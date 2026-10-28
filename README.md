@@ -33,7 +33,7 @@ CERTAIN measures the integration of legal and ethical requirements into the onto
 2. it has at least one competency question, and
 3. at least one of its competency questions is formalised as a query in [cq/](cq/README.md) that returns an answer over the example graphs.
 
-The Integration Success Rate is the share of integrated requirements. `make kpi` computes it, with the counts after each condition per framework, and writes `reports/kpi-1-2.md`. The third condition is the one that limits the rate: the terms and competency questions exist for all requirements, but only some of the questions are formalised so far.
+The Integration Success Rate is the share of integrated requirements. `make kpi` computes it, with the counts after each condition per framework, and writes `reports/kpi-1-2.md`. With one formalised question per requirement, 169 of the 180 requirements are integrated (0.939). The eleven others are not answered over the example system: Article 11(3) and 15(2) concern acts of the Commission, Article 12(3) with its points (b) and (c) and Article 14(5) apply to biometric systems under Annex III, point 1(a), Article 17(4) and 73(9) to providers covered by other Union law, Article 9(7) to testing in real-world conditions and ALTAI requirement 1.4 to systems that simulate social interaction; Article 73(5) has no competency question.
 
 ## Example
 
