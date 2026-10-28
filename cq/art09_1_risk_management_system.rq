@@ -1,10 +1,11 @@
 # CQ: What risk management system has been established for the high-risk AI system?
 # Question: lexreq:aiact-art9-1-cq1
 # Requirement: lexreq:aiact-art9-1
-# Terms: aidoc-lex:RiskManagementSystem, aidoc-lex:accountableAgent, aidoc-lex:hasManagementSystem, aidoc-lex:includesDocument
+# Terms: dpv-aiact:RiskManagementSystem, aidoc-lex:accountableAgent, aidoc-lex:hasManagementSystem, aidoc-lex:includesDocument
 
 PREFIX aidoc: <https://w3id.org/aidoc-ap#>
 PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
 PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
 PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
 PREFIX dqv: <http://www.w3.org/ns/dqv#>
@@ -14,7 +15,7 @@ PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?system ?rms ?document ?accountable WHERE {
   ?system a aidoc:AISystem ;
           aidoc-lex:hasManagementSystem ?rms .
-  ?rms a aidoc-lex:RiskManagementSystem .
+  ?rms a dpv-aiact:RiskManagementSystem .
   OPTIONAL { ?rms aidoc-lex:includesDocument ?document }
   OPTIONAL { ?rms aidoc-lex:accountableAgent ?accountable }
 }

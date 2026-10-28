@@ -1,16 +1,16 @@
 raw_term,requirements,decision,target,rationale
 AbuseTestScenario,oecd-p4,merge,aidoc-lex:SecurityAssessment,
-AccessControl,aiact-art10-5-c,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+AccessControl,aiact-art10-5-c,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 AccessibilityAssessment,altai-r5-06,lex,aidoc-lex:AccessibilityAssessment,
 AccessibilityComplianceAssessment,aiact-art16-l,merge,aidoc-lex:AccessibilityAssessment,
 AccessibilityRequirement,aiact-art16-l,merge,aidoc-lex:AccessibilityMeasure,
 AccessLog,aiact-art10-5-c,core,aidoc:Log,an access log is an aidoc:Log
-AccompanyingDocumentationMarking,aiact-art16-b aiact-art16-h,merge,aidoc-lex:CEMarking,markings on the packaging or the accompanying documentation are where the CE marking is affixed
+AccompanyingDocumentationMarking,aiact-art16-b aiact-art16-h,merge,dpv-aiact:CEMarking,markings on the packaging or the accompanying documentation are where the CE marking is affixed
 AccountabilityFramework,aiact-art17-1-m,lex,aidoc-lex:AccountabilityFramework,
 AccountableOwner,oecd-p5,merge,aidoc-lex:accountableAgent,responsibility assignment and accountable owner are a relation to the accountable agent
 AccuracyLevel,aiact-art15-1,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
 AdoptionMotivation,gender-04,out,,team composition and culture are organisational facts outside the AI system documentation
-AdversarialExampleMeasure,aiact-art15-5,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+AdversarialExampleMeasure,aiact-art15-5,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 AdverseImpactOnGroup,aiact-art9-9,skos,aidoc-lex:FundamentalRightsRisk,a concept of the RiskCategories scheme
 AIEthicsReviewBoard,altai-r7-05,merge,aidoc-lex:EthicsReviewBoard,
 ALTAIAssessmentProcess,altai-r7-06,merge,aidoc-lex:Assessment,the ALTAI self-assessment is an assessment that addresses the ALTAI requirements
@@ -24,13 +24,13 @@ AnnexIVAmendment,aiact-art11-3,out,,powers of the Commission are outside the pro
 AnnexIVElement,aiact-art11-1,core,aiact:Requirement,"Annex IV elements are already the aiact:Requirement concepts of the AIDOC-AP core (annex_4.ttl), linked with addressesRequirement"
 Anomaly,aiact-art14-4-a,merge,aidoc-lex:Incident,"anomalies, dysfunctions and unexpected performance are incidents"
 AnonymisedData,aiact-art10-5-a,out,,synthetic or anonymised data are aidoc:Dataset with dcterms:type dpv:SyntheticData or dpv:AnonymisedData
-Article3_49_b_SeriousIncident,aiact-art73-3,merge,aidoc-lex:SeriousIncident,categories of Article 3(49) are concepts of IncidentCategories
+Article3_49_b_SeriousIncident,aiact-art73-3,merge,dpv-aiact:SeriousIncident,categories of Article 3(49) are concepts of IncidentCategories
 Article3_49_c_NotificationScope,aiact-art73-9,skos,aidoc-lex:FundamentalRightsInfringement,a concept of the IncidentCategories scheme
 AssignedHumanOverseer,aiact-art14-4,merge,aidoc-lex:assignedOverseer,
 AssistiveTechnologyCompatibility,altai-r5-07,merge,aidoc-lex:AccessibilityMeasure,
 Assumption,aiact-art10-2-d,merge,aidoc-lex:dataAssumption,
 AsylumUse,aiact-art14-5,reuse,dpv-aiact:HighRiskAISystem-AnnexIII-1-a,high-risk categories of Annex III are classes in dpv-aiact
-AuthorisedPerson,aiact-art10-5-c,merge,aidoc-lex:HumanOverseer,
+AuthorisedPerson,aiact-art10-5-c,merge,dpv-aiact:HumanOverseer,
 AuthorisedRepresentative,aiact-art13-3-a,lex,aidoc-lex:AuthorisedRepresentative,
 AuthorityCommunicationProcedure,aiact-art17-1-j,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
 AutomaticLoggingCapability,aiact-art12-1,core,aidoc:DataMonitoringAndLogging,automatic logging and log collection are aidoc:DataMonitoringAndLogging
@@ -56,7 +56,7 @@ BuiltInOversightMeasure,aiact-art14-3-a,merge,aidoc-lex:ProviderOversightMeasure
 CarbonMetric,altai-r6-01,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
 CausalLinkAssessment,aiact-art73-2,merge,aidoc-lex:IncidentInvestigation,severity and causal link are assessed in the investigation
 CausalRelationship,aiact-art73-4,merge,aidoc-lex:IncidentInvestigation,severity and causal link are assessed in the investigation
-CEMarking,aiact-art16-h,lex,aidoc-lex:CEMarking,markings on the packaging or the accompanying documentation are where the CE marking is affixed
+CEMarking,aiact-art16-h,reuse,dpv-aiact:CEMarking,markings on the packaging or the accompanying documentation are where the CE marking is affixed
 Child,aiact-art9-9,merge,aidoc-lex:AffectedGroup,
 CircumstanceSpecificControl,aiact-art15-5,merge,aidoc-lex:RiskControlMeasure,one control measure class with controlFunction and addressesRisk
 CompetentAuthorityRequest,aiact-art16-k,merge,aidoc-lex:AuthorityCommunication,
@@ -66,8 +66,8 @@ CompletenessMeasure,aiact-art10-3,core,aidoc:PerformanceMetric,an indicator or s
 ComplianceEvidencePack,gender-05,core,aiact:Requirement,"Annex IV elements are already the aiact:Requirement concepts of the AIDOC-AP core (annex_4.ttl), linked with addressesRequirement"
 ComplianceRemediationMeasure,aiact-art10-2-h,merge,aidoc-lex:RiskControlMeasure,one control measure class with controlFunction and addressesRisk
 ComplianceTest,aiact-art9-6 aiact-art9-7,lex,aidoc-lex:ComplianceTest,
-ConfidenceThresholdPolicy,altai-r2-12,merge,aidoc-lex:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
-ConfidentialityAttackMeasure,aiact-art15-5,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+ConfidenceThresholdPolicy,altai-r2-12,merge,dpv:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
+ConfidentialityAttackMeasure,aiact-art15-5,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 ConfidentialityObligation,aiact-art10-5-c,merge,aidoc-lex:PrivacyPreservingMeasure,
 ConflictResolutionJustification,gender-01,merge,aidoc-lex:justification,a reason or justification is a literal on the record or decision
 ConformityAssessmentProcedure,aiact-art16-f aiact-art17-1-a,merge,aidoc-lex:ConformityAssessment,submission and demonstration of conformity are parts of the conformity assessment
@@ -80,12 +80,12 @@ ContextualSetting,aiact-art10-4,core,aidoc:IntendedPurpose,the boundary and cont
 ControlMeasure,aiact-art9-5-b,merge,aidoc-lex:RiskControlMeasure,one control measure class with controlFunction and addressesRisk
 CorrectiveAction,aiact-art73-6,lex,aidoc-lex:CorrectiveAction,
 CorrectiveActionNotice,aiact-art16-j,merge,aidoc-lex:CorrectiveAction,
-CyberResilienceMeasure,aiact-art15-5,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+CyberResilienceMeasure,aiact-art15-5,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 CybersecurityCertification,altai-r2-01,core,aidoc:Standard,technical specifications and other means of compliance are aidoc:Standard
-CybersecurityMeasure,aiact-art15-1,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
-CybersecurityProperty,aiact-art13-3-b-ii,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
-CybersecurityTechnicalSolution,aiact-art15-5,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
-CybersecurityVulnerability,aiact-art15-5,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+CybersecurityMeasure,aiact-art15-1,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+CybersecurityProperty,aiact-art13-3-b-ii,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+CybersecurityTechnicalSolution,aiact-art15-5,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+CybersecurityVulnerability,aiact-art15-5,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 DataAggregation,aiact-art10-2-c,core,aidoc:DataProcessing,"updating, enrichment and aggregation are aidoc:DataProcessing activities"
 DataEnrichment,aiact-art10-2-c,core,aidoc:DataProcessing,"updating, enrichment and aggregation are aidoc:DataProcessing activities"
 DataFiltration,aiact-art17-1-f,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
@@ -93,9 +93,9 @@ DataGap,aiact-art10-2-h,lex,aidoc-lex:DataGap,
 DataGovernancePractice,aiact-art10-2,merge,aidoc-lex:DataGovernanceFramework,one class for data governance and data management practices
 DataManagementPractice,aiact-art10-2,merge,aidoc-lex:DataGovernanceFramework,one class for data governance and data management practices
 DataMiningProcedure,aiact-art17-1-f,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
-DataPoisoningMeasure,aiact-art15-5,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+DataPoisoningMeasure,aiact-art15-5,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 DataProtectionImpactAssessment,altai-r3-02,lex,aidoc-lex:DataProtectionImpactAssessment,privacy impact assessment and DPIA are the same instrument
-DataProtectionOfficer,altai-r3-02,lex,aidoc-lex:DataProtectionOfficer,
+DataProtectionOfficer,altai-r3-02,reuse,dpv:DataProtectionOfficer,
 DataRetentionProcedure,aiact-art17-1-f,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
 DatasetSuitabilityAssessment,aiact-art10-2-e,lex,aidoc-lex:DatasetSuitabilityAssessment,the assessment of alternative data is part of the suitability of the data sets
 DataShortcoming,aiact-art10-2-h,merge,aidoc-lex:DataGap,
@@ -137,7 +137,7 @@ FailSafePlan,aiact-art15-4,merge,aidoc-lex:ResilienceMeasure,
 FairnessDefinition,altai-r5-05,out,,the fairness definition is recorded in the bias assessment (dcterms:description)
 FairnessMetric,altai-r5-02,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
 FallbackPlan,altai-r2-06,merge,aidoc-lex:ResilienceMeasure,
-FatalIncident,aiact-art73-4,merge,aidoc-lex:SeriousIncident,categories of Article 3(49) are concepts of IncidentCategories
+FatalIncident,aiact-art73-4,merge,dpv-aiact:SeriousIncident,categories of Article 3(49) are concepts of IncidentCategories
 FaultTolerance,aiact-art15-4,merge,aidoc-lex:ResilienceMeasure,
 FeedbackLoop,aiact-art15-4 gender-07,skos,aidoc-lex:FeedbackLoopRisk,a concept of the RiskCategories scheme
 FeedbackLoopBias,aiact-art10-2-f,skos,aidoc-lex:FeedbackLoopRisk,a concept of the RiskCategories scheme
@@ -150,7 +150,7 @@ GenderAcceptanceDisparity,gender-05,skos,aidoc-lex:GenderDisparityRisk,a concept
 GenderAccessDisparity,gender-05,skos,aidoc-lex:GenderDisparityRisk,a concept of the RiskCategories scheme
 GenderAuditActivity,gender-01,merge,aidoc-lex:GenderAudit,
 GenderAuditProcess,gender-06,merge,aidoc-lex:GenderAudit,
-GenderBalanceObjective,gender-06,merge,aidoc-lex:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
+GenderBalanceObjective,gender-06,merge,dpv:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
 GenderBiasRisk,gender-05,skos,aidoc-lex:GenderDisparityRisk,a concept of the RiskCategories scheme
 GenderDifferentiatedImpact,gender-01,merge,aidoc-lex:GenderImpactAssessment,the GIA and SGIA steps are parts of one gender impact assessment
 GenderEqualityBenefit,gender-03,out,,"a benefit is described in the impact assessment, not as a class"
@@ -180,7 +180,7 @@ ImprovementRecommendation,gender-03,merge,aidoc-lex:CorrectiveAction,
 IncidentAwarenessDate,aiact-art73-2,merge,aidoc-lex:awarenessDate,the deadlines follow from the awareness date and the incident category
 IncidentInvestigation,aiact-art73-6,lex,aidoc-lex:IncidentInvestigation,severity and causal link are assessed in the investigation
 IncidentReport,aiact-art73-1,lex,aidoc-lex:IncidentReport,initial and complete reports are distinguished with isInitialReport
-IncidentTriggerThreshold,oecd-p4,merge,aidoc-lex:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
+IncidentTriggerThreshold,oecd-p4,merge,dpv:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
 InclusiveLanguageControl,gender-01,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
 InclusiveTeamCulture,gender-01,out,,team composition and culture are organisational facts outside the AI system documentation
 InconsistencyHandling,aiact-art15-4,merge,aidoc-lex:ResilienceMeasure,
@@ -188,10 +188,10 @@ InformationIntegrityRisk,oecd-p2,skos,aidoc-lex:InformationIntegrityRisk,a conce
 InitialIncidentReport,aiact-art73-5,merge,aidoc-lex:IncidentReport,initial and complete reports are distinguished with isInitialReport
 Instruction,aiact-art17-1,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
 InstructionContentQuality,aiact-art13-2,out,,"form and quality of the instructions are checked against the requirement, not modelled"
-InstructionsForUse,aiact-art13-2 aiact-art15-3 aiact-art9-3 aiact-art9-4 aiact-art9-5-c,lex,aidoc-lex:InstructionsForUse,technical information and risk communication to deployers are part of the instructions for use
+InstructionsForUse,aiact-art13-2 aiact-art15-3 aiact-art9-3 aiact-art9-4 aiact-art9-5-c,reuse,dpv-aiact:InstructionForUse,technical information and risk communication to deployers are part of the instructions for use
 IntegratedQMS,aiact-art17-3,merge,aidoc-lex:integratedWith,integration with procedures under other Union law is a relation between management systems
 IntegratedRiskManagementProcedure,aiact-art9-10,merge,aidoc-lex:integratedWith,integration with procedures under other Union law is a relation between management systems
-IntegrityControl,oecd-p4,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+IntegrityControl,oecd-p4,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 IntendedUseBoundary,oecd-p2,core,aidoc:IntendedPurpose,the boundary and context of use are part of aidoc:IntendedPurpose
 InterestedPartyCommunication,aiact-art17-1-j,merge,aidoc-lex:StakeholderConsultation,
 InternalGovernanceRequirement,aiact-art17-4,out,,"obligations are the requirements themselves (lexreq), not ontology classes"
@@ -215,11 +215,11 @@ MeasurementMethodology,aiact-art15-2,core,aidoc:PerformanceMetric,an indicator o
 Microenterprise,aiact-art11-1,lex,aidoc-lex:Microenterprise,
 MigrationUse,aiact-art14-5,reuse,dpv-aiact:HighRiskAISystem-AnnexIII-1-a,high-risk categories of Annex III are classes in dpv-aiact
 MisusePreventionMeasure,aiact-art10-5-c,merge,aidoc-lex:RiskControlMeasure,one control measure class with controlFunction and addressesRisk
-MisuseScenario,aiact-art9-2-b,merge,aidoc-lex:ReasonablyForeseeableMisuse,
+MisuseScenario,aiact-art9-2-b,merge,dpv-aiact:ReasonablyForeseeableMisuse,
 MisuseScenarioRegister,oecd-p2,merge,aidoc-lex:RiskRegister,
 MitigationMeasure,aiact-art9-2-d aiact-art9-5-b gender-05,merge,aidoc-lex:RiskControlMeasure,one control measure class with controlFunction and addressesRisk
-ModelFlawControl,aiact-art15-5,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
-ModelPoisoningMeasure,aiact-art15-5,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+ModelFlawControl,aiact-art15-5,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+ModelPoisoningMeasure,aiact-art15-5,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 NecessityReason,aiact-art10-5-f,merge,aidoc-lex:justification,a reason or justification is a literal on the record or decision
 NonUseDecision,aiact-art14-4-d,merge,aidoc-lex:OverrideMechanism,
 NotifiedBodyCooperation,aiact-art73-6,merge,aidoc-lex:AuthorityCommunication,
@@ -231,13 +231,13 @@ OverrideAction,aiact-art14-4-d,merge,aidoc-lex:OverrideMechanism,
 OverrideAuthority,oecd-p2,merge,aidoc-lex:OverrideMechanism,
 OversightMeasureType,aiact-art14-3,core,aidoc:HumanOversightMechanism,the type is given by the subclasses of aidoc:HumanOversightMechanism
 OversightTrainingRecord,altai-r1-06,merge,aidoc-lex:CompetenceTraining,all trainings are one class; topic and participants are recorded on the activity
-PackagingMarking,aiact-art16-b aiact-art16-h,merge,aidoc-lex:CEMarking,markings on the packaging or the accompanying documentation are where the CE marking is affixed
+PackagingMarking,aiact-art16-b aiact-art16-h,merge,dpv-aiact:CEMarking,markings on the packaging or the accompanying documentation are where the CE marking is affixed
 PerceivedBarrier,gender-04,out,,team composition and culture are organisational facts outside the AI system documentation
 PerceivedEaseOfUse,gender-02,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
 PerceivedTrust,gender-02,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
 PerceivedUsefulness,gender-02,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
 PerformanceLimitation,aiact-art13-3-b,merge,aidoc-lex:measuredForGroup,group-specific and disaggregated performance are measurements for a group
-PostMarketMonitoringSystem,aiact-art17-1-h aiact-art72-1,lex,aidoc-lex:PostMarketMonitoringSystem,
+PostMarketMonitoringSystem,aiact-art17-1-h aiact-art72-1,reuse,dpv-aiact:PostMarketMonitoringSystem,
 PredeterminedChange,aiact-art13-3-c,lex,aidoc-lex:PredeterminedChange,
 PrivacyImpactAssessment,oecd-p2,merge,aidoc-lex:DataProtectionImpactAssessment,privacy impact assessment and DPIA are the same instrument
 PrivacyPreservingMeasure,aiact-art10-5 aiact-art10-5-b,lex,aidoc-lex:PrivacyPreservingMeasure,
@@ -248,20 +248,20 @@ ProportionateImplementation,aiact-art17-2,out,,"proportionality is a property of
 ProtectionLevel,aiact-art17-2,out,,"proportionality is a property of the requirement, not of the system"
 ProviderContactDetails,aiact-art16-b,merge,aidoc-lex:contactDetails,
 ProviderControlCondition,aiact-art16-e,out,,"obligations are the requirements themselves (lexreq), not ontology classes"
-ProviderOrganisationSize,aiact-art17-2,merge,aidoc-lex:SME,
+ProviderOrganisationSize,aiact-art17-2,merge,dpv:SMEOrganisation,
 PseudonymisationMeasure,aiact-art10-5-b,merge,aidoc-lex:PrivacyPreservingMeasure,
 PuttingIntoServiceEvent,aiact-art16-f,out,,market placement and putting into service are status values of dpv-aiact
 QETAMQuestionnaire,gender-02,merge,aidoc-lex:TechnologyAcceptanceStudy,QETAM constructs are measured as aidoc:PerformanceMetric of the study
 QualityAssuranceProcedure,aiact-art17-1-c,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
 QualityControlProcedure,aiact-art17-1-c,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
-QualityManagementSystem,aiact-art16-c aiact-art17-1,lex,aidoc-lex:QualityManagementSystem,
-ReasonablyForeseeableMisuse,aiact-art14-2,lex,aidoc-lex:ReasonablyForeseeableMisuse,
+QualityManagementSystem,aiact-art16-c aiact-art17-1,reuse,dpv-aiact:QualityManagementSystem,
+ReasonablyForeseeableMisuse,aiact-art14-2,reuse,dpv-aiact:ReasonablyForeseeableMisuse,
 ReasonedRequest,aiact-art16-k,merge,aidoc-lex:AuthorityCommunication,
 RecordKeepingSystem,aiact-art17-1-k,lex,aidoc-lex:RecordKeepingSystem,
 RedressMechanism,altai-r7-08,lex,aidoc-lex:RedressMechanism,
 ReferenceDatabaseLogEntry,aiact-art12-3-b,merge,aidoc-lex:LogEntry,"one class for log entries, typed with the LoggedEventTypes scheme"
 RegistrationObligation,aiact-art16-i,out,,"obligations are the requirements themselves (lexreq), not ontology classes"
-RegulatoryComplianceStrategy,aiact-art17-1-a,merge,aidoc-lex:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
+RegulatoryComplianceStrategy,aiact-art17-1-a,merge,dpv:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
 RelevantEventCategory,aiact-art12-2,skos,aidoc-lex:RiskSituation,logged event types are concepts of the LoggedEventTypes scheme
 ReportingDeadline,aiact-art73-2,merge,aidoc-lex:awarenessDate,the deadlines follow from the awareness date and the incident category
 Representativeness,aiact-art10-3,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
@@ -272,21 +272,21 @@ ResidualRisk,aiact-art9-5,reuse,airo:Risk,AIRO models hazards and residual risk 
 ResourceAccessIndicator,gender-04,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
 ResourceManagementMeasure,aiact-art17-1-l,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
 ResponsibilityAssignment,aiact-art17-1-m,merge,aidoc-lex:accountableAgent,responsibility assignment and accountable owner are a relation to the accountable agent
-ResponsibleBusinessConductControl,oecd-p5,merge,aidoc-lex:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
-ResultVerifier,aiact-art12-3-d,merge,aidoc-lex:HumanOverseer,
+ResponsibleBusinessConductControl,oecd-p5,merge,dpv:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
+ResultVerifier,aiact-art12-3-d,merge,dpv-aiact:HumanOverseer,
 RetentionPeriod,aiact-art10-5-e,merge,aidoc-lex:retentionPeriod,
 ReuseRestriction,aiact-art10-5-b,merge,aidoc-lex:PrivacyPreservingMeasure,
 ReverseOutput,aiact-art14-4-d,merge,aidoc-lex:OverrideMechanism,
 RiskAcceptanceCriterion,aiact-art9-5,merge,aidoc-lex:riskAcceptanceCriteria,
 RiskAnalysisOutcome,aiact-art9-2-a,merge,aidoc-lex:RiskAssessment,"analysis, estimation and evaluation steps are parts of one risk assessment; likelihood and severity use AIRO"
-RiskCommunication,aiact-art9-3 aiact-art9-4,merge,aidoc-lex:InstructionsForUse,technical information and risk communication to deployers are part of the instructions for use
+RiskCommunication,aiact-art9-3 aiact-art9-4,merge,dpv-aiact:InstructionForUse,technical information and risk communication to deployers are part of the instructions for use
 RiskControlMeasure,aiact-art9-2-d,lex,aidoc-lex:RiskControlMeasure,one control measure class with controlFunction and addressesRisk
 RiskEvaluation,aiact-art9-2-b,merge,aidoc-lex:RiskAssessment,"analysis, estimation and evaluation steps are parts of one risk assessment; likelihood and severity use AIRO"
 RiskLevel,altai-r2-04,reuse,dpv-aiact:RiskLevel,use dpv-aiact risk levels
 RiskLikelihood,aiact-art9-2-b,reuse,airo:Likelihood,AIRO models likelihood and severity of risks
-RiskManagementIteration,aiact-art9-2,merge,aidoc-lex:RiskManagementSystem,an iteration is a repeated RiskAssessment within the system; record dates with PROV
+RiskManagementIteration,aiact-art9-2,merge,dpv-aiact:RiskManagementSystem,an iteration is a repeated RiskAssessment within the system; record dates with PROV
 RiskManagementProcedure,aiact-art9-1,merge,aidoc-lex:Procedure,a procedure of the risk management system
-RiskManagementSystem,aiact-art17-1-g aiact-art9-1,lex,aidoc-lex:RiskManagementSystem,
+RiskManagementSystem,aiact-art17-1-g aiact-art9-1,reuse,dpv-aiact:RiskManagementSystem,
 RiskRegister,oecd-p5,lex,aidoc-lex:RiskRegister,
 RiskSeverity,aiact-art9-2-b,reuse,airo:Severity,AIRO models likelihood and severity of risks
 RiskStatus,gender-05,out,,a status value; use dcterms:type on the risk or adms:status
@@ -300,18 +300,18 @@ SafetyCriticality,altai-r2-05,reuse,dpv-aiact:RiskLevel,use dpv-aiact risk level
 SafetyRisk,aiact-art9-2-a,skos,aidoc-lex:SafetyRisk,a concept of the RiskCategories scheme
 Section2ComplianceObligation,aiact-art16-a,out,,"obligations are the requirements themselves (lexreq), not ontology classes"
 SectoralUnionLawObligation,aiact-art17-3,merge,aidoc-lex:integratedWith,integration with procedures under other Union law is a relation between management systems
-SecurityMeasure,aiact-art10-5-b,lex,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+SecurityMeasure,aiact-art10-5-b,reuse,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 SecurityOfSupplyMeasure,aiact-art17-1-l,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
 SecurityTest,oecd-p4,merge,aidoc-lex:SecurityAssessment,
 SeparateVerification,aiact-art14-5,merge,aidoc-lex:verifiedBy,separate verification by two persons is two verifiedBy links on the log entry
-SeriousIncident,aiact-art17-1-i aiact-art73-1,lex,aidoc-lex:SeriousIncident,categories of Article 3(49) are concepts of IncidentCategories
+SeriousIncident,aiact-art17-1-i aiact-art73-1,reuse,dpv-aiact:SeriousIncident,categories of Article 3(49) are concepts of IncidentCategories
 SeriousIncidentReportingProcedure,aiact-art17-1-i,merge,aidoc-lex:Procedure,one procedure class typed with the ProcedureTypes scheme
 SeverityAssessment,aiact-art73-2,merge,aidoc-lex:IncidentInvestigation,severity and causal link are assessed in the investigation
 SexDisaggregatedDataset,gender-03,merge,aidoc-lex:measuredForGroup,group-specific and disaggregated performance are measurements for a group
 SimplifiedTechnicalDocumentationForm,aiact-art11-1,merge,aidoc-lex:SimplifiedTechnicalDocumentation,
 SingleSetOfTechnicalDocumentation,aiact-art11-2,core,aidoc:TechnicalDocumentation,a single set is one aidoc:TechnicalDocumentation with addressesRequirement links to the requirements of both acts
 SkillImpactAssessment,altai-r6-04,merge,aidoc-lex:ImpactAssessment,one impact assessment class typed with the ImpactAreas scheme
-SME,aiact-art11-1,lex,aidoc-lex:SME,
+SME,aiact-art11-1,reuse,dpv:SMEOrganisation,
 SocialImpactAssessment,oecd-p1,merge,aidoc-lex:ImpactAssessment,one impact assessment class typed with the ImpactAreas scheme
 SocialInfluence,gender-02,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
 SocietalImpactAssessment,altai-r6-05,merge,aidoc-lex:ImpactAssessment,one impact assessment class typed with the ImpactAreas scheme
@@ -319,7 +319,7 @@ SoftwareUpdateMeasure,aiact-art13-3-e,merge,aidoc-lex:MaintenanceMeasure,
 SpecialCategoryPersonalData,aiact-art10-5,merge,aidoc-lex:containsSpecialCategoryData,
 StakeholderEngagementPlan,altai-r5-09,merge,aidoc-lex:StakeholderConsultation,
 StartDateTime,aiact-art12-3-a,reuse,prov:startedAtTime,start and end of a use are prov:startedAtTime and prov:endedAtTime of the use activity
-StartUp,aiact-art11-1,lex,aidoc-lex:StartUp,
+StartUp,aiact-art11-1,reuse,dpv:StartupOrganisation,
 StatisticalProperty,aiact-art10-3,core,aidoc:PerformanceMetric,an indicator or score is a metric with dqv measurements; group values use measuredForGroup
 StopButton,aiact-art14-4-e,merge,aidoc-lex:StopMechanism,
 SubstantialModificationEvent,aiact-art12-2-a,merge,aidoc-lex:SubstantialModification,
@@ -331,7 +331,7 @@ TeamCompositionBalance,gender-06,out,,team composition and culture are organisat
 TechnicalDocumentation,aiact-art11-1,core,aidoc:TechnicalDocumentation,exists in AIDOC-AP 1.2
 TechnicalDocumentationRequirementUpdate,aiact-art11-3,out,,powers of the Commission are outside the provider scope
 TechnicalFeasibilityAssessment,aiact-art9-5-a,merge,aidoc-lex:RiskAssessment,"analysis, estimation and evaluation steps are parts of one risk assessment; likelihood and severity use AIRO"
-TechnicalInformation,aiact-art9-3 aiact-art9-4,merge,aidoc-lex:InstructionsForUse,technical information and risk communication to deployers are part of the instructions for use
+TechnicalInformation,aiact-art9-3 aiact-art9-4,merge,dpv-aiact:InstructionForUse,technical information and risk communication to deployers are part of the instructions for use
 TechnicalMeasure,aiact-art15-4,merge,aidoc-lex:RiskControlMeasure,one control measure class with controlFunction and addressesRisk
 TechnicalProgress,aiact-art11-3,out,,powers of the Commission are outside the provider scope
 TechnicalRedundancySolution,aiact-art15-4,merge,aidoc-lex:ResilienceMeasure,
@@ -347,14 +347,14 @@ TransferRestriction,aiact-art10-5-d,merge,aidoc-lex:PrivacyPreservingMeasure,
 TransmissionRestriction,aiact-art10-5-d,merge,aidoc-lex:PrivacyPreservingMeasure,
 TransparencyDegree,aiact-art13-1,core,aidoc:TransparencyMeasure,the degree of transparency is described by the transparency measures of the system
 TwoDayReportingDeadline,aiact-art73-3,merge,aidoc-lex:awarenessDate,the deadlines follow from the awareness date and the incident category
-UnauthorisedAlterationAttempt,aiact-art15-5,merge,aidoc-lex:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
+UnauthorisedAlterationAttempt,aiact-art15-5,merge,vair:SecurityMeasure,one class for security measures; the attack or vulnerability addressed is given by addressesRisk (for example dpv-ai:DataPoisoning)
 UnexpectedPerformance,aiact-art14-4-a,merge,aidoc-lex:Incident,"anomalies, dysfunctions and unexpected performance are incidents"
 UnionHarmonisationLegislation,aiact-art11-2,reuse,airo:Regulation,Union harmonisation legislation is an airo:Regulation linked with airo:compliesWithRegulation
 UniversalDesignPrinciple,altai-r5-08,merge,aidoc-lex:AccessibilityMeasure,
 UsagePeriodLogEntry,aiact-art12-3-a,merge,aidoc-lex:LogEntry,"one class for log entries, typed with the LoggedEventTypes scheme"
 UseContext,aiact-art9-5-closing,core,aidoc:IntendedPurpose,the boundary and context of use are part of aidoc:IntendedPurpose
 UserWellbeingSafeguard,altai-r1-04,merge,aidoc-lex:RiskControlMeasure,one control measure class with controlFunction and addressesRisk
-VerifierAuthority,aiact-art14-5,merge,aidoc-lex:HumanOverseer,
+VerifierAuthority,aiact-art14-5,merge,dpv-aiact:HumanOverseer,
 VerifierCompetence,aiact-art14-5,merge,aidoc-lex:CompetenceTraining,all trainings are one class; topic and participants are recorded on the activity
 VerifierIdentificationLogEntry,aiact-art12-3-d,merge,aidoc-lex:LogEntry,"one class for log entries, typed with the LoggedEventTypes scheme"
 VerifierTraining,aiact-art14-5,merge,aidoc-lex:CompetenceTraining,all trainings are one class; topic and participants are recorded on the activity
@@ -362,4 +362,4 @@ VulnerableGroup,aiact-art9-9,merge,aidoc-lex:AffectedGroup,
 WhistleblowingOrReportingChannel,altai-r7-07,merge,aidoc-lex:ReportingChannel,
 WidespreadInfringement,aiact-art73-3,skos,aidoc-lex:WidespreadInfringement,a concept of the IncidentCategories scheme
 WorkerConsultationRecord,altai-r6-02,merge,aidoc-lex:StakeholderConsultation,
-WrittenPolicy,aiact-art17-1,merge,aidoc-lex:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
+WrittenPolicy,aiact-art17-1,merge,dpv:Policy,written policies are one class; the subject is given by addressesRequirement and dcterms:subject
