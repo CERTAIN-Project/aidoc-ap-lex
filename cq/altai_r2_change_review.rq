@@ -1,0 +1,11 @@
+# CQ: How does the AI system determine whether changes to model, data, software, or deployment require a new robustness and safety review?
+# Question: lexreq:altai-r2-07-cq1
+# Requirement: lexreq:altai-r2-07
+# Terms: aidoc:ChangeRecord, aidoc:reasonForChange, aidoc:hasChangeRecord
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?change ?type ?reason WHERE {
+  ?log aidoc:hasChangeRecord ?change .
+  ?change a ?type .
+  OPTIONAL { ?change aidoc:reasonForChange ?reason }
+}

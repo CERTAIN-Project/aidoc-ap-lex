@@ -1,0 +1,11 @@
+# CQ: How does the AI system protect its integrity, robustness, and security throughout its lifecycle?
+# Question: lexreq:altai-r2-03-cq1
+# Requirement: lexreq:altai-r2-03
+# Terms: aidoc:ChangeRecord, aidoc:hasChangeRecord, aidoc:BuildAndIntegrationTesting, aidoc:hasFrequency
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?system ?change ?test ?frequency WHERE {
+  ?system aidoc:hasChangeLog/aidoc:hasChangeRecord ?change .
+  ?test a aidoc:BuildAndIntegrationTesting ;
+        aidoc:hasFrequency ?frequency .
+}

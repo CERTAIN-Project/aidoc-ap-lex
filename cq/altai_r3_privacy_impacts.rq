@@ -1,0 +1,13 @@
+# CQ: How does the AI system assess and manage impacts on privacy, data protection, and physical, mental, or moral integrity?
+# Question: lexreq:altai-r3-01-cq1
+# Requirement: lexreq:altai-r3-01
+# Terms: aidoc-lex:FundamentalRightsImpactAssessment, aidoc-lex:DataProtectionImpactAssessment
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?assessment ?type ?system WHERE {
+  ?assessment a ?type ;
+              aidoc-lex:assesses ?system .
+  VALUES ?type { aidoc-lex:FundamentalRightsImpactAssessment aidoc-lex:DataProtectionImpactAssessment }
+  ?system a aidoc:AISystem .
+}

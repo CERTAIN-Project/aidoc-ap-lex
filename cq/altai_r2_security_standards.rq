@@ -1,0 +1,12 @@
+# CQ: What cybersecurity certifications, assurance schemes, or security standards does the AI system meet?
+# Question: lexreq:altai-r2-01-cq2
+# Requirement: lexreq:altai-r2-01
+# Terms: aidoc:Standard, aidoc:appliesStandard
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?standard ?label WHERE {
+  ?system aidoc:appliesStandard ?standard .
+  ?standard rdfs:label ?label .
+  FILTER(CONTAINS(?label, "security"))
+}

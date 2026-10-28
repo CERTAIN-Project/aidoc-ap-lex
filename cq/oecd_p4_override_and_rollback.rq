@@ -1,0 +1,18 @@
+# CQ: How can the AI system be overridden, repaired, rolled back, and/or decommissioned safely when undue harm or undesired behaviour is detected?
+# Question: lexreq:oecd-p4-cq4
+# Requirement: lexreq:oecd-p4
+# Terms: aidoc-lex:OverrideMechanism, aidoc-lex:StopMechanism, aidoc-lex:CorrectiveAction
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?item ?type WHERE {
+  {
+    ?system aidoc:hasHumanOversight ?item .
+    ?item a ?type .
+    VALUES ?type { aidoc-lex:OverrideMechanism aidoc-lex:StopMechanism }
+  } UNION {
+    ?item a aidoc-lex:CorrectiveAction ;
+          aidoc-lex:concernsSystem ?system .
+    BIND(aidoc-lex:CorrectiveAction AS ?type)
+  }
+}

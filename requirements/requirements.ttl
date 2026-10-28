@@ -2456,7 +2456,7 @@ lexreq:altai-r1-02 a lexreq:Requirement ;
     lexreq:expectedEvidence "Product copy guidelines for AI interaction disclosure"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r1-02-cq1 , lexreq:altai-r1-02-cq2 , lexreq:altai-r1-02-cq3 .
 lexreq:altai-r1-02-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system prevent confusion about whether a user is interacting with a human or with an AI system?"@en .
-lexreq:altai-r1-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What disclosure mechanisms does the AI system provide to make users aware that they are interacting with an AI system?"@en .
+lexreq:altai-r1-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What disclosure mechanisms does the AI system provide to make users aware that they are interacting with an AI system?"@en ; lexreq:formalisedBy "cq/altai_r1_disclosure_mechanisms.rq" .
 lexreq:altai-r1-02-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system verify that these disclosures are clear and effective for representative users?"@en .
 
 lexreq:altai-r1-03 a lexreq:Requirement ;
@@ -2480,7 +2480,7 @@ lexreq:altai-r1-03 a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:altai-r1-03-cq1 , lexreq:altai-r1-03-cq2 , lexreq:altai-r1-03-cq3 .
 lexreq:altai-r1-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system detect and reduce the risk of end-user over-reliance?"@en .
 lexreq:altai-r1-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What controls or interface mechanisms does the AI system use to prevent users from deferring excessively to its outputs?"@en .
-lexreq:altai-r1-03-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system avoid unintended interference with human autonomy or decision-making?"@en .
+lexreq:altai-r1-03-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system avoid unintended interference with human autonomy or decision-making?"@en ; lexreq:formalisedBy "cq/altai_r1_human_autonomy.rq" .
 
 lexreq:altai-r1-04 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2523,7 +2523,7 @@ lexreq:altai-r1-05 a lexreq:Requirement ;
     lexreq:expectedEvidence "Governance memo explaining chosen oversight model"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r1-05-cq1 , lexreq:altai-r1-05-cq2 , lexreq:altai-r1-05-cq3 .
 lexreq:altai-r1-05-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system determine whether it operates as a self-learning or autonomous system?"@en .
-lexreq:altai-r1-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What oversight model does the AI system require, including human-in-the-loop, human-on-the-loop, or human-in-command?"@en .
+lexreq:altai-r1-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What oversight model does the AI system require, including human-in-the-loop, human-on-the-loop, or human-in-command?"@en ; lexreq:formalisedBy "cq/altai_r1_oversight_model.rq" .
 lexreq:altai-r1-05-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system justify that the selected oversight model matches its risk profile and operating context?"@en .
 
 lexreq:altai-r1-06 a lexreq:Requirement ;
@@ -2543,7 +2543,7 @@ lexreq:altai-r1-06 a lexreq:Requirement ;
     lexreq:expectedEvidence "Requirement 1: Human Agency and Oversight / Human Oversight"@en ;
     lexreq:expectedEvidence "Did you establish any detection and response mechanisms for undesirable adverse effects of the AI system for the end-user or subject?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r1-06-cq1 , lexreq:altai-r1-06-cq2 , lexreq:altai-r1-06-cq3 .
-lexreq:altai-r1-06-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system ensure that oversight personnel are trained to exercise oversight effectively?"@en .
+lexreq:altai-r1-06-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system ensure that oversight personnel are trained to exercise oversight effectively?"@en ; lexreq:formalisedBy "cq/altai_r1_overseer_training.rq" .
 lexreq:altai-r1-06-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What oversight roles, instructions, and decision rights does the AI system define for humans supervising it?"@en .
 lexreq:altai-r1-06-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system detect, escalate, and support response to undesirable adverse effects on end-users or subjects?"@en .
 
@@ -2564,7 +2564,7 @@ lexreq:altai-r1-07 a lexreq:Requirement ;
     lexreq:expectedEvidence "Requirement 1: Human Agency and Oversight / Human Oversight"@en ;
     lexreq:expectedEvidence "Did you take any specific oversight and control measures to reflect the self-learning or autonomous nature of the AI system?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r1-07-cq1 , lexreq:altai-r1-07-cq2 , lexreq:altai-r1-07-cq3 .
-lexreq:altai-r1-07-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system support safe stopping, aborting, or overriding of its operation when needed?"@en .
+lexreq:altai-r1-07-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system support safe stopping, aborting, or overriding of its operation when needed?"@en ; lexreq:formalisedBy "cq/altai_r1_safe_stopping.rq" .
 lexreq:altai-r1-07-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What technical and organisational controls does the AI system implement to manage its self-learning or autonomous behaviour?"@en .
 lexreq:altai-r1-07-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system verify that emergency stop and override procedures work effectively?"@en .
 
@@ -2586,7 +2586,7 @@ lexreq:altai-r2-01 a lexreq:Requirement ;
     lexreq:expectedEvidence "Is the AI system certified for cybersecurity (e.g. the certification scheme created by the Cybersecurity Act in Europe) or is it compliant with specific security standards?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-01-cq1 , lexreq:altai-r2-01-cq2 , lexreq:altai-r2-01-cq3 .
 lexreq:altai-r2-01-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system identify and control adversarial, critical, or damaging effects arising from faults, outages, attacks, misuse, or malicious use?"@en .
-lexreq:altai-r2-01-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What cybersecurity certifications, assurance schemes, or security standards does the AI system meet?"@en .
+lexreq:altai-r2-01-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What cybersecurity certifications, assurance schemes, or security standards does the AI system meet?"@en ; lexreq:formalisedBy "cq/altai_r2_security_standards.rq" .
 lexreq:altai-r2-01-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system maintain a security posture proportionate to its human and societal safety impacts?"@en .
 
 lexreq:altai-r2-02 a lexreq:Requirement ;
@@ -2605,7 +2605,7 @@ lexreq:altai-r2-02 a lexreq:Requirement ;
     lexreq:expectedEvidence "Documented mitigations for poisoning, evasion, and inversion risks"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-02-cq1 , lexreq:altai-r2-02-cq2 , lexreq:altai-r2-02-cq3 .
 lexreq:altai-r2-02-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system assess exposure to cyber-attacks across its data, model, software, and deployment interfaces?"@en .
-lexreq:altai-r2-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What attack scenarios and entry points does the AI system evaluate, including data poisoning, model evasion, and model inversion?"@en .
+lexreq:altai-r2-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What attack scenarios and entry points does the AI system evaluate, including data poisoning, model evasion, and model inversion?"@en ; lexreq:formalisedBy "cq/altai_r2_attack_scenarios.rq" .
 lexreq:altai-r2-02-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system prioritise and remediate vulnerabilities based on likelihood, exploitability, and impact?"@en .
 
 lexreq:altai-r2-03 a lexreq:Requirement ;
@@ -2628,7 +2628,7 @@ lexreq:altai-r2-03 a lexreq:Requirement ;
     lexreq:expectedEvidence "Did you inform end-users of the duration of security coverage and updates?"@en ;
     lexreq:expectedEvidence "What length is the expected timeframe within which you provide security updates for the AI system?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-03-cq1 , lexreq:altai-r2-03-cq2 , lexreq:altai-r2-03-cq3 .
-lexreq:altai-r2-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system protect its integrity, robustness, and security throughout its lifecycle?"@en .
+lexreq:altai-r2-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system protect its integrity, robustness, and security throughout its lifecycle?"@en ; lexreq:formalisedBy "cq/altai_r2_lifecycle_integrity.rq" .
 lexreq:altai-r2-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What red-teaming or penetration-testing mechanisms does the AI system use, and how are findings resolved?"@en .
 lexreq:altai-r2-03-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system communicate security coverage, update commitments, and support timeframes to end-users?"@en .
 
@@ -2647,7 +2647,7 @@ lexreq:altai-r2-04 a lexreq:Requirement ;
     lexreq:expectedEvidence "Continuous risk review schedule"@en ;
     lexreq:expectedEvidence "User risk disclosures and safety notices"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-04-cq1 , lexreq:altai-r2-04-cq2 , lexreq:altai-r2-04-cq3 .
-lexreq:altai-r2-04-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system define risks, risk metrics, and risk levels for each use case?"@en .
+lexreq:altai-r2-04-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system define risks, risk metrics, and risk levels for each use case?"@en ; lexreq:formalisedBy "cq/altai_r2_risk_levels.rq" .
 lexreq:altai-r2-04-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to continuously measure, review, and update its risk profile?"@en .
 lexreq:altai-r2-04-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system communicate existing or potential risks to end-users and subjects?"@en .
 
@@ -2667,7 +2667,7 @@ lexreq:altai-r2-05 a lexreq:Requirement ;
     lexreq:expectedEvidence "Consequence analysis linked to controls"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-05-cq1 , lexreq:altai-r2-05-cq2 , lexreq:altai-r2-05-cq3 .
 lexreq:altai-r2-05-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system identify design faults, technical faults, environmental threats, and their consequences?"@en .
-lexreq:altai-r2-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to assess malicious use, misuse, and inappropriate use?"@en .
+lexreq:altai-r2-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to assess malicious use, misuse, and inappropriate use?"@en ; lexreq:formalisedBy "cq/altai_r2_misuse_assessment.rq" .
 lexreq:altai-r2-05-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system define safety criticality levels for the consequences of faults or misuse?"@en .
 
 lexreq:altai-r2-06 a lexreq:Requirement ;
@@ -2689,7 +2689,7 @@ lexreq:altai-r2-06 a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-06-cq1 , lexreq:altai-r2-06-cq2 , lexreq:altai-r2-06-cq3 .
 lexreq:altai-r2-06-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system ensure that critical decisions depend on stable and reliable behaviour?"@en .
 lexreq:altai-r2-06-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What testing and reliability requirements does the AI system apply to meet required stability and reliability levels?"@en .
-lexreq:altai-r2-06-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system provide fault tolerance, including duplicated or parallel fallback systems where needed?"@en .
+lexreq:altai-r2-06-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system provide fault tolerance, including duplicated or parallel fallback systems where needed?"@en ; lexreq:formalisedBy "cq/altai_r2_fault_tolerance.rq" .
 
 lexreq:altai-r2-07 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2706,7 +2706,7 @@ lexreq:altai-r2-07 a lexreq:Requirement ;
     lexreq:expectedEvidence "Version history with review decisions"@en ;
     lexreq:expectedEvidence "Post-change safety review records"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-07-cq1 , lexreq:altai-r2-07-cq2 .
-lexreq:altai-r2-07-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system determine whether changes to model, data, software, or deployment require a new robustness and safety review?"@en .
+lexreq:altai-r2-07-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system determine whether changes to model, data, software, or deployment require a new robustness and safety review?"@en ; lexreq:formalisedBy "cq/altai_r2_change_review.rq" .
 lexreq:altai-r2-07-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What thresholds or triggers cause the AI system to initiate reassessment after significant change?"@en .
 
 lexreq:altai-r2-08 a lexreq:Requirement ;
@@ -2727,7 +2727,7 @@ lexreq:altai-r2-08 a lexreq:Requirement ;
     lexreq:expectedEvidence "Did you put in place measures to ensure that the data (including training data) used to develop the AI system is up-to-date, of high quality, complete and representative of the environment the system will be deployed in?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-08-cq1 , lexreq:altai-r2-08-cq2 , lexreq:altai-r2-08-cq3 .
 lexreq:altai-r2-08-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system identify where low accuracy could create critical, adversarial, or damaging consequences?"@en .
-lexreq:altai-r2-08-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to ensure that training and development data are current, high quality, complete, and representative of the deployment environment?"@en .
+lexreq:altai-r2-08-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to ensure that training and development data are current, high quality, complete, and representative of the deployment environment?"@en ; lexreq:formalisedBy "cq/altai_r2_data_quality.rq" .
 lexreq:altai-r2-08-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system verify data representativeness for each relevant operating context?"@en .
 
 lexreq:altai-r2-09 a lexreq:Requirement ;
@@ -2748,7 +2748,7 @@ lexreq:altai-r2-09 a lexreq:Requirement ;
     lexreq:expectedEvidence "Did you consider whether the AI system's operation can invalidate the data or assumptions it was trained on, and how this might lead to adversarial effects?"@en ;
     lexreq:expectedEvidence "Did you put processes in place to ensure that the level of accuracy of the AI system to be expected by end-users and/or subjects is properly communicated?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-09-cq1 , lexreq:altai-r2-09-cq2 , lexreq:altai-r2-09-cq3 .
-lexreq:altai-r2-09-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system monitor, document, and review accuracy over time?"@en .
+lexreq:altai-r2-09-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system monitor, document, and review accuracy over time?"@en ; lexreq:formalisedBy "cq/altai_r2_accuracy_over_time.rq" .
 lexreq:altai-r2-09-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to detect when live operation invalidates training data assumptions or creates adversarial effects?"@en .
 lexreq:altai-r2-09-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system communicate expected accuracy levels and performance limitations to end-users and subjects?"@en .
 
@@ -2769,7 +2769,7 @@ lexreq:altai-r2-10 a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-10-cq1 , lexreq:altai-r2-10-cq2 , lexreq:altai-r2-10-cq3 .
 lexreq:altai-r2-10-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system identify where low reliability or reproducibility could lead to critical, adversarial, or damaging consequences?"@en .
 lexreq:altai-r2-10-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to monitor whether it is meeting its intended goals?"@en .
-lexreq:altai-r2-10-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system define and test the contexts and conditions required for reproducibility?"@en .
+lexreq:altai-r2-10-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system define and test the contexts and conditions required for reproducibility?"@en ; lexreq:formalisedBy "cq/altai_r2_reproducibility.rq" .
 
 lexreq:altai-r2-11 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2786,7 +2786,7 @@ lexreq:altai-r2-11 a lexreq:Requirement ;
     lexreq:expectedEvidence "Execution logs and audit trails"@en ;
     lexreq:expectedEvidence "Validation summary report"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-11-cq1 , lexreq:altai-r2-11-cq2 , lexreq:altai-r2-11-cq3 .
-lexreq:altai-r2-11-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system use verification and validation methods to demonstrate reliability and reproducibility?"@en .
+lexreq:altai-r2-11-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system use verification and validation methods to demonstrate reliability and reproducibility?"@en ; lexreq:formalisedBy "cq/altai_r2_verification_methods.rq" .
 lexreq:altai-r2-11-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What documentation and logging does the AI system maintain to support testing and verification of these properties?"@en .
 lexreq:altai-r2-11-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How are these testing and verification activities embedded in the AI system's lifecycle?"@en .
 
@@ -2808,7 +2808,7 @@ lexreq:altai-r2-12 a lexreq:Requirement ;
     lexreq:expectedEvidence "Did you put in place a proper procedure for handling the cases where the AI system yields results with a low confidence score?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-12-cq1 , lexreq:altai-r2-12-cq2 , lexreq:altai-r2-12-cq3 .
 lexreq:altai-r2-12-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system trigger tested failsafe fallback plans when it encounters errors?"@en .
-lexreq:altai-r2-12-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms determine when the AI system must switch to fallback modes or manual handling?"@en .
+lexreq:altai-r2-12-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms determine when the AI system must switch to fallback modes or manual handling?"@en ; lexreq:formalisedBy "cq/altai_r2_fallback_triggers.rq" .
 lexreq:altai-r2-12-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system detect, route, and resolve low-confidence outputs?"@en .
 
 lexreq:altai-r2-13 a lexreq:Requirement ;
@@ -2828,7 +2828,7 @@ lexreq:altai-r2-13 a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:altai-r2-13-cq1 , lexreq:altai-r2-13-cq2 , lexreq:altai-r2-13-cq3 .
 lexreq:altai-r2-13-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system use online or continual learning, where applicable?"@en .
 lexreq:altai-r2-13-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What controls does the AI system implement to prevent harmful or undesirable behaviours learned through optimisation of its objective function?"@en .
-lexreq:altai-r2-13-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system monitor and constrain continual-learning behaviour after deployment?"@en .
+lexreq:altai-r2-13-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system monitor and constrain continual-learning behaviour after deployment?"@en ; lexreq:formalisedBy "cq/altai_r2_continual_learning.rq" .
 
 lexreq:altai-r3-01 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2847,7 +2847,7 @@ lexreq:altai-r3-01 a lexreq:Requirement ;
     lexreq:expectedEvidence "Requirement 3: Privacy and Data Governance / Privacy"@en ;
     lexreq:expectedEvidence "Depending on the use case, did you establish mechanisms that allow flagging issues related to privacy concerning the AI system?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r3-01-cq1 , lexreq:altai-r3-01-cq2 .
-lexreq:altai-r3-01-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system assess and manage impacts on privacy, data protection, and physical, mental, or moral integrity?"@en .
+lexreq:altai-r3-01-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system assess and manage impacts on privacy, data protection, and physical, mental, or moral integrity?"@en ; lexreq:formalisedBy "cq/altai_r3_privacy_impacts.rq" .
 lexreq:altai-r3-01-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system provide to flag, investigate, and resolve privacy-related issues?"@en .
 
 lexreq:altai-r3-02 a lexreq:Requirement ;
@@ -2895,7 +2895,7 @@ lexreq:altai-r3-03 a lexreq:Requirement ;
     lexreq:expectedEvidence "Did you consider the privacy and data protection implications of data collected, generated or processed over the course of the AI system's life cycle?"@en ;
     lexreq:expectedEvidence "Did you consider the privacy and data protection implications of the AI system's non-personal training-data or other processed non-personal data?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r3-03-cq1 , lexreq:altai-r3-03-cq2 , lexreq:altai-r3-03-cq3 .
-lexreq:altai-r3-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system support the rights to withdraw consent, object, and be forgotten where applicable?"@en .
+lexreq:altai-r3-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system support the rights to withdraw consent, object, and be forgotten where applicable?"@en ; lexreq:formalisedBy "cq/altai_r3_data_subject_rights.rq" .
 lexreq:altai-r3-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What privacy and data protection implications does the AI system identify for data collected, generated, or processed across its lifecycle?"@en .
 lexreq:altai-r3-03-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system evaluate privacy implications arising from non-personal training data or other processed non-personal data?"@en .
 
@@ -2913,7 +2913,7 @@ lexreq:altai-r3-04 a lexreq:Requirement ;
     lexreq:expectedEvidence "Data governance operating procedures"@en ;
     lexreq:expectedEvidence "Gap remediation plan for standards alignment"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r3-04-cq1 , lexreq:altai-r3-04-cq2 .
-lexreq:altai-r3-04-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system align with relevant standards or widely adopted protocols for data management and governance?"@en .
+lexreq:altai-r3-04-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system align with relevant standards or widely adopted protocols for data management and governance?"@en ; lexreq:formalisedBy "cq/altai_r3_data_standards.rq" .
 lexreq:altai-r3-04-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to identify and close gaps against selected standards or protocols?"@en .
 
 lexreq:altai-r4-01 a lexreq:Requirement ;
@@ -2933,7 +2933,7 @@ lexreq:altai-r4-01 a lexreq:Requirement ;
     lexreq:expectedEvidence "Runbook for logging and trace retrieval"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r4-01-cq1 , lexreq:altai-r4-01-cq2 , lexreq:altai-r4-01-cq3 .
 lexreq:altai-r4-01-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system maintain traceability across its full lifecycle?"@en .
-lexreq:altai-r4-01-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms allow the AI system to trace the input data, model or rule set, and outputs involved in each decision or recommendation?"@en .
+lexreq:altai-r4-01-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms allow the AI system to trace the input data, model or rule set, and outputs involved in each decision or recommendation?"@en ; lexreq:formalisedBy "cq/altai_r4_traceability.rq" .
 lexreq:altai-r4-01-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system continuously assess input quality, output quality, and logging practices?"@en .
 
 lexreq:altai-r4-02 a lexreq:Requirement ;
@@ -2953,7 +2953,7 @@ lexreq:altai-r4-02 a lexreq:Requirement ;
     lexreq:expectedEvidence "Requirement 4: Transparency / Explainability"@en ;
     lexreq:expectedEvidence "Do you continuously survey the users if they understand the decision(s) of the AI system?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r4-02-cq1 , lexreq:altai-r4-02-cq2 , lexreq:altai-r4-02-cq3 .
-lexreq:altai-r4-02-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system explain its decisions or outputs to users?"@en .
+lexreq:altai-r4-02-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system explain its decisions or outputs to users?"@en ; lexreq:formalisedBy "cq/altai_r4_explanations.rq" .
 lexreq:altai-r4-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to determine whether users understand these explanations over time?"@en .
 lexreq:altai-r4-02-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system use identified misunderstandings to improve explanations, documentation, or behaviour?"@en .
 
@@ -2978,7 +2978,7 @@ lexreq:altai-r4-03 a lexreq:Requirement ;
     lexreq:expectedEvidence "Did you provide appropriate training material and disclaimers to users on how to adequately use the AI system?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r4-03-cq1 , lexreq:altai-r4-03-cq2 , lexreq:altai-r4-03-cq3 .
 lexreq:altai-r4-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system inform users that an interactive system is AI rather than a human?"@en .
-lexreq:altai-r4-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to communicate the purpose, criteria, benefits, limitations, and risks of its decisions?"@en .
+lexreq:altai-r4-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to communicate the purpose, criteria, benefits, limitations, and risks of its decisions?"@en ; lexreq:formalisedBy "cq/altai_r4_purpose_and_limitations.rq" .
 lexreq:altai-r4-03-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system provide training materials and disclaimers that enable appropriate use?"@en .
 
 lexreq:altai-r5-01 a lexreq:Requirement ;
@@ -2997,7 +2997,7 @@ lexreq:altai-r5-01 a lexreq:Requirement ;
     lexreq:expectedEvidence "Pre-deployment fairness review record"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r5-01-cq1 , lexreq:altai-r5-01-cq2 .
 lexreq:altai-r5-01-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system prevent creation or reinforcement of unfair bias through input data and algorithm design?"@en .
-lexreq:altai-r5-01-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What operational controls does the AI system apply to prevent bias during design, development, validation, and deployment?"@en .
+lexreq:altai-r5-01-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What operational controls does the AI system apply to prevent bias during design, development, validation, and deployment?"@en ; lexreq:formalisedBy "cq/altai_r5_bias_controls.rq" .
 
 lexreq:altai-r5-02 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -3015,7 +3015,7 @@ lexreq:altai-r5-02 a lexreq:Requirement ;
     lexreq:expectedEvidence "Bias monitoring dashboard"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r5-02-cq1 , lexreq:altai-r5-02-cq2 , lexreq:altai-r5-02-cq3 .
 lexreq:altai-r5-02-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system assess diversity and representativeness of end-users or subjects in the data it uses?"@en .
-lexreq:altai-r5-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What tests does the AI system apply for specific target groups, problematic use cases, and lifecycle bias monitoring?"@en .
+lexreq:altai-r5-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What tests does the AI system apply for specific target groups, problematic use cases, and lifecycle bias monitoring?"@en ; lexreq:formalisedBy "cq/altai_r5_group_tests.rq" .
 lexreq:altai-r5-02-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system use state-of-the-art tools to analyse data, model behaviour, and performance for bias-related concerns?"@en .
 
 lexreq:altai-r5-03 a lexreq:Requirement ;
@@ -3033,7 +3033,7 @@ lexreq:altai-r5-03 a lexreq:Requirement ;
     lexreq:expectedEvidence "Developer handbook sections on bias mitigation"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r5-03-cq1 , lexreq:altai-r5-03-cq2 .
 lexreq:altai-r5-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system ensure that AI designers and developers are supported to recognise and reduce bias that could be introduced into the system?"@en .
-lexreq:altai-r5-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What awareness or training mechanisms linked to the AI system reinforce bias-sensitive design and development practices?"@en .
+lexreq:altai-r5-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What awareness or training mechanisms linked to the AI system reinforce bias-sensitive design and development practices?"@en ; lexreq:formalisedBy "cq/altai_r5_developer_training.rq" .
 
 lexreq:altai-r5-04 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -3051,7 +3051,7 @@ lexreq:altai-r5-04 a lexreq:Requirement ;
     lexreq:expectedEvidence "Case log of reported bias or discrimination issues"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r5-04-cq1 , lexreq:altai-r5-04-cq2 , lexreq:altai-r5-04-cq3 .
 lexreq:altai-r5-04-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system allow issues related to bias, discrimination, or poor performance to be flagged?"@en .
-lexreq:altai-r5-04-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What escalation paths and reporting channels does the AI system provide for raising such issues?"@en .
+lexreq:altai-r5-04-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What escalation paths and reporting channels does the AI system provide for raising such issues?"@en ; lexreq:formalisedBy "cq/altai_r5_escalation_channels.rq" .
 lexreq:altai-r5-04-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system identify directly and indirectly affected subjects when such issues arise?"@en .
 
 lexreq:altai-r5-05 a lexreq:Requirement ;
@@ -3069,7 +3069,7 @@ lexreq:altai-r5-05 a lexreq:Requirement ;
     lexreq:expectedEvidence "Fairness metric specification and evaluation results"@en ;
     lexreq:expectedEvidence "Ongoing fairness governance procedure"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r5-05-cq1 , lexreq:altai-r5-05-cq2 , lexreq:altai-r5-05-cq3 .
-lexreq:altai-r5-05-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What definition of fairness does the AI system implement, and where in the system is it operationalised?"@en .
+lexreq:altai-r5-05-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What definition of fairness does the AI system implement, and where in the system is it operationalised?"@en ; lexreq:formalisedBy "cq/altai_r5_fairness_definition.rq" .
 lexreq:altai-r5-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system justify the chosen fairness definition against alternative definitions?"@en .
 lexreq:altai-r5-05-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system incorporate community input, quantitative metrics, and control mechanisms to test and ensure fairness?"@en .
 
@@ -3088,7 +3088,7 @@ lexreq:altai-r5-06 a lexreq:Requirement ;
     lexreq:expectedEvidence "Usability results across diverse user groups"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r5-06-cq1 , lexreq:altai-r5-06-cq2 .
 lexreq:altai-r5-06-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system accommodate the variety of user preferences and abilities present in society?"@en .
-lexreq:altai-r5-06-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What design or evaluation mechanisms does the AI system use to verify that it serves diverse user capabilities?"@en .
+lexreq:altai-r5-06-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What design or evaluation mechanisms does the AI system use to verify that it serves diverse user capabilities?"@en ; lexreq:formalisedBy "cq/altai_r5_diverse_capabilities.rq" .
 
 lexreq:altai-r5-07 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -3106,7 +3106,7 @@ lexreq:altai-r5-07 a lexreq:Requirement ;
     lexreq:expectedEvidence "WCAG or accessibility conformance mapping"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r5-07-cq1 , lexreq:altai-r5-07-cq2 , lexreq:altai-r5-07-cq3 .
 lexreq:altai-r5-07-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system ensure that its interface is usable by people with disabilities or at risk of exclusion?"@en .
-lexreq:altai-r5-07-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What makes the AI system information and interface accessible to assistive technologies such as screen readers?"@en .
+lexreq:altai-r5-07-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What makes the AI system information and interface accessible to assistive technologies such as screen readers?"@en ; lexreq:formalisedBy "cq/altai_r5_assistive_technologies.rq" .
 lexreq:altai-r5-07-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system incorporate input from users needing assistive technology during planning and development?"@en .
 
 lexreq:altai-r5-08 a lexreq:Requirement ;
@@ -3123,7 +3123,7 @@ lexreq:altai-r5-08 a lexreq:Requirement ;
     lexreq:expectedEvidence "Lifecycle review checklist"@en ;
     lexreq:expectedEvidence "Approval gates including accessibility criteria"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r5-08-cq1 , lexreq:altai-r5-08-cq2 .
-lexreq:altai-r5-08-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system incorporate Universal Design principles into each relevant step of planning and development?"@en .
+lexreq:altai-r5-08-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system incorporate Universal Design principles into each relevant step of planning and development?"@en ; lexreq:formalisedBy "cq/altai_r5_universal_design.rq" .
 lexreq:altai-r5-08-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to verify that Universal Design requirements remain addressed throughout its lifecycle?"@en .
 
 lexreq:altai-r5-09 a lexreq:Requirement ;
@@ -3144,7 +3144,7 @@ lexreq:altai-r5-09 a lexreq:Requirement ;
     lexreq:expectedEvidence "Did you consider a mechanism to include the participation of the widest range of possible stakeholders in the AI system’s design and development?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r5-09-cq1 , lexreq:altai-r5-09-cq2 , lexreq:altai-r5-09-cq3 .
 lexreq:altai-r5-09-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system assess impacts on potential end-users, subjects, and their communities?"@en .
-lexreq:altai-r5-09-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to engage target end-users, subjects, and other stakeholders during design and development?"@en .
+lexreq:altai-r5-09-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms does the AI system use to engage target end-users, subjects, and other stakeholders during design and development?"@en ; lexreq:formalisedBy "cq/altai_r5_stakeholder_engagement.rq" .
 lexreq:altai-r5-09-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system identify and address disproportionate effects and community-level unfairness risks?"@en .
 
 lexreq:altai-r6-01 a lexreq:Requirement ;
@@ -3205,7 +3205,7 @@ lexreq:altai-r6-03 a lexreq:Requirement ;
     lexreq:expectedEvidence "Survey results on workforce understanding"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r6-03-cq1 , lexreq:altai-r6-03-cq2 .
 lexreq:altai-r6-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system make its impacts on human work understandable to the organisation and workforce?"@en .
-lexreq:altai-r6-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms ensure that workers understand how the AI system operates, including what it can and cannot do?"@en .
+lexreq:altai-r6-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms ensure that workers understand how the AI system operates, including what it can and cannot do?"@en ; lexreq:formalisedBy "cq/altai_r6_worker_understanding.rq" .
 
 lexreq:altai-r6-04 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -3225,7 +3225,7 @@ lexreq:altai-r6-04 a lexreq:Requirement ;
     lexreq:expectedEvidence "Does the system promote or require new (digital) skills?"@en ;
     lexreq:expectedEvidence "Did you provide training opportunities and materials for re- and up-skilling?"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r6-04-cq1 , lexreq:altai-r6-04-cq2 , lexreq:altai-r6-04-cq3 .
-lexreq:altai-r6-04-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system identify and manage risks of workforce de-skilling?"@en .
+lexreq:altai-r6-04-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system identify and manage risks of workforce de-skilling?"@en ; lexreq:formalisedBy "cq/altai_r6_deskilling.rq" .
 lexreq:altai-r6-04-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What measures linked to the AI system counteract de-skilling risks?"@en .
 lexreq:altai-r6-04-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What new skills does the AI system require or promote, and how are re-skilling and up-skilling opportunities supported?"@en .
 
@@ -3245,7 +3245,7 @@ lexreq:altai-r6-05 a lexreq:Requirement ;
     lexreq:expectedEvidence "Monitoring indicators for public-interest risks"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r6-05-cq1 , lexreq:altai-r6-05-cq2 , lexreq:altai-r6-05-cq3 .
 lexreq:altai-r6-05-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How could the AI system negatively affect society at large or democracy?"@en .
-lexreq:altai-r6-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system assess societal impacts beyond immediate end-users or subjects, including indirectly affected stakeholders?"@en .
+lexreq:altai-r6-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system assess societal impacts beyond immediate end-users or subjects, including indirectly affected stakeholders?"@en ; lexreq:formalisedBy "cq/altai_r6_societal_impacts.rq" .
 lexreq:altai-r6-05-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What measures does the AI system implement to minimise societal harm and protect democratic processes?"@en .
 
 lexreq:altai-r7-01 a lexreq:Requirement ;
@@ -3264,7 +3264,7 @@ lexreq:altai-r7-01 a lexreq:Requirement ;
     lexreq:expectedEvidence "Impact log covering positive and negative outcomes"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r7-01-cq1 , lexreq:altai-r7-01-cq2 .
 lexreq:altai-r7-01-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system enable auditability through traceability of development, data sourcing, and logging of processes, outcomes, and impacts?"@en .
-lexreq:altai-r7-01-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What records does the AI system maintain so that internal or external parties can reconstruct relevant decisions and lifecycle actions?"@en .
+lexreq:altai-r7-01-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What records does the AI system maintain so that internal or external parties can reconstruct relevant decisions and lifecycle actions?"@en ; lexreq:formalisedBy "cq/altai_r7_reconstruction_records.rq" .
 
 lexreq:altai-r7-02 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -3282,7 +3282,7 @@ lexreq:altai-r7-02 a lexreq:Requirement ;
     lexreq:expectedEvidence "Previous third-party audit report or readiness checklist"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r7-02-cq1 , lexreq:altai-r7-02-cq2 .
 lexreq:altai-r7-02-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system support effective independent third-party audit?"@en .
-lexreq:altai-r7-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What access, documentation, and controls does the AI system provide to enable independent auditors to assess it?"@en .
+lexreq:altai-r7-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What access, documentation, and controls does the AI system provide to enable independent auditors to assess it?"@en ; lexreq:formalisedBy "cq/altai_r7_auditor_access.rq" .
 
 lexreq:altai-r7-03 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -3298,7 +3298,7 @@ lexreq:altai-r7-03 a lexreq:Requirement ;
     lexreq:expectedEvidence "Third-party review schedule across lifecycle phases"@en ;
     lexreq:expectedEvidence "Contracts or statements of work for external oversight"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r7-03-cq1 , lexreq:altai-r7-03-cq2 .
-lexreq:altai-r7-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What external guidance or third-party auditing processes does the AI system rely on to oversee ethical concerns and accountability measures?"@en .
+lexreq:altai-r7-03-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What external guidance or third-party auditing processes does the AI system rely on to oversee ethical concerns and accountability measures?"@en ; lexreq:formalisedBy "cq/altai_r7_third_party_audit.rq" .
 lexreq:altai-r7-03-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system maintain third-party oversight beyond development and into deployment or operation?"@en .
 
 lexreq:altai-r7-04 a lexreq:Requirement ;
@@ -3316,7 +3316,7 @@ lexreq:altai-r7-04 a lexreq:Requirement ;
     lexreq:expectedEvidence "Legal and regulatory awareness material"@en ;
     lexreq:expectedEvidence "Competency assessment results"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r7-04-cq1 , lexreq:altai-r7-04-cq2 .
-lexreq:altai-r7-04-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system ensure that relevant personnel receive risk training?"@en .
+lexreq:altai-r7-04-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system ensure that relevant personnel receive risk training?"@en ; lexreq:formalisedBy "cq/altai_r7_risk_training.rq" .
 lexreq:altai-r7-04-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What legal framework applicable to the AI system is included in that training?"@en .
 
 lexreq:altai-r7-05 a lexreq:Requirement ;
@@ -3334,7 +3334,7 @@ lexreq:altai-r7-05 a lexreq:Requirement ;
     lexreq:expectedEvidence "Meeting minutes and decision log"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r7-05-cq1 , lexreq:altai-r7-05-cq2 .
 lexreq:altai-r7-05-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system support review of accountability and ethics practices, including unclear grey areas?"@en .
-lexreq:altai-r7-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What review board or equivalent mechanism is established or considered for this purpose in relation to the AI system?"@en .
+lexreq:altai-r7-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What review board or equivalent mechanism is established or considered for this purpose in relation to the AI system?"@en ; lexreq:formalisedBy "cq/altai_r7_ethics_board.rq" .
 
 lexreq:altai-r7-06 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -3370,7 +3370,7 @@ lexreq:altai-r7-07 a lexreq:Requirement ;
     lexreq:expectedEvidence "Procedure linking reports to risk management updates"@en ;
     lexreq:expectedEvidence "Closed-loop corrective action records"@en ;
     aiact:hasCompetencyQuestion lexreq:altai-r7-07-cq1 , lexreq:altai-r7-07-cq2 .
-lexreq:altai-r7-07-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system allow third parties to report potential vulnerabilities, risks, or biases?"@en .
+lexreq:altai-r7-07-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system allow third parties to report potential vulnerabilities, risks, or biases?"@en ; lexreq:formalisedBy "cq/altai_r7_vulnerability_reporting.rq" .
 lexreq:altai-r7-07-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system ensure that such reporting triggers review and revision of risk management?"@en .
 
 lexreq:altai-r7-08 a lexreq:Requirement ;
@@ -3411,7 +3411,7 @@ lexreq:oecd-p1 a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:oecd-p1-cq1 , lexreq:oecd-p1-cq2 , lexreq:oecd-p1-cq3 .
 lexreq:oecd-p1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What documented beneficial outcomes for people and/or the planet does the AI system pursue within its intended purpose?"@en .
 lexreq:oecd-p1-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system identify affected groups, including underrepresented populations, and check whether it reduces rather than worsens inequalities?"@en .
-lexreq:oecd-p1-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system assess and monitor environmental sustainability, inclusion, and broader well-being impacts across its lifecycle?"@en .
+lexreq:oecd-p1-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system assess and monitor environmental sustainability, inclusion, and broader well-being impacts across its lifecycle?"@en ; lexreq:formalisedBy "cq/oecd_p1_wellbeing_impacts.rq" .
 
 lexreq:oecd-p2 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -3448,7 +3448,7 @@ lexreq:oecd-p3 a lexreq:Requirement ;
     lexreq:expectedEvidence "AI notice"@en ;
     lexreq:expectedEvidence "User-facing limitation statement"@en ;
     aiact:hasCompetencyQuestion lexreq:oecd-p3-cq1 .
-lexreq:oecd-p3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What understandable information does the AI system provide about its capabilities, limitations, data or input sources, and the factors, processes, or logic relevant to its outputs?"@en .
+lexreq:oecd-p3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What understandable information does the AI system provide about its capabilities, limitations, data or input sources, and the factors, processes, or logic relevant to its outputs?"@en ; lexreq:formalisedBy "cq/oecd_p3_understandable_information.rq" .
 
 lexreq:oecd-p4 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -3474,7 +3474,7 @@ lexreq:oecd-p4 a lexreq:Requirement ;
 lexreq:oecd-p4-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system demonstrate robustness, safety, and security under normal use, foreseeable misuse, and adverse operating conditions?"@en .
 lexreq:oecd-p4-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What performance, safety, and security thresholds does the AI system monitor, and how are failures, vulnerabilities, and residual risks documented?"@en .
 lexreq:oecd-p4-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system monitor robustness, safety, and security after deployment throughout the lifecycle?"@en .
-lexreq:oecd-p4-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How can the AI system be overridden, repaired, rolled back, and/or decommissioned safely when undue harm or undesired behaviour is detected?"@en .
+lexreq:oecd-p4-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How can the AI system be overridden, repaired, rolled back, and/or decommissioned safely when undue harm or undesired behaviour is detected?"@en ; lexreq:formalisedBy "cq/oecd_p4_override_and_rollback.rq" .
 lexreq:oecd-p4-cq5 a lexreq:CompetencyQuestion ; rdfs:label "What triggers, thresholds, or incident conditions require override, repair, rollback, or decommissioning of the AI system?"@en .
 lexreq:oecd-p4-cq6 a lexreq:CompetencyQuestion ; rdfs:label "How does the AI system implement technically feasible measures to support information integrity?"@en .
 lexreq:oecd-p4-cq7 a lexreq:CompetencyQuestion ; rdfs:label "What controls does the AI system use to identify, label, trace, or limit deceptive, manipulated, or provenance-sensitive outputs where relevant?"@en .
@@ -3567,7 +3567,7 @@ lexreq:gender-02 a lexreq:Requirement ;
     lexreq:expectedEvidence "Analysis report"@en ;
     lexreq:expectedEvidence "Questionnaire version history"@en ;
     aiact:hasCompetencyQuestion lexreq:gender-02-cq1 , lexreq:gender-02-cq2 , lexreq:gender-02-cq3 , lexreq:gender-02-cq4 .
-lexreq:gender-02-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What questionnaire is used to collect demographic information and responses on PU, PEOU, PT, SI, FC, and GI?"@en .
+lexreq:gender-02-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What questionnaire is used to collect demographic information and responses on PU, PEOU, PT, SI, FC, and GI?"@en ; lexreq:formalisedBy "cq/gender_acceptance_questionnaire.rq" .
 lexreq:gender-02-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What 1-10 response scale is used for each acceptance dimension?"@en .
 lexreq:gender-02-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What correlation matrix and BIU calculation are used to produce the result?"@en .
 lexreq:gender-02-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How are potential gender differences across PU, PEOU, PT, SI, and FC analysed?"@en .
@@ -3665,7 +3665,7 @@ lexreq:gender-05-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the trai
 lexreq:gender-05-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What disparities in access, trust, or acceptance exist between gender groups?"@en .
 lexreq:gender-05-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What underrepresentation of women and non-binary people exists in system development and design?"@en .
 lexreq:gender-05-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How can automated decisions indirectly discriminate and limit opportunities or resources?"@en .
-lexreq:gender-05-cq5 a lexreq:CompetencyQuestion ; rdfs:label "How are gender risks rated, mitigated, assigned, and tracked in the Ethical and Gender Risk Register?"@en .
+lexreq:gender-05-cq5 a lexreq:CompetencyQuestion ; rdfs:label "How are gender risks rated, mitigated, assigned, and tracked in the Ethical and Gender Risk Register?"@en ; lexreq:formalisedBy "cq/gender_risk_register.rq" .
 lexreq:gender-05-cq6 a lexreq:CompetencyQuestion ; rdfs:label "What legal, ethical, and EIGE GIA obligations apply to the AI system?"@en .
 lexreq:gender-05-cq7 a lexreq:CompetencyQuestion ; rdfs:label "How are design rationale, ethical risk analysis, gender-bias audits, mitigations, and ongoing performance documented in a traceable way?"@en .
 
@@ -3692,7 +3692,7 @@ lexreq:gender-06 a lexreq:Requirement ;
     lexreq:expectedEvidence "Lifecycle monitoring report"@en ;
     aiact:hasCompetencyQuestion lexreq:gender-06-cq1 , lexreq:gender-06-cq2 , lexreq:gender-06-cq3 , lexreq:gender-06-cq4 , lexreq:gender-06-cq5 , lexreq:gender-06-cq6 , lexreq:gender-06-cq7 .
 lexreq:gender-06-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are gender impact assessments implemented for the AI system?"@en .
-lexreq:gender-06-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What measures are used to achieve gender balance in datasets?"@en .
+lexreq:gender-06-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What measures are used to achieve gender balance in datasets?"@en ; lexreq:formalisedBy "cq/gender_balance_in_datasets.rq" .
 lexreq:gender-06-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What measures are used to achieve gender balance in team composition?"@en .
 lexreq:gender-06-cq4 a lexreq:CompetencyQuestion ; rdfs:label "What measures are used to achieve gender balance in evaluation?"@en .
 lexreq:gender-06-cq5 a lexreq:CompetencyQuestion ; rdfs:label "How are gender audit processes defined in project governance?"@en .
@@ -3719,7 +3719,7 @@ lexreq:gender-07 a lexreq:Requirement ;
     lexreq:expectedEvidence "Release update history"@en ;
     lexreq:expectedEvidence "Post-project review report"@en ;
     aiact:hasCompetencyQuestion lexreq:gender-07-cq1 , lexreq:gender-07-cq2 , lexreq:gender-07-cq3 , lexreq:gender-07-cq4 .
-lexreq:gender-07-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are gender-related harms detected and reported after deployment?"@en .
+lexreq:gender-07-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are gender-related harms detected and reported after deployment?"@en ; lexreq:formalisedBy "cq/gender_harms_after_deployment.rq" .
 lexreq:gender-07-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How do self-assessment outputs feed into the risk register and documented mitigation strategies?"@en .
 lexreq:gender-07-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How are gender-related monitoring results used to update the system over time?"@en .
 lexreq:gender-07-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How are long-term gender consequences evaluated beyond the immediate project phase?"@en .

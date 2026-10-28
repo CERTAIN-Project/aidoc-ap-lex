@@ -1,0 +1,15 @@
+# CQ: What external guidance or third-party auditing processes does the AI system rely on to oversee ethical concerns and accountability measures?
+# Question: lexreq:altai-r7-03-cq1
+# Requirement: lexreq:altai-r7-03
+# Terms: aidoc-lex:Audit, aidoc:Auditor
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?audit ?label ?auditor WHERE {
+  ?audit a aidoc-lex:Audit ;
+         rdfs:label ?label ;
+         prov:wasAssociatedWith ?auditor .
+  ?auditor a aidoc:Auditor .
+}

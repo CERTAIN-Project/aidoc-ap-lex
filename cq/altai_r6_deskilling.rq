@@ -1,0 +1,12 @@
+# CQ: How does the AI system identify and manage risks of workforce de-skilling?
+# Question: lexreq:altai-r6-04-cq1
+# Requirement: lexreq:altai-r6-04
+# Terms: aidoc-lex:ImpactAssessment, aidoc-lex:WorkAndSkills
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?assessment ?label WHERE {
+  ?assessment a aidoc-lex:ImpactAssessment ;
+              aidoc-lex:impactArea aidoc-lex:WorkAndSkills ;
+              rdfs:label ?label .
+}

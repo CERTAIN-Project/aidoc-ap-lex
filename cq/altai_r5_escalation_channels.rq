@@ -1,0 +1,13 @@
+# CQ: What escalation paths and reporting channels does the AI system provide for raising such issues?
+# Question: lexreq:altai-r5-04-cq2
+# Requirement: lexreq:altai-r5-04
+# Terms: aidoc-lex:ReportingChannel, aidoc-lex:RedressMechanism
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?channel ?type ?label WHERE {
+  ?channel a ?type ;
+           aidoc-lex:concernsSystem ?system ;
+           rdfs:label ?label .
+  VALUES ?type { aidoc-lex:ReportingChannel aidoc-lex:RedressMechanism }
+}

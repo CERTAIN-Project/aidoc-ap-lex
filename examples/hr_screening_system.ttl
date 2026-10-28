@@ -311,7 +311,7 @@ ex:OverseerTraining_2026 a aidoc-lex:CompetenceTraining ;
 ex:HirewiseQMS a dpv-aiact:QualityManagementSystem ;
     rdfs:label "Hirewise quality management system" ;
     aidoc-lex:includesDocument ex:ComplianceStrategy , ex:QCProcedure , ex:DesignControlProcedure , ex:IncidentProcedure ,
-        ex:AuthorityProcedure , ex:RetentionProcedure , ex:ResourceProcedure ;
+        ex:AuthorityProcedure , ex:RetentionProcedure , ex:ResourceProcedure , ex:ReproducibilityProcedure ;
     aidoc-lex:addressesRequirement lexreq:aiact-art17-1 .
 ex:ComplianceStrategy a dpv:Policy ; rdfs:label "Regulatory compliance strategy" ;
     aidoc-lex:addressesRequirement lexreq:aiact-art17-1-a .
@@ -328,6 +328,9 @@ ex:RetentionProcedure a aidoc-lex:Procedure ; rdfs:label "Document and log reten
 
 ex:ResourceProcedure a aidoc-lex:Procedure ; rdfs:label "Resource management and security-of-supply procedure for compute and data providers" ;
     aidoc-lex:procedureType aidoc-lex:ResourceManagement .
+
+ex:ReproducibilityProcedure a aidoc-lex:Procedure ; rdfs:label "Reproducible training runs with fixed seeds, versioned data snapshots and pinned dependencies" ;
+    aidoc-lex:procedureType aidoc-lex:Reproducibility .
 
 ex:HirewiseRecordKeeping a aidoc-lex:RecordKeepingSystem ;
     rdfs:label "Hirewise document management system" ;
@@ -644,3 +647,8 @@ ex:SocietyImpact_2026 a aidoc-lex:ImpactAssessment ;
     aidoc-lex:impactArea aidoc-lex:Society ;
     aidoc-lex:assesses ex:TalentScreen ;
     aidoc-lex:identifiesRisk ex:Risk_AgeExclusion .
+
+ex:Measure_RetrainingGate a aidoc-lex:BiasMitigationMeasure ;
+    rdfs:label "Release gate that blocks a retrained model when the selection rate ratio of any group drops below 0.8" ;
+    aidoc-lex:controlFunction aidoc-lex:Prevention ;
+    aidoc-lex:addressesRisk ex:Risk_AgeExclusion .

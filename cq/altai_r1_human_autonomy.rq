@@ -1,0 +1,13 @@
+# CQ: How does the AI system avoid unintended interference with human autonomy or decision-making?
+# Question: lexreq:altai-r1-03-cq3
+# Requirement: lexreq:altai-r1-03
+# Terms: aidoc-lex:ImpactAssessment, aidoc-lex:impactArea, aidoc-lex:HumanAutonomy
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?assessment ?label ?system WHERE {
+  ?assessment a aidoc-lex:ImpactAssessment ;
+              aidoc-lex:impactArea aidoc-lex:HumanAutonomy ;
+              aidoc-lex:assesses ?system ;
+              rdfs:label ?label .
+}

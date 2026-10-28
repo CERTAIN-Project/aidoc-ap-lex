@@ -1,0 +1,14 @@
+# CQ: What measures are used to achieve gender balance in datasets?
+# Question: lexreq:gender-06-cq2
+# Requirement: lexreq:gender-06
+# Terms: aidoc-lex:BiasMitigationMeasure, aidoc:Dataset, aidoc:dataCharacteristic
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?measure ?label ?dataset ?characteristic WHERE {
+  ?measure a aidoc-lex:BiasMitigationMeasure ;
+           rdfs:label ?label .
+  ?gap aidoc-lex:remediatedBy ?measure .
+  OPTIONAL { ?dataset aidoc:dataCharacteristic ?characteristic . ?training aidoc:usesTrainingData ?dataset }
+}

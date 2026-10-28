@@ -1,0 +1,12 @@
+# CQ: How does the AI system assess and monitor environmental sustainability, inclusion, and broader well-being impacts across its lifecycle?
+# Question: lexreq:oecd-p1-cq3
+# Requirement: lexreq:oecd-p1
+# Terms: aidoc-lex:ImpactAssessment, aidoc-lex:impactArea
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?assessment ?area ?system WHERE {
+  ?assessment a aidoc-lex:ImpactAssessment ;
+              aidoc-lex:impactArea ?area ;
+              aidoc-lex:assesses ?system .
+  VALUES ?area { aidoc-lex:Environment aidoc-lex:Society aidoc-lex:Wellbeing }
+}
