@@ -1,0 +1,18 @@
+# CQ: How are the natural persons involved in the verification of the results identified?
+# Question: lexreq:aiact-art12-3-d-cq2
+# Requirement: lexreq:aiact-art12-3-d
+# Terms: aidoc-lex:LogEntry, aidoc-lex:verifiedBy
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?entry ?person ?time WHERE {
+  ?entry a aidoc-lex:LogEntry ;
+         aidoc-lex:verifiedBy ?person .
+  OPTIONAL { ?entry prov:generatedAtTime ?time }
+}

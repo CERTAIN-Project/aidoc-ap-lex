@@ -1,0 +1,19 @@
+# CQ: What elements set out in Annex IV are contained in the technical documentation?
+# Question: lexreq:aiact-art11-1-cq6
+# Requirement: lexreq:aiact-art11-1
+# Terms: aidoc-lex:addressesRequirement
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?documentation ?element ?label WHERE {
+  ?system aidoc:hasTechnicalDocumentation ?documentation .
+  ?documentation aidoc-lex:addressesRequirement ?element .
+  ?element a aiact:Requirement ;
+           rdfs:label ?label .
+}

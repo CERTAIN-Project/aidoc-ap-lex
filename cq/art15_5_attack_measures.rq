@@ -1,0 +1,18 @@
+# CQ: What measures are used to prevent, detect, respond to, resolve and control attacks trying to manipulate the training data set, pre-trained components used in training, inputs designed to cause the AI model to make a mistake, confidentiality attacks or model flaws?
+# Question: lexreq:aiact-art15-5-cq6
+# Requirement: lexreq:aiact-art15-5
+# Terms: aidoc-lex:SecurityMeasure, aidoc-lex:addressesRisk, aidoc-lex:controlFunction
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?measure ?function ?addresses WHERE {
+  ?measure a aidoc-lex:SecurityMeasure ;
+           aidoc-lex:addressesRisk ?addresses .
+  OPTIONAL { ?measure aidoc-lex:controlFunction ?function }
+}

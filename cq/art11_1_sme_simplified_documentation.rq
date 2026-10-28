@@ -1,0 +1,22 @@
+# CQ: If the system provider is an SME or startup, is the more simplified technical documentation provided by the Commission being used?
+# Question: lexreq:aiact-art11-1-cq9
+# Requirement: lexreq:aiact-art11-1
+# Terms: aidoc-lex:Microenterprise, aidoc-lex:SME, aidoc-lex:SimplifiedTechnicalDocumentation, aidoc-lex:StartUp
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?provider ?simplified WHERE {
+  ?system aidoc:isProvidedBy ?provider .
+  ?provider a ?size .
+  VALUES ?size { aidoc-lex:SME aidoc-lex:Microenterprise aidoc-lex:StartUp }
+  OPTIONAL {
+    ?system aidoc:hasTechnicalDocumentation ?simplified .
+    ?simplified a aidoc-lex:SimplifiedTechnicalDocumentation .
+  }
+}

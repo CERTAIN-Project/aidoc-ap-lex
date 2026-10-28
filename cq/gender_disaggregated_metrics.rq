@@ -1,0 +1,20 @@
+# CQ: How are performance metrics disaggregated by gender and intersecting identities?
+# Question: lexreq:gender-01-cq4
+# Requirement: lexreq:gender-01
+# Terms: aidoc-lex:measuredForGroup
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?metric ?group ?value WHERE {
+  ?m dqv:isMeasurementOf ?metric ;
+     dqv:value ?value ;
+     aidoc-lex:measuredForGroup ?group .
+  ?metric a aidoc:PerformanceMetric .
+}
+ORDER BY ?metric ?group

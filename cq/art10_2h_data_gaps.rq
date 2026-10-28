@@ -1,0 +1,17 @@
+# CQ: How are those gaps or shortcomings addressed in order to be compliant with this Regulation?
+# Question: lexreq:aiact-art10-2-h-cq2
+# Requirement: lexreq:aiact-art10-2-h
+# Terms: aidoc-lex:DataGap, aidoc-lex:remediatedBy
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?gap ?measure WHERE {
+  ?gap a aidoc-lex:DataGap .
+  OPTIONAL { ?gap aidoc-lex:remediatedBy ?measure }
+}

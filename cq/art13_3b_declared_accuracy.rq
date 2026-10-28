@@ -1,0 +1,21 @@
+# CQ: Is the level of accuracy, including its metrics, robustness and cybersecurity captured by the high-risk AI system?
+# Question: lexreq:aiact-art13-3-b-ii-cq1
+# Requirement: lexreq:aiact-art13-3-b-ii
+# Terms: aidoc-lex:declaresMetric, aidoc-lex:hasInstructionsForUse, aidoc-lex:measuredForGroup
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?instructions ?metric ?value WHERE {
+  ?system aidoc-lex:hasInstructionsForUse ?instructions .
+  ?instructions aidoc-lex:declaresMetric ?metric .
+  OPTIONAL {
+    ?m dqv:isMeasurementOf ?metric ; dqv:computedOn ?system ; dqv:value ?value .
+    FILTER NOT EXISTS { ?m aidoc-lex:measuredForGroup ?anyGroup }
+  }
+}

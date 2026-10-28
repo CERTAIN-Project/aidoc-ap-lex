@@ -1,0 +1,21 @@
+# CQ: Is the high-risk AI system likely to have an adverse impact on other vulnerable groups?
+# Question: lexreq:aiact-art9-9-cq2
+# Requirement: lexreq:aiact-art9-9
+# Terms: aidoc-lex:AffectedGroup, aidoc-lex:affectsGroup
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?group ?groupType ?risk WHERE {
+  ?system a aidoc:AISystem ;
+          aidoc-lex:affectsGroup ?group .
+  ?group a aidoc-lex:AffectedGroup .
+  OPTIONAL { ?group dcterms:type ?groupType }
+  OPTIONAL { ?risk aidoc-lex:affectsGroup ?group . ?system aidoc:hasRisk ?risk }
+}
+ORDER BY ?group

@@ -1,0 +1,20 @@
+# CQ: What testing is carried out to identify the most appropriate and targeted risk management measures?
+# Question: lexreq:aiact-art9-6-cq2
+# Requirement: lexreq:aiact-art9-6
+# Terms: aidoc-lex:ComplianceTest, aidoc-lex:addressesRequirement, aidoc-lex:assesses
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?test ?ended ?requirement WHERE {
+  ?test a aidoc-lex:ComplianceTest ;
+        aidoc-lex:assesses ?system .
+  OPTIONAL { ?test prov:endedAtTime ?ended }
+  OPTIONAL { ?test aidoc-lex:addressesRequirement ?requirement }
+}
+ORDER BY ?ended

@@ -1,0 +1,98 @@
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix aidoc-lex: <https://w3id.org/aidoc-ap/lex#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dpv-ai: <https://w3id.org/dpv/ai#> .
+@prefix dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#> .
+@prefix airo: <https://w3id.org/airo#> .
+@prefix vair: <https://w3id.org/vair#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+
+# Alignment proposals for the AIDOC-AP LEX Extension.
+#
+# Status: proposed and reviewed by the maintainers of the module; no expert curation as for the
+# core alignments. alignments/proposed-reified.ttl holds the same mappings in the record format
+# of the core alignments; regenerate it with `make alignments`.
+#
+# Format: one mapping per line, followed by its rationale as a comment. Subjects are module
+# terms; targets are terms of the AIDOC-AP core or of the vocabularies vendored with it
+# (DPV, DPV-AI, DPV AI Act extension, AIRO, VAIR).
+
+# Management systems
+aidoc-lex:RiskManagementSystem skos:exactMatch dpv-aiact:RiskManagementSystem .  # both denote the risk management system of Article 9 AI Act.
+aidoc-lex:QualityManagementSystem skos:exactMatch dpv-aiact:QualityManagementSystem .  # both denote the quality management system of Article 17 AI Act.
+aidoc-lex:PostMarketMonitoringSystem skos:exactMatch dpv-aiact:PostMarketMonitoringSystem .  # both denote the post-market monitoring system of Article 72 AI Act.
+aidoc-lex:PostMarketMonitoringSystem skos:relatedMatch vair:PostMarketMonitoringSystemDescription .  # VAIR names the document that describes the system, not the system.
+aidoc-lex:DataGovernanceFramework skos:closeMatch dpv:DataGovernance .  # DPV data governance covers the same practices without the AI Act focus on training, validation and testing data.
+aidoc-lex:AccountabilityFramework skos:broadMatch dpv:GovernanceProcedures .  # assigning responsibilities is one kind of governance procedure.
+
+# Documents
+aidoc-lex:Policy skos:exactMatch dpv:Policy .  # a written policy in both vocabularies.
+aidoc-lex:InstructionsForUse skos:exactMatch dpv-aiact:InstructionForUse .  # instructions for use as defined in Article 3(15) AI Act.
+aidoc-lex:InstructionsForUse skos:exactMatch vair:InstructionForUse .  # VAIR models the same AI Act document.
+aidoc-lex:SimplifiedTechnicalDocumentation skos:broadMatch dpv-aiact:TechnicalDocumentation .  # the simplified form is a kind of technical documentation.
+aidoc-lex:ProcessingRecord skos:closeMatch dpv:DataProcessingRecord .  # DPV records any processing; the module record also states why special category data was necessary.
+aidoc-lex:CEMarking skos:exactMatch dpv-aiact:CEMarking .  # the CE marking of Article 48 AI Act.
+
+# Assessments
+aidoc-lex:Assessment skos:closeMatch dpv:Assessment .  # DPV assessments are organisational measures; the module models them as activities.
+aidoc-lex:RiskAssessment skos:exactMatch dpv:RiskAssessment .  # identification, analysis and evaluation of risks.
+aidoc-lex:ImpactAssessment skos:exactMatch dpv:ImpactAssessment .  # assessment of impacts in a given area.
+aidoc-lex:FundamentalRightsImpactAssessment skos:exactMatch dpv-aiact:FRIA .  # the fundamental rights impact assessment of Article 27 AI Act.
+aidoc-lex:FundamentalRightsImpactAssessment skos:broadMatch dpv:RightsImpactAssessment .  # a rights impact assessment restricted to fundamental rights.
+aidoc-lex:DataProtectionImpactAssessment skos:broadMatch dpv:ImpactAssessment .  # the GDPR DPIA is a kind of impact assessment; the DPV GDPR extension is not vendored.
+aidoc-lex:BiasAssessment skos:exactMatch dpv-ai:BiasAssessment .  # assessment of bias in data, models or outputs.
+aidoc-lex:DatasetSuitabilityAssessment skos:closeMatch dpv:DataSuitabilityAssessment .  # DPV assesses suitability for a purpose; Article 10 adds availability and quantity.
+aidoc-lex:ConformityAssessment skos:exactMatch dpv-aiact:ConformityAssessment .  # the conformity assessment of Article 43 AI Act.
+aidoc-lex:SecurityAssessment skos:closeMatch dpv:CybersecurityAssessment .  # the module includes security tests and abuse test scenarios.
+aidoc-lex:Audit skos:closeMatch dpv:Audit .  # DPV audits are organisational measures; the module models them as activities.
+
+# Governance activities
+aidoc-lex:CompetenceTraining skos:closeMatch dpv:StaffTraining .  # the module also covers training of deployers and human overseers.
+aidoc-lex:StakeholderConsultation skos:closeMatch dpv:Consultation .  # consultation of stakeholders about an AI system.
+
+# Measures
+aidoc-lex:Measure skos:closeMatch dpv:TechnicalOrganisationalMeasure .  # technical or organisational measures in both vocabularies.
+aidoc-lex:RiskControlMeasure skos:closeMatch dpv:RiskMitigationMeasure .  # the module also covers elimination and correction of risks.
+aidoc-lex:RiskControlMeasure skos:closeMatch airo:RiskControl .  # AIRO risk controls modify risk concepts.
+aidoc-lex:RiskControlMeasure skos:closeMatch vair:MitigationMeasure .  # VAIR mitigation measures address risks of AI systems.
+aidoc-lex:BiasMitigationMeasure skos:relatedMatch dpv-ai:BiasMitigation .  # DPV-AI names the technique; the module names the measure that applies it.
+aidoc-lex:SecurityMeasure skos:exactMatch vair:SecurityMeasure .  # security measures of an AI system.
+aidoc-lex:PrivacyPreservingMeasure skos:broadMatch dpv:TechnicalOrganisationalMeasure .  # privacy-preserving measures are technical or organisational measures.
+aidoc-lex:DataSubjectRightsMechanism skos:closeMatch dpv:DataSubjectRightsManagement .  # handling of data subject rights requests.
+
+# Oversight and transparency
+aidoc-lex:ProviderOversightMeasure skos:exactMatch dpv-aiact:ProviderHumanOversightMeasure .  # Article 14(3)(a) AI Act.
+aidoc-lex:DeployerOversightMeasure skos:exactMatch dpv-aiact:DeployerHumanOversightMeasure .  # Article 14(3)(b) AI Act.
+aidoc-lex:StopMechanism skos:relatedMatch vair:Interruption .  # VAIR names the human intervention; the module names the mechanism that allows it.
+aidoc-lex:OverrideMechanism skos:relatedMatch vair:OverridingOutcome .  # VAIR names the intervention; the module names the mechanism.
+aidoc-lex:OverrideMechanism skos:relatedMatch vair:ReverseOutput .  # reversing an output is one use of the override mechanism.
+aidoc-lex:AIInteractionDisclosure skos:closeMatch dpv:AINotice .  # a notice about the use of AI.
+
+# Occurrences and changes
+aidoc-lex:SeriousIncident skos:exactMatch dpv-aiact:SeriousIncident .  # Article 3(49) AI Act.
+aidoc-lex:SubstantialModification skos:exactMatch dpv-aiact:SubstantialModification .  # Article 3(23) AI Act.
+aidoc-lex:PredeterminedChange skos:exactMatch dpv-aiact:PredeterminedChange .  # Article 13(3)(c) AI Act.
+aidoc-lex:ReasonablyForeseeableMisuse skos:exactMatch dpv-aiact:ReasonablyForeseeableMisuse .  # Article 3(13) AI Act.
+aidoc-lex:DataGap skos:relatedMatch vair:UnavailabilityOfData .  # missing data is one cause of a data gap.
+
+# Agents
+aidoc-lex:SME skos:exactMatch dpv:SMEOrganisation .  # small and medium-sized enterprise.
+aidoc-lex:StartUp skos:exactMatch dpv:StartupOrganisation .  # start-up enterprise.
+aidoc-lex:AuthorisedRepresentative skos:exactMatch dpv-aiact:AuthorisedRepresentative .  # Article 3(5) AI Act.
+aidoc-lex:AuthorisedRepresentative skos:exactMatch vair:AuthorisedRepresentative .  # VAIR models the same AI Act role.
+aidoc-lex:CompetentAuthority skos:narrowMatch dpv-aiact:MarketSurveillanceAuthority .  # a market surveillance authority is one kind of competent authority.
+aidoc-lex:CompetentAuthority skos:closeMatch dpv-aiact:NationalCompetentAuthority .  # Article 3(48) AI Act, which includes market surveillance authorities.
+aidoc-lex:NotifiedBody skos:exactMatch dpv-aiact:NotifiedBody .  # Article 3(22) AI Act.
+aidoc-lex:NotifiedBody skos:exactMatch vair:NotifiedBody .  # VAIR models the same AI Act role.
+aidoc-lex:HumanOverseer skos:exactMatch dpv-aiact:HumanOverseer .  # natural person assigned to human oversight.
+aidoc-lex:DataProtectionOfficer skos:exactMatch dpv:DataProtectionOfficer .  # Article 37 GDPR.
+aidoc-lex:AffectedGroup skos:narrowMatch vair:VulnerableGroup .  # a vulnerable group is one kind of affected group.
+
+# Concepts
+aidoc-lex:AutomationBiasRisk skos:closeMatch dpv-ai:AutomationBias .  # DPV-AI names the bias; the module concept names the risk it creates.
+
+# Properties
+aidoc-lex:addressesRisk skos:closeMatch airo:mitigatesRiskConcept .  # the module property also covers detection and elimination.
+aidoc-lex:identifiesRisk skos:relatedMatch airo:detectsRiskConcept .  # AIRO relates a control to the risk it detects; the module relates an assessment to the risk it found.
+aidoc-lex:affectsGroup skos:relatedMatch airo:hasImpactOnStakeholder .  # AIRO relates an impact to a stakeholder; the module relates a system or risk to a group.
+aidoc-lex:hasInstructionsForUse skos:broadMatch airo:hasDocumentation .  # instructions for use are one kind of documentation.

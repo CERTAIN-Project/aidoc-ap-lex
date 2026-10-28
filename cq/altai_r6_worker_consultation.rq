@@ -1,0 +1,19 @@
+# CQ: What mechanisms linked to the AI system ensure that impacted workers and their representatives are informed and consulted before its introduction?
+# Question: lexreq:altai-r6-02-cq2
+# Requirement: lexreq:altai-r6-02
+# Terms: aidoc-lex:ImpactAssessment, aidoc-lex:StakeholderConsultation, aidoc-lex:WorkAndSkills, aidoc-lex:assesses, aidoc-lex:concernsSystem, aidoc-lex:impactArea
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?consultation ?impact ?area WHERE {
+  ?consultation a aidoc-lex:StakeholderConsultation ;
+                aidoc-lex:concernsSystem ?system .
+  OPTIONAL { ?impact a aidoc-lex:ImpactAssessment ; aidoc-lex:assesses ?system ; aidoc-lex:impactArea ?area .
+             FILTER (?area = aidoc-lex:WorkAndSkills) }
+}

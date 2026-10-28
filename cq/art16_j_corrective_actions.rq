@@ -1,0 +1,19 @@
+# CQ: How do providers abide to Article 20 and how do they implement it?
+# Question: lexreq:aiact-art16-j-cq1
+# Requirement: lexreq:aiact-art16-j
+# Terms: aidoc-lex:CorrectiveAction, aidoc-lex:concernsSystem, aidoc-lex:submittedTo
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?action ?trigger ?communication ?authority WHERE {
+  ?action a aidoc-lex:CorrectiveAction ;
+          aidoc-lex:concernsSystem ?system .
+  OPTIONAL { ?action prov:wasInformedBy ?trigger }
+  OPTIONAL { ?communication prov:wasInformedBy ?action ; aidoc-lex:submittedTo ?authority }
+}

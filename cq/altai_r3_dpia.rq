@@ -1,0 +1,20 @@
+# CQ: How does the AI system implement DPIA, DPO involvement, access controls, logging, privacy-by-design, and data minimisation measures where applicable?
+# Question: lexreq:altai-r3-02-cq2
+# Requirement: lexreq:altai-r3-02
+# Terms: aidoc-lex:DataProtectionImpactAssessment, aidoc-lex:DataProtectionOfficer, aidoc-lex:assesses
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?dpia ?dataset ?dpo WHERE {
+  ?dpia a aidoc-lex:DataProtectionImpactAssessment ;
+        aidoc-lex:assesses ?system .
+  ?system a aidoc:AISystem .
+  OPTIONAL { ?dpia aidoc-lex:assesses ?dataset . ?dataset a aidoc:Dataset }
+  OPTIONAL { ?dpia prov:wasAssociatedWith ?dpo . ?dpo a aidoc-lex:DataProtectionOfficer }
+}

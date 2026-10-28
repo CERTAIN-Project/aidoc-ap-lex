@@ -1,0 +1,18 @@
+# CQ: How does the provider comply with the registration obligations under Article 49(1)?
+# Question: lexreq:aiact-art16-i-cq2
+# Requirement: lexreq:aiact-art16-i
+# Terms: aidoc-lex:EURegistration, aidoc-lex:concernsSystem
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?registration ?ended WHERE {
+  ?registration a aidoc-lex:EURegistration ;
+                aidoc-lex:concernsSystem ?system .
+  OPTIONAL { ?registration prov:endedAtTime ?ended }
+}

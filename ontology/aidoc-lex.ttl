@@ -1,0 +1,1398 @@
+@prefix : <https://w3id.org/aidoc-ap/lex#> .
+@prefix aidoc-lex: <https://w3id.org/aidoc-ap/lex#> .
+@prefix aidoc: <https://w3id.org/aidoc-ap#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix schema: <https://schema.org/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix dqv: <http://www.w3.org/ns/dqv#> .
+@prefix dpv: <https://w3id.org/dpv#> .
+@prefix dpv-ai: <https://w3id.org/dpv/ai#> .
+@prefix dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#> .
+@prefix airo: <https://w3id.org/airo#> .
+@prefix vair: <https://w3id.org/vair#> .
+@base <https://w3id.org/aidoc-ap/lex#> .
+
+# AIDOC-AP LEX Extension (aidoc-lex): legal and ethical requirements
+
+<https://w3id.org/aidoc-ap/lex#> rdf:type owl:Ontology ;
+    owl:imports <https://w3id.org/aidoc-ap/1.2> ;
+    owl:versionIRI <https://w3id.org/aidoc-ap/lex/1.0> ;
+    owl:versionInfo "1.0" ;
+    dcterms:title "AIDOC-AP LEX Extension"@en ;
+    rdfs:label "AIDOC-AP LEX Extension"@en ;
+    dcterms:description "Extension module of the AIDOC-AP application profile for legal and ethical requirements. It adds the terms needed to document how an AI system meets the obligations of providers and deployers in Articles 9 to 17, 72 and 73 of the EU AI Act and the ethical requirements of ALTAI, the OECD AI Principles and the gender requirements of CERTAIN D3.2: management systems, assessments, measures, compliance documents, incidents and the organisations and persons involved. The requirements, their competency questions and the expected evidence are published with the module. The module imports the core and does not change any core definition."@en ;
+    dcterms:creator [ rdf:type foaf:Person ;
+                      foaf:name "Fabian Kovac" ;
+                      foaf:organization "University of Applied Sciences St. Pölten" ] ,
+                    [ rdf:type foaf:Person ;
+                      foaf:name "Konstantinos Amplianitis" ;
+                      foaf:mbox <mailto:konstantinos.amplianitis@ucd.ie> ;
+                      foaf:organization "University College Dublin" ] ,
+                    [ rdf:type foaf:Person ;
+                      foaf:name "Sebastian Neumaier" ;
+                      foaf:mbox <mailto:sebastian.neumaier@ustp.at> ;
+                      foaf:organization "University of Applied Sciences St. Pölten" ] ,
+                    [ rdf:type foaf:Person ;
+                      foaf:name "Tobias Dam" ;
+                      foaf:organization "University of Applied Sciences St. Pölten" ] ;
+    dcterms:created "2026-10-28"^^xsd:date ;
+    dcterms:modified "2026-10-28"^^xsd:date ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:publisher [ foaf:name "CERTAIN Project" ;
+                        foaf:homepage <https://certain-project.eu> ] ;
+    dcterms:language "en" ;
+    rdfs:seeAlso <https://w3id.org/aidoc-ap/lex/requirements> ;
+    vann:preferredNamespacePrefix "aidoc-lex" ;
+    vann:preferredNamespaceUri "https://w3id.org/aidoc-ap/lex#" ;
+    schema:funding <https://cordis.europa.eu/project/id/101189650> ;
+    skos:note "Draft, not released."@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  https://w3id.org/aidoc-ap/lex#ManagementSystem
+:ManagementSystem rdf:type owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "management system"@en ;
+    rdfs:comment "Documented set of policies, procedures and assigned responsibilities that an organisation establishes, implements and maintains to meet an obligation for its AI systems."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 9, 17 and 72" .
+
+###  https://w3id.org/aidoc-ap/lex#ComplianceDocument
+:ComplianceDocument rdf:type owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "compliance document"@en ;
+    rdfs:comment "Document or record that an organisation keeps as evidence that an obligation for an AI system has been met."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 11, 12, 17 and 18" .
+
+###  https://w3id.org/aidoc-ap/lex#GovernanceActivity
+:GovernanceActivity rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:AIActivity ;
+    rdfs:label "governance activity"@en ;
+    rdfs:comment "Activity that governs an AI system rather than building or running it, such as an assessment, a staff training or a communication with an authority."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Chapter III, Section 3" .
+
+###  https://w3id.org/aidoc-ap/lex#Assessment
+:Assessment rdf:type owl:Class ;
+    rdfs:subClassOf :GovernanceActivity ;
+    rdfs:label "assessment"@en ;
+    rdfs:comment "Governance activity that examines an AI system, its data or its context against stated criteria and records the outcome."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 9, 10 and 43; ALTAI (2020), all requirements" .
+
+###  https://w3id.org/aidoc-ap/lex#Measure
+:Measure rdf:type owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "measure"@en ;
+    rdfs:comment "Technical or organisational measure that is put in place for an AI system to meet a legal or ethical requirement."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 9, 10, 14 and 15" .
+
+###  https://w3id.org/aidoc-ap/lex#RiskManagementSystem
+:RiskManagementSystem rdf:type owl:Class ;
+    rdfs:subClassOf :ManagementSystem ;
+    rdfs:label "risk management system"@en ;
+    rdfs:comment "Continuous iterative process, planned and run throughout the lifecycle of a high-risk AI system, that identifies, estimates, evaluates and controls the risks of the system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(1) and (2)" .
+
+###  https://w3id.org/aidoc-ap/lex#QualityManagementSystem
+:QualityManagementSystem rdf:type owl:Class ;
+    rdfs:subClassOf :ManagementSystem ;
+    rdfs:label "quality management system"@en ;
+    rdfs:comment "Quality management system of a provider of high-risk AI systems, documented as written policies, procedures and instructions."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#PostMarketMonitoringSystem
+:PostMarketMonitoringSystem rdf:type owl:Class ;
+    rdfs:subClassOf :ManagementSystem ;
+    rdfs:label "post-market monitoring system"@en ;
+    rdfs:comment "System by which a provider collects, documents and analyses data on the performance of a high-risk AI system throughout its lifetime, in proportion to the nature of the AI technologies and the risks of the system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 72(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#RecordKeepingSystem
+:RecordKeepingSystem rdf:type owl:Class ;
+    rdfs:subClassOf :ManagementSystem ;
+    rdfs:label "record-keeping system"@en ;
+    rdfs:comment "System and procedures by which a provider keeps all relevant documentation and information on its AI systems."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(1)(k)" .
+
+###  https://w3id.org/aidoc-ap/lex#DataGovernanceFramework
+:DataGovernanceFramework rdf:type owl:Class ;
+    rdfs:subClassOf :ManagementSystem ;
+    rdfs:label "data governance framework"@en ;
+    rdfs:comment "Data governance and management practices that apply to the training, validation and testing data sets of an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(2)" .
+
+###  https://w3id.org/aidoc-ap/lex#AccountabilityFramework
+:AccountabilityFramework rdf:type owl:Class ;
+    rdfs:subClassOf :ManagementSystem ;
+    rdfs:label "accountability framework"@en ;
+    rdfs:comment "Framework that sets out the responsibilities of the management and other staff for the obligations concerning an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(1)(m); OECD AI Principles (2024), Principle 1.5" .
+
+###  https://w3id.org/aidoc-ap/lex#Policy
+:Policy rdf:type owl:Class ;
+    rdfs:subClassOf :ComplianceDocument ;
+    rdfs:label "policy"@en ;
+    rdfs:comment "Written statement of the rules or objectives that an organisation adopts for its AI systems, such as a regulatory compliance strategy or a confidence threshold policy."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(1) and (1)(a)" .
+
+###  https://w3id.org/aidoc-ap/lex#Procedure
+:Procedure rdf:type owl:Class ;
+    rdfs:subClassOf :ComplianceDocument ;
+    rdfs:label "procedure"@en ;
+    rdfs:comment "Written description of the steps that an organisation follows for a recurring task concerning an AI system, such as quality control, incident reporting or data retention."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#InstructionsForUse
+:InstructionsForUse rdf:type owl:Class ;
+    rdfs:subClassOf :ComplianceDocument ;
+    rdfs:label "instructions for use"@en ;
+    rdfs:comment "Information from the provider that informs deployers of the characteristics, capabilities and limitations of performance of a high-risk AI system, its intended purpose and its human oversight measures."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 3(15) and 13(2) and (3)" .
+
+###  https://w3id.org/aidoc-ap/lex#SimplifiedTechnicalDocumentation
+:SimplifiedTechnicalDocumentation rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:TechnicalDocumentation ;
+    rdfs:label "simplified technical documentation"@en ;
+    rdfs:comment "Technical documentation provided in the simplified form that the Commission establishes for small and micro enterprises, including start-ups."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 11(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#RiskRegister
+:RiskRegister rdf:type owl:Class ;
+    rdfs:subClassOf :ComplianceDocument ;
+    rdfs:label "risk register"@en ;
+    rdfs:comment "Record of the identified risks of an AI system with their estimation, evaluation, control measures and status."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "OECD AI Principles (2024), Principle 1.5; CERTAIN D3.2, Sections 4.2 and 4.4" .
+
+###  https://w3id.org/aidoc-ap/lex#ProcessingRecord
+:ProcessingRecord rdf:type owl:Class ;
+    rdfs:subClassOf :ComplianceDocument ;
+    rdfs:label "processing record"@en ;
+    rdfs:comment "Record of a processing of personal data for an AI system, including special categories of personal data, with the reasons why the processing was strictly necessary."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(5)(f)" .
+
+###  https://w3id.org/aidoc-ap/lex#IncidentReport
+:IncidentReport rdf:type owl:Class ;
+    rdfs:subClassOf :ComplianceDocument ;
+    rdfs:label "incident report"@en ;
+    rdfs:comment "Report of a serious incident that a provider submits to the market surveillance authority, as an initial or a complete report."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 73(1) and (5)" .
+
+###  https://w3id.org/aidoc-ap/lex#LogEntry
+:LogEntry rdf:type owl:Class ;
+    rdfs:subClassOf :ComplianceDocument ;
+    rdfs:label "log entry"@en ;
+    rdfs:comment "Record of an event that an AI system logs automatically over its lifetime."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 12(1) to (3)" .
+
+###  https://w3id.org/aidoc-ap/lex#SafetyCase
+:SafetyCase rdf:type owl:Class ;
+    rdfs:subClassOf :ComplianceDocument ;
+    rdfs:label "safety case"@en ;
+    rdfs:comment "Structured argument, supported by evidence, that an AI system is safe for its intended purpose in its context of use."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "OECD AI Principles (2024), Principle 1.4" .
+
+###  https://w3id.org/aidoc-ap/lex#DesignChoice
+:DesignChoice rdf:type owl:Class ;
+    rdfs:subClassOf :ComplianceDocument ;
+    rdfs:label "design choice"@en ;
+    rdfs:comment "Recorded design decision about an AI system or its data, with the reasons for it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 10(2)(a) and 17(1)(b)" .
+
+###  https://w3id.org/aidoc-ap/lex#CEMarking
+:CEMarking rdf:type owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "CE marking"@en ;
+    rdfs:comment "CE marking affixed to a high-risk AI system, its packaging or its accompanying documentation to indicate conformity with the AI Act."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 16(h) and 48" .
+
+###  https://w3id.org/aidoc-ap/lex#RiskAssessment
+:RiskAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "risk assessment"@en ;
+    rdfs:comment "Assessment that identifies, analyses, estimates and evaluates the known and reasonably foreseeable risks of an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(2)(a) to (c)" .
+
+###  https://w3id.org/aidoc-ap/lex#ImpactAssessment
+:ImpactAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "impact assessment"@en ;
+    rdfs:comment "Assessment of the impact of an AI system on an area such as human autonomy, work and skills, society, democracy or the environment."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirements 1 and 6; OECD AI Principles (2024), Principle 1.1" .
+
+###  https://w3id.org/aidoc-ap/lex#FundamentalRightsImpactAssessment
+:FundamentalRightsImpactAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :ImpactAssessment ;
+    rdfs:label "fundamental rights impact assessment"@en ;
+    rdfs:comment "Impact assessment of the risks that an AI system poses to the fundamental rights of persons or groups of persons."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 9(2)(a) and 27; ALTAI (2020), Requirement 3" .
+
+###  https://w3id.org/aidoc-ap/lex#DataProtectionImpactAssessment
+:DataProtectionImpactAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :ImpactAssessment ;
+    rdfs:label "data protection impact assessment"@en ;
+    rdfs:comment "Impact assessment of the processing of personal data by an AI system on the protection of personal data, as required by Article 35 GDPR."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 3; OECD AI Principles (2024), Principle 1.2" .
+
+###  https://w3id.org/aidoc-ap/lex#GenderImpactAssessment
+:GenderImpactAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :ImpactAssessment ;
+    rdfs:label "gender impact assessment"@en ;
+    rdfs:comment "Impact assessment of the gender-differentiated effects of an AI system and its development, following the GIA or SGIA five-step method."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "CERTAIN D3.2, Section 5.2" .
+
+###  https://w3id.org/aidoc-ap/lex#BiasAssessment
+:BiasAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "bias assessment"@en ;
+    rdfs:comment "Assessment of data sets, models or outputs for biases that are likely to affect health and safety or fundamental rights, or to lead to discrimination."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(2)(f); ALTAI (2020), Requirement 5" .
+
+###  https://w3id.org/aidoc-ap/lex#GenderAudit
+:GenderAudit rdf:type owl:Class ;
+    rdfs:subClassOf :BiasAssessment ;
+    rdfs:label "gender audit"@en ;
+    rdfs:comment "Bias assessment of data sets, algorithms and workflows with respect to gender and intersecting identities, following the Gender Audit Tool."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "CERTAIN D3.2, Appendix A, Phase I, Section 4" .
+
+###  https://w3id.org/aidoc-ap/lex#AccessibilityAssessment
+:AccessibilityAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "accessibility assessment"@en ;
+    rdfs:comment "Assessment of whether an AI system meets accessibility requirements and can be used by persons with disabilities."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 16(l); ALTAI (2020), Requirement 5" .
+
+###  https://w3id.org/aidoc-ap/lex#DatasetSuitabilityAssessment
+:DatasetSuitabilityAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "data set suitability assessment"@en ;
+    rdfs:comment "Assessment of the availability, quantity and suitability of the data sets that an AI system needs, including whether data other than special categories of personal data would suffice."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(2)(e) and (5)(a)" .
+
+###  https://w3id.org/aidoc-ap/lex#TradeOffAssessment
+:TradeOffAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "trade-off assessment"@en ;
+    rdfs:comment "Assessment of a trade-off between requirements, such as accuracy and fairness or gender inclusion and privacy, with the justification of the decision taken."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 7; CERTAIN D3.2, Appendix A" .
+
+###  https://w3id.org/aidoc-ap/lex#TechnologyAcceptanceStudy
+:TechnologyAcceptanceStudy rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "technology acceptance study"@en ;
+    rdfs:comment "Study of the acceptance of an AI system by its users, such as a QETAM questionnaire on perceived usefulness, ease of use and trust."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "CERTAIN D3.2, Section 5.2" .
+
+###  https://w3id.org/aidoc-ap/lex#ConformityAssessment
+:ConformityAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "conformity assessment"@en ;
+    rdfs:comment "Process of demonstrating whether the requirements for a high-risk AI system have been fulfilled."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 3(20), 16(f) and 43" .
+
+###  https://w3id.org/aidoc-ap/lex#ComplianceTest
+:ComplianceTest rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "compliance test"@en ;
+    rdfs:comment "Test of an AI system against prior defined metrics and probabilistic thresholds to verify that it complies with the requirements for its intended purpose."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(6) to (8)" .
+
+###  https://w3id.org/aidoc-ap/lex#SecurityAssessment
+:SecurityAssessment rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "security assessment"@en ;
+    rdfs:comment "Assessment of the cybersecurity of an AI system, including security tests and abuse test scenarios."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 15(5); OECD AI Principles (2024), Principle 1.4" .
+
+###  https://w3id.org/aidoc-ap/lex#Audit
+:Audit rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "audit"@en ;
+    rdfs:comment "Assessment of an AI system, its processes and its records by an internal or external auditor."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 7, Auditability" .
+
+###  https://w3id.org/aidoc-ap/lex#IncidentInvestigation
+:IncidentInvestigation rdf:type owl:Class ;
+    rdfs:subClassOf :Assessment ;
+    rdfs:label "incident investigation"@en ;
+    rdfs:comment "Investigation of a serious incident and of the AI system concerned, including a risk assessment of the incident and of the causal link between system and incident."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 73(2) and (6)" .
+
+###  https://w3id.org/aidoc-ap/lex#CorrectiveAction
+:CorrectiveAction rdf:type owl:Class ;
+    rdfs:subClassOf :GovernanceActivity ;
+    rdfs:label "corrective action"@en ;
+    rdfs:comment "Action that a provider takes to bring an AI system into conformity, or to withdraw, disable or recall it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 16(j), 20 and 73(6)" .
+
+###  https://w3id.org/aidoc-ap/lex#CompetenceTraining
+:CompetenceTraining rdf:type owl:Class ;
+    rdfs:subClassOf :GovernanceActivity ;
+    rdfs:label "competence training"@en ;
+    rdfs:comment "Training of staff, deployers or human overseers on an AI system, its risks or the obligations that apply to it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 4, 9(5)(c) and 14(4); ALTAI (2020), Requirements 1 and 7" .
+
+###  https://w3id.org/aidoc-ap/lex#StakeholderConsultation
+:StakeholderConsultation rdf:type owl:Class ;
+    rdfs:subClassOf :GovernanceActivity ;
+    rdfs:label "stakeholder consultation"@en ;
+    rdfs:comment "Consultation of stakeholders such as workers, affected persons or their representatives about an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirements 5 and 6" .
+
+###  https://w3id.org/aidoc-ap/lex#EURegistration
+:EURegistration rdf:type owl:Class ;
+    rdfs:subClassOf :GovernanceActivity ;
+    rdfs:label "EU database registration"@en ;
+    rdfs:comment "Registration of a high-risk AI system in the EU database."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 16(i) and 49(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#AuthorityCommunication
+:AuthorityCommunication rdf:type owl:Class ;
+    rdfs:subClassOf :GovernanceActivity ;
+    rdfs:label "authority communication"@en ;
+    rdfs:comment "Communication between a provider and a national competent authority, market surveillance authority or notified body, such as a reasoned request and its answer."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 16(k), 17(1)(j) and 73(6)" .
+
+###  https://w3id.org/aidoc-ap/lex#RiskControlMeasure
+:RiskControlMeasure rdf:type owl:Class ;
+    rdfs:subClassOf :Measure ;
+    rdfs:label "risk control measure"@en ;
+    rdfs:comment "Measure that eliminates, reduces, mitigates or controls a risk of an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(2)(d) and (5)" .
+
+###  https://w3id.org/aidoc-ap/lex#BiasMitigationMeasure
+:BiasMitigationMeasure rdf:type owl:Class ;
+    rdfs:subClassOf :RiskControlMeasure ;
+    rdfs:label "bias mitigation measure"@en ;
+    rdfs:comment "Risk control measure that detects, prevents or mitigates bias in data sets, models or outputs."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(2)(g); ALTAI (2020), Requirement 5" .
+
+###  https://w3id.org/aidoc-ap/lex#SecurityMeasure
+:SecurityMeasure rdf:type owl:Class ;
+    rdfs:subClassOf :RiskControlMeasure ;
+    rdfs:label "security measure"@en ;
+    rdfs:comment "Risk control measure that protects an AI system against attempts by unauthorised third parties to alter its use, outputs or performance, such as data poisoning, model poisoning or adversarial examples."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 15(5)" .
+
+###  https://w3id.org/aidoc-ap/lex#PrivacyPreservingMeasure
+:PrivacyPreservingMeasure rdf:type owl:Class ;
+    rdfs:subClassOf :RiskControlMeasure ;
+    rdfs:label "privacy-preserving measure"@en ;
+    rdfs:comment "Risk control measure that protects personal data processed for an AI system, such as pseudonymisation, access control or restrictions on reuse and transfer."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(5)(b) to (e)" .
+
+###  https://w3id.org/aidoc-ap/lex#ResilienceMeasure
+:ResilienceMeasure rdf:type owl:Class ;
+    rdfs:subClassOf :RiskControlMeasure ;
+    rdfs:label "resilience measure"@en ;
+    rdfs:comment "Risk control measure that keeps an AI system resilient to errors, faults or inconsistencies, such as technical redundancy, backup or fail-safe plans."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 15(4); ALTAI (2020), Requirement 2" .
+
+###  https://w3id.org/aidoc-ap/lex#AccessibilityMeasure
+:AccessibilityMeasure rdf:type owl:Class ;
+    rdfs:subClassOf :Measure ;
+    rdfs:label "accessibility measure"@en ;
+    rdfs:comment "Measure that makes an AI system accessible, such as compatibility with assistive technologies or the application of universal design principles."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 16(l); ALTAI (2020), Requirement 5" .
+
+###  https://w3id.org/aidoc-ap/lex#MaintenanceMeasure
+:MaintenanceMeasure rdf:type owl:Class ;
+    rdfs:subClassOf :Measure ;
+    rdfs:label "maintenance measure"@en ;
+    rdfs:comment "Measure for the maintenance and care of an AI system over its expected lifetime, including software updates."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 13(3)(e)" .
+
+###  https://w3id.org/aidoc-ap/lex#RedressMechanism
+:RedressMechanism rdf:type owl:Class ;
+    rdfs:subClassOf :Measure ;
+    rdfs:label "redress mechanism"@en ;
+    rdfs:comment "Mechanism by which affected persons can complain about or challenge an output of an AI system and obtain redress."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 7; OECD AI Principles (2024), Principle 1.3" .
+
+###  https://w3id.org/aidoc-ap/lex#ReportingChannel
+:ReportingChannel rdf:type owl:Class ;
+    rdfs:subClassOf :Measure ;
+    rdfs:label "reporting channel"@en ;
+    rdfs:comment "Channel through which staff or third parties can report concerns, harms or potential violations concerning an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 7; CERTAIN D3.2, Section 7" .
+
+###  https://w3id.org/aidoc-ap/lex#DataSubjectRightsMechanism
+:DataSubjectRightsMechanism rdf:type owl:Class ;
+    rdfs:subClassOf :Measure ;
+    rdfs:label "data subject rights mechanism"@en ;
+    rdfs:comment "Mechanism by which data subjects can exercise their rights over personal data processed for an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 3" .
+
+###  https://w3id.org/aidoc-ap/lex#ProviderOversightMeasure
+:ProviderOversightMeasure rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:HumanOversightMechanism ;
+    rdfs:label "provider oversight measure"@en ;
+    rdfs:comment "Human oversight measure that the provider identifies and builds into a high-risk AI system before it is placed on the market or put into service."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 14(3)(a)" .
+
+###  https://w3id.org/aidoc-ap/lex#DeployerOversightMeasure
+:DeployerOversightMeasure rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:HumanOversightMechanism ;
+    rdfs:label "deployer oversight measure"@en ;
+    rdfs:comment "Human oversight measure that the provider identifies as appropriate to be implemented by the deployer."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 14(3)(b)" .
+
+###  https://w3id.org/aidoc-ap/lex#StopMechanism
+:StopMechanism rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:HumanOversightMechanism ;
+    rdfs:label "stop mechanism"@en ;
+    rdfs:comment "Oversight mechanism, such as a stop button, that lets a human interrupt an AI system and bring it to a halt in a safe state."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 14(4)(e)" .
+
+###  https://w3id.org/aidoc-ap/lex#OverrideMechanism
+:OverrideMechanism rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:HumanOversightMechanism ;
+    rdfs:label "override mechanism"@en ;
+    rdfs:comment "Oversight mechanism that lets a human decide not to use, disregard, override or reverse an output of an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 14(4)(d)" .
+
+###  https://w3id.org/aidoc-ap/lex#AIInteractionDisclosure
+:AIInteractionDisclosure rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:TransparencyMeasure ;
+    rdfs:label "AI interaction disclosure"@en ;
+    rdfs:comment "Transparency measure that informs persons that they interact with an AI system or that an output was generated by it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 1; Regulation (EU) 2024/1689 (AI Act), Article 50(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#SyntheticContentLabel
+:SyntheticContentLabel rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:TransparencyMeasure ;
+    rdfs:label "synthetic content label"@en ;
+    rdfs:comment "Transparency measure that marks generated or manipulated content as artificially generated and records its provenance."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 50(2); OECD AI Principles (2024), Principle 1.4" .
+
+###  https://w3id.org/aidoc-ap/lex#OutputInterpretationGuidance
+:OutputInterpretationGuidance rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:TransparencyMeasure ;
+    rdfs:label "output interpretation guidance"@en ;
+    rdfs:comment "Guidance that helps deployers and human overseers interpret the outputs of an AI system and the logs it produces."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 13(3)(b)(vii), 13(3)(f) and 14(4)(c)" .
+
+###  https://w3id.org/aidoc-ap/lex#Incident
+:Incident rdf:type owl:Class ;
+    rdfs:subClassOf prov:Activity ;
+    rdfs:label "incident"@en ;
+    rdfs:comment "Occurrence in which an AI system malfunctions, behaves unexpectedly or causes harm."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 73; CERTAIN D3.2, Section 7" .
+
+###  https://w3id.org/aidoc-ap/lex#SeriousIncident
+:SeriousIncident rdf:type owl:Class ;
+    rdfs:subClassOf :Incident ;
+    rdfs:label "serious incident"@en ;
+    rdfs:comment "Incident or malfunctioning of an AI system that directly or indirectly leads to death or serious harm to health, serious disruption of critical infrastructure, an infringement of fundamental rights obligations or serious harm to property or the environment."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 3(49) and 73" .
+
+###  https://w3id.org/aidoc-ap/lex#SubstantialModification
+:SubstantialModification rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:ChangeRecord ;
+    rdfs:label "substantial modification"@en ;
+    rdfs:comment "Change to an AI system after it is placed on the market or put into service that was not foreseen in the initial conformity assessment and affects its compliance or its intended purpose."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 3(23) and 12(2)(a)" .
+
+###  https://w3id.org/aidoc-ap/lex#PredeterminedChange
+:PredeterminedChange rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:ChangeRecord ;
+    rdfs:label "predetermined change"@en ;
+    rdfs:comment "Change to an AI system and its performance that the provider determined in advance, at the moment of the initial conformity assessment."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 13(3)(c)" .
+
+###  https://w3id.org/aidoc-ap/lex#ReasonablyForeseeableMisuse
+:ReasonablyForeseeableMisuse rdf:type owl:Class ;
+    rdfs:subClassOf airo:Misuse ;
+    rdfs:label "reasonably foreseeable misuse"@en ;
+    rdfs:comment "Use of an AI system in a way that is not in accordance with its intended purpose but may result from reasonably foreseeable human behaviour or interaction with other systems."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 3(13), 9(2)(b) and 14(2)" .
+
+###  https://w3id.org/aidoc-ap/lex#DataGap
+:DataGap rdf:type owl:Class ;
+    rdfs:subClassOf prov:Entity ;
+    rdfs:label "data gap"@en ;
+    rdfs:comment "Gap or shortcoming in a data set that prevents compliance with the AI Act."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(2)(h)" .
+
+###  https://w3id.org/aidoc-ap/lex#SME
+:SME rdf:type owl:Class ;
+    rdfs:subClassOf prov:Organization ;
+    rdfs:label "SME"@en ;
+    rdfs:comment "Small or medium-sized enterprise as defined in Commission Recommendation 2003/361/EC."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 11(1) and 17(2)" .
+
+###  https://w3id.org/aidoc-ap/lex#Microenterprise
+:Microenterprise rdf:type owl:Class ;
+    rdfs:subClassOf :SME ;
+    rdfs:label "microenterprise"@en ;
+    rdfs:comment "Microenterprise as defined in Commission Recommendation 2003/361/EC."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 11(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#StartUp
+:StartUp rdf:type owl:Class ;
+    rdfs:subClassOf prov:Organization ;
+    rdfs:label "start-up"@en ;
+    rdfs:comment "Recently founded enterprise that develops an innovative product or service, treated like an SME for the simplified technical documentation."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 11(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#FinancialInstitution
+:FinancialInstitution rdf:type owl:Class ;
+    rdfs:subClassOf prov:Organization ;
+    rdfs:label "financial institution"@en ;
+    rdfs:comment "Financial institution subject to requirements on internal governance, arrangements or processes under Union financial services law."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(4)" .
+
+###  https://w3id.org/aidoc-ap/lex#AuthorisedRepresentative
+:AuthorisedRepresentative rdf:type owl:Class ;
+    rdfs:subClassOf aidoc:AIAgent ;
+    rdfs:label "authorised representative"@en ;
+    rdfs:comment "Natural or legal person in the Union who has a written mandate from a provider to perform the AI Act obligations on its behalf."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 3(5), 13(3)(a) and 22" .
+
+###  https://w3id.org/aidoc-ap/lex#CompetentAuthority
+:CompetentAuthority rdf:type owl:Class ;
+    rdfs:subClassOf prov:Organization ;
+    rdfs:label "competent authority"@en ;
+    rdfs:comment "National competent authority or market surveillance authority to which a provider reports or which requests information from it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 16(k) and 73(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#NotifiedBody
+:NotifiedBody rdf:type owl:Class ;
+    rdfs:subClassOf prov:Organization ;
+    rdfs:label "notified body"@en ;
+    rdfs:comment "Conformity assessment body notified under the AI Act."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 3(22) and 73(6)" .
+
+###  https://w3id.org/aidoc-ap/lex#HumanOverseer
+:HumanOverseer rdf:type owl:Class ;
+    rdfs:subClassOf prov:Person ;
+    rdfs:label "human overseer"@en ;
+    rdfs:comment "Natural person to whom the human oversight of a high-risk AI system is assigned, with the competence, training and authority that the role requires."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 14(4), 14(5) and 26(2)" .
+
+###  https://w3id.org/aidoc-ap/lex#DataProtectionOfficer
+:DataProtectionOfficer rdf:type owl:Class ;
+    rdfs:subClassOf prov:Person ;
+    rdfs:label "data protection officer"@en ;
+    rdfs:comment "Data protection officer designated under Article 37 GDPR who is consulted on the processing of personal data for an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 3" .
+
+###  https://w3id.org/aidoc-ap/lex#EthicsReviewBoard
+:EthicsReviewBoard rdf:type owl:Class ;
+    rdfs:subClassOf prov:Organization ;
+    rdfs:label "ethics review board"@en ;
+    rdfs:comment "Board or committee that reviews the ethical aspects of AI systems and oversees the related processes."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 7" .
+
+###  https://w3id.org/aidoc-ap/lex#AffectedGroup
+:AffectedGroup rdf:type owl:Class ;
+    rdfs:subClassOf airo:Stakeholder ;
+    rdfs:label "affected group"@en ;
+    rdfs:comment "Group of persons affected by an AI system, such as persons under 18, a vulnerable group or a gender or intersectional group."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(9); OECD AI Principles (2024), Principle 1.1; CERTAIN D3.2, Section 5.2" .
+
+#################################################################
+#    Object properties
+#################################################################
+
+###  https://w3id.org/aidoc-ap/lex#addressesRequirement
+:addressesRequirement rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( prov:Entity prov:Activity ) ] ;
+    rdfs:range skos:Concept ;
+    rdfs:label "addresses requirement"@en ;
+    rdfs:comment "Relates an artefact, measure or activity to a requirement that it provides evidence for, such as a paragraph of an AI Act article or an ALTAI question."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "AIDOC-AP LEX requirements" .
+
+###  https://w3id.org/aidoc-ap/lex#hasManagementSystem
+:hasManagementSystem rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( aidoc:AISystem aidoc:AIAgent ) ] ;
+    rdfs:range :ManagementSystem ;
+    rdfs:label "has management system"@en ;
+    rdfs:comment "Relates an AI system or an organisation to a management system that applies to it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 9, 17 and 72" .
+
+###  https://w3id.org/aidoc-ap/lex#includesDocument
+:includesDocument rdf:type owl:ObjectProperty ;
+    rdfs:domain :ManagementSystem ;
+    rdfs:range :ComplianceDocument ;
+    rdfs:label "includes document"@en ;
+    rdfs:comment "Relates a management system to a policy, procedure or other document that is part of it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#integratedWith
+:integratedWith rdf:type owl:ObjectProperty ;
+    rdfs:domain :ManagementSystem ;
+    rdfs:range :ManagementSystem ;
+    rdfs:label "integrated with"@en ;
+    rdfs:comment "Relates a management system to another management system, required by other Union law, that it is part of or combined with."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 9(10) and 17(3)" .
+
+###  https://w3id.org/aidoc-ap/lex#hasInstructionsForUse
+:hasInstructionsForUse rdf:type owl:ObjectProperty ;
+    rdfs:domain aidoc:AISystem ;
+    rdfs:range :InstructionsForUse ;
+    rdfs:label "has instructions for use"@en ;
+    rdfs:comment "Relates a high-risk AI system to its instructions for use."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 13(2)" .
+
+###  https://w3id.org/aidoc-ap/lex#declaresMetric
+:declaresMetric rdf:type owl:ObjectProperty ;
+    rdfs:domain :InstructionsForUse ;
+    rdfs:range aidoc:PerformanceMetric ;
+    rdfs:label "declares metric"@en ;
+    rdfs:comment "Relates instructions for use to a declared accuracy, robustness or other performance metric of the AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 13(3)(b)(ii) and 15(3)" .
+
+###  https://w3id.org/aidoc-ap/lex#assesses
+:assesses rdf:type owl:ObjectProperty ;
+    rdfs:domain :Assessment ;
+    rdfs:range prov:Entity ;
+    rdfs:label "assesses"@en ;
+    rdfs:comment "Relates an assessment to the AI system, data set or other artefact that it examines."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 9, 10 and 43" .
+
+###  https://w3id.org/aidoc-ap/lex#documentedIn
+:documentedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( prov:Entity prov:Activity ) ] ;
+    rdfs:range :ComplianceDocument ;
+    rdfs:label "documented in"@en ;
+    rdfs:comment "Relates a system, measure or activity to a document that records it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 11 and 17" .
+
+###  https://w3id.org/aidoc-ap/lex#identifiesRisk
+:identifiesRisk rdf:type owl:ObjectProperty ;
+    rdfs:domain :Assessment ;
+    rdfs:range airo:Risk ;
+    rdfs:label "identifies risk"@en ;
+    rdfs:comment "Relates an assessment to a risk that it identified."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(2)(a)" .
+
+###  https://w3id.org/aidoc-ap/lex#addressesRisk
+:addressesRisk rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( :Measure aidoc:HumanOversightMechanism aidoc:TransparencyMeasure ) ] ;
+    rdfs:range airo:RiskConcept ;
+    rdfs:label "addresses risk"@en ;
+    rdfs:comment "Relates a measure, a human oversight mechanism or a transparency measure to the risk, risk source or consequence that it controls."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(2)(d)" .
+
+###  https://w3id.org/aidoc-ap/lex#controlFunction
+:controlFunction rdf:type owl:ObjectProperty ;
+    rdfs:domain :RiskControlMeasure ;
+    rdfs:range skos:Concept ;
+    rdfs:label "control function"@en ;
+    rdfs:comment "Relates a risk control measure to what it does about the risk, from the concept scheme of control functions."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(2)(g)" .
+
+###  https://w3id.org/aidoc-ap/lex#riskCategory
+:riskCategory rdf:type owl:ObjectProperty ;
+    rdfs:domain airo:Risk ;
+    rdfs:range skos:Concept ;
+    rdfs:label "risk category"@en ;
+    rdfs:comment "Relates a risk to its category from the concept scheme of risk categories."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(2)(a)" .
+
+###  https://w3id.org/aidoc-ap/lex#impactArea
+:impactArea rdf:type owl:ObjectProperty ;
+    rdfs:domain :ImpactAssessment ;
+    rdfs:range skos:Concept ;
+    rdfs:label "impact area"@en ;
+    rdfs:comment "Relates an impact assessment to the area of impact it covers, from the concept scheme of impact areas."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirement 6" .
+
+###  https://w3id.org/aidoc-ap/lex#procedureType
+:procedureType rdf:type owl:ObjectProperty ;
+    rdfs:domain :Procedure ;
+    rdfs:range skos:Concept ;
+    rdfs:label "procedure type"@en ;
+    rdfs:comment "Relates a procedure to its type from the concept scheme of procedure types."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#affectsGroup
+:affectsGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( aidoc:AISystem airo:Risk ) ] ;
+    rdfs:range :AffectedGroup ;
+    rdfs:label "affects group"@en ;
+    rdfs:comment "Relates an AI system or a risk to a group of persons that it affects."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(9)" .
+
+###  https://w3id.org/aidoc-ap/lex#measuredForGroup
+:measuredForGroup rdf:type owl:ObjectProperty ;
+    rdfs:domain dqv:QualityMeasurement ;
+    rdfs:range :AffectedGroup ;
+    rdfs:label "measured for group"@en ;
+    rdfs:comment "Relates a measurement to the group of persons for which it was computed, for metrics disaggregated by group."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 13(3)(b)(v); CERTAIN D3.2, Appendix A" .
+
+###  https://w3id.org/aidoc-ap/lex#assignedOverseer
+:assignedOverseer rdf:type owl:ObjectProperty ;
+    rdfs:domain aidoc:HumanOversightMechanism ;
+    rdfs:range :HumanOverseer ;
+    rdfs:label "assigned overseer"@en ;
+    rdfs:comment "Relates a human oversight mechanism to a natural person assigned to carry it out."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 14(4) and 26(2)" .
+
+###  https://w3id.org/aidoc-ap/lex#accountableAgent
+:accountableAgent rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( prov:Entity prov:Activity ) ] ;
+    rdfs:range prov:Agent ;
+    rdfs:label "accountable agent"@en ;
+    rdfs:comment "Relates a system, measure or activity to the person or organisational unit accountable for it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(1)(m); OECD AI Principles (2024), Principle 1.5" .
+
+###  https://w3id.org/aidoc-ap/lex#concernsSystem
+:concernsSystem rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( prov:Entity prov:Activity ) ] ;
+    rdfs:range aidoc:AISystem ;
+    rdfs:label "concerns system"@en ;
+    rdfs:comment "Relates an incident, report, log entry or governance activity to the AI system that it concerns."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 12 and 73" .
+
+###  https://w3id.org/aidoc-ap/lex#partOfLog
+:partOfLog rdf:type owl:ObjectProperty ;
+    rdfs:domain :LogEntry ;
+    rdfs:range aidoc:Log ;
+    rdfs:label "part of log"@en ;
+    rdfs:comment "Relates a log entry to the log that holds it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 12(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#loggedEventType
+:loggedEventType rdf:type owl:ObjectProperty ;
+    rdfs:domain :LogEntry ;
+    rdfs:range skos:Concept ;
+    rdfs:label "logged event type"@en ;
+    rdfs:comment "Relates a log entry to the type of event it records, from the concept scheme of logged event types."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 12(2) and (3)" .
+
+###  https://w3id.org/aidoc-ap/lex#verifiedBy
+:verifiedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :LogEntry ;
+    rdfs:range :HumanOverseer ;
+    rdfs:label "verified by"@en ;
+    rdfs:comment "Relates a log entry to a natural person involved in the verification of the results."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 12(3)(d) and 14(5)" .
+
+###  https://w3id.org/aidoc-ap/lex#reportsIncident
+:reportsIncident rdf:type owl:ObjectProperty ;
+    rdfs:domain :IncidentReport ;
+    rdfs:range :SeriousIncident ;
+    rdfs:label "reports incident"@en ;
+    rdfs:comment "Relates an incident report to the serious incident it reports."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 73(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#incidentCategory
+:incidentCategory rdf:type owl:ObjectProperty ;
+    rdfs:domain :SeriousIncident ;
+    rdfs:range skos:Concept ;
+    rdfs:label "incident category"@en ;
+    rdfs:comment "Relates a serious incident to its category from the concept scheme of serious incident categories."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 3(49) and 73(3) and (4)" .
+
+###  https://w3id.org/aidoc-ap/lex#submittedTo
+:submittedTo rdf:type owl:ObjectProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( :ComplianceDocument :GovernanceActivity ) ] ;
+    rdfs:range prov:Organization ;
+    rdfs:label "submitted to"@en ;
+    rdfs:comment "Relates a document or activity to the authority or notified body it was submitted or addressed to."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 16(k) and 73(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#remediatedBy
+:remediatedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain :DataGap ;
+    rdfs:range :Measure ;
+    rdfs:label "remediated by"@en ;
+    rdfs:comment "Relates a data gap to a measure that addresses it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(2)(h)" .
+
+###  https://w3id.org/aidoc-ap/lex#hasForeseeableMisuse
+:hasForeseeableMisuse rdf:type owl:ObjectProperty ;
+    rdfs:domain aidoc:AISystem ;
+    rdfs:range :ReasonablyForeseeableMisuse ;
+    rdfs:label "has foreseeable misuse"@en ;
+    rdfs:comment "Relates an AI system to a reasonably foreseeable misuse of it."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 9(2)(b), 13(3)(b)(iii) and 14(2)" .
+
+#################################################################
+#    Datatype properties
+#################################################################
+
+###  https://w3id.org/aidoc-ap/lex#originalPurposeOfCollection
+:originalPurposeOfCollection rdf:type owl:DatatypeProperty ;
+    rdfs:domain aidoc:Dataset ;
+    rdfs:range xsd:string ;
+    rdfs:label "original purpose of collection"@en ;
+    rdfs:comment "Original purpose of the data collection, for personal data."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(2)(b)" .
+
+###  https://w3id.org/aidoc-ap/lex#dataAssumption
+:dataAssumption rdf:type owl:DatatypeProperty ;
+    rdfs:domain aidoc:Dataset ;
+    rdfs:range xsd:string ;
+    rdfs:label "data assumption"@en ;
+    rdfs:comment "Assumption made about a data set, in particular about the information that the data is supposed to measure and represent."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(2)(d)" .
+
+###  https://w3id.org/aidoc-ap/lex#containsSpecialCategoryData
+:containsSpecialCategoryData rdf:type owl:DatatypeProperty ;
+    rdfs:domain aidoc:Dataset ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "contains special category data"@en ;
+    rdfs:comment "Whether a data set contains special categories of personal data."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(5)" .
+
+###  https://w3id.org/aidoc-ap/lex#retentionPeriod
+:retentionPeriod rdf:type owl:DatatypeProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( aidoc:Dataset aidoc:Log :ComplianceDocument ) ] ;
+    rdfs:range xsd:duration ;
+    rdfs:label "retention period"@en ;
+    rdfs:comment "Period for which a data set, log or document is kept before it is deleted."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 10(5)(e), 18 and 19" .
+
+###  https://w3id.org/aidoc-ap/lex#justification
+:justification rdf:type owl:DatatypeProperty ;
+    rdfs:domain [ rdf:type owl:Class ; owl:unionOf ( prov:Entity prov:Activity ) ] ;
+    rdfs:range xsd:string ;
+    rdfs:label "justification"@en ;
+    rdfs:comment "Reasons for a decision, a processing of data or a trade-off."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 10(5)(f); ALTAI (2020), Requirement 7" .
+
+###  https://w3id.org/aidoc-ap/lex#riskAcceptanceCriteria
+:riskAcceptanceCriteria rdf:type owl:DatatypeProperty ;
+    rdfs:domain :RiskManagementSystem ;
+    rdfs:range xsd:string ;
+    rdfs:label "risk acceptance criteria"@en ;
+    rdfs:comment "Criteria by which the residual risks of an AI system are judged acceptable."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(5)" .
+
+###  https://w3id.org/aidoc-ap/lex#awarenessDate
+:awarenessDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain :SeriousIncident ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "awareness date"@en ;
+    rdfs:comment "Time at which the provider became aware of a serious incident, from which the reporting deadline runs."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 73(2) to (4)" .
+
+###  https://w3id.org/aidoc-ap/lex#isInitialReport
+:isInitialReport rdf:type owl:DatatypeProperty ;
+    rdfs:domain :IncidentReport ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is initial report"@en ;
+    rdfs:comment "Whether an incident report is an initial, incomplete report to be followed by a complete one."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 73(5)" .
+
+###  https://w3id.org/aidoc-ap/lex#expectedLifetime
+:expectedLifetime rdf:type owl:DatatypeProperty ;
+    rdfs:domain aidoc:AISystem ;
+    rdfs:range xsd:duration ;
+    rdfs:label "expected lifetime"@en ;
+    rdfs:comment "Expected lifetime of a high-risk AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 13(3)(e)" .
+
+###  https://w3id.org/aidoc-ap/lex#contactDetails
+:contactDetails rdf:type owl:DatatypeProperty ;
+    rdfs:domain aidoc:AIAgent ;
+    rdfs:range xsd:string ;
+    rdfs:label "contact details"@en ;
+    rdfs:comment "Name, registered trade name or trade mark and contact address of a provider or its authorised representative."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 13(3)(a) and 16(b)" .
+
+#################################################################
+#    Concept schemes
+#################################################################
+
+###  https://w3id.org/aidoc-ap/lex#RiskCategories
+:RiskCategories rdf:type skos:ConceptScheme ;
+    skos:prefLabel "Risk categories"@en ;
+    skos:definition "Categories of risks of an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 9(2)(a)" .
+
+###  https://w3id.org/aidoc-ap/lex#HealthRisk
+:HealthRisk rdf:type skos:Concept ;
+    skos:inScheme :RiskCategories ;
+    skos:topConceptOf :RiskCategories ;
+    skos:prefLabel "Health risk"@en ;
+    skos:definition "Risk to the health of persons."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#SafetyRisk
+:SafetyRisk rdf:type skos:Concept ;
+    skos:inScheme :RiskCategories ;
+    skos:topConceptOf :RiskCategories ;
+    skos:prefLabel "Safety risk"@en ;
+    skos:definition "Risk to the safety of persons or property."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#FundamentalRightsRisk
+:FundamentalRightsRisk rdf:type skos:Concept ;
+    skos:inScheme :RiskCategories ;
+    skos:topConceptOf :RiskCategories ;
+    skos:prefLabel "Fundamental rights risk"@en ;
+    skos:definition "Risk to the fundamental rights of persons or groups."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#BehaviouralManipulationRisk
+:BehaviouralManipulationRisk rdf:type skos:Concept ;
+    skos:inScheme :RiskCategories ;
+    skos:topConceptOf :RiskCategories ;
+    skos:prefLabel "Behavioural manipulation risk"@en ;
+    skos:definition "Risk that an AI system manipulates the behaviour of its users."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#InformationIntegrityRisk
+:InformationIntegrityRisk rdf:type skos:Concept ;
+    skos:inScheme :RiskCategories ;
+    skos:topConceptOf :RiskCategories ;
+    skos:prefLabel "Information integrity risk"@en ;
+    skos:definition "Risk that an AI system creates or amplifies misinformation or disinformation."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#AutomationBiasRisk
+:AutomationBiasRisk rdf:type skos:Concept ;
+    skos:inScheme :RiskCategories ;
+    skos:topConceptOf :RiskCategories ;
+    skos:prefLabel "Automation bias risk"@en ;
+    skos:definition "Risk that persons rely too much on the outputs of an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#FeedbackLoopRisk
+:FeedbackLoopRisk rdf:type skos:Concept ;
+    skos:inScheme :RiskCategories ;
+    skos:topConceptOf :RiskCategories ;
+    skos:prefLabel "Feedback loop risk"@en ;
+    skos:definition "Risk that biased outputs of a system that keeps learning influence the input of future operations."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#GenderDisparityRisk
+:GenderDisparityRisk rdf:type skos:Concept ;
+    skos:inScheme :RiskCategories ;
+    skos:topConceptOf :RiskCategories ;
+    skos:prefLabel "Gender disparity risk"@en ;
+    skos:definition "Risk of unequal access, trust, acceptance or outcomes between genders."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#ControlFunctions
+:ControlFunctions rdf:type skos:ConceptScheme ;
+    skos:prefLabel "Control functions"@en ;
+    skos:definition "What a risk control measure does about a risk."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 9(5) and 10(2)(g)" .
+
+###  https://w3id.org/aidoc-ap/lex#Elimination
+:Elimination rdf:type skos:Concept ;
+    skos:inScheme :ControlFunctions ;
+    skos:topConceptOf :ControlFunctions ;
+    skos:prefLabel "Elimination"@en ;
+    skos:definition "Removes the risk, as far as technically feasible, through design and development."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Prevention
+:Prevention rdf:type skos:Concept ;
+    skos:inScheme :ControlFunctions ;
+    skos:topConceptOf :ControlFunctions ;
+    skos:prefLabel "Prevention"@en ;
+    skos:definition "Keeps the risk from occurring."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Detection
+:Detection rdf:type skos:Concept ;
+    skos:inScheme :ControlFunctions ;
+    skos:topConceptOf :ControlFunctions ;
+    skos:prefLabel "Detection"@en ;
+    skos:definition "Finds occurrences of the risk."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Mitigation
+:Mitigation rdf:type skos:Concept ;
+    skos:inScheme :ControlFunctions ;
+    skos:topConceptOf :ControlFunctions ;
+    skos:prefLabel "Mitigation"@en ;
+    skos:definition "Reduces the likelihood or severity of the risk."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Correction
+:Correction rdf:type skos:Concept ;
+    skos:inScheme :ControlFunctions ;
+    skos:topConceptOf :ControlFunctions ;
+    skos:prefLabel "Correction"@en ;
+    skos:definition "Corrects the effects of the risk after it occurred."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#ImpactAreas
+:ImpactAreas rdf:type skos:ConceptScheme ;
+    skos:prefLabel "Impact areas"@en ;
+    skos:definition "Areas of impact covered by an impact assessment."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "ALTAI (2020), Requirements 1 and 6" .
+
+###  https://w3id.org/aidoc-ap/lex#HumanAutonomy
+:HumanAutonomy rdf:type skos:Concept ;
+    skos:inScheme :ImpactAreas ;
+    skos:topConceptOf :ImpactAreas ;
+    skos:prefLabel "Human autonomy"@en ;
+    skos:definition "Impact on the autonomy and decisions of persons."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#WorkAndSkills
+:WorkAndSkills rdf:type skos:Concept ;
+    skos:inScheme :ImpactAreas ;
+    skos:topConceptOf :ImpactAreas ;
+    skos:prefLabel "Work and skills"@en ;
+    skos:definition "Impact on work, workers and their skills."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Society
+:Society rdf:type skos:Concept ;
+    skos:inScheme :ImpactAreas ;
+    skos:topConceptOf :ImpactAreas ;
+    skos:prefLabel "Society"@en ;
+    skos:definition "Impact on society at large."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Democracy
+:Democracy rdf:type skos:Concept ;
+    skos:inScheme :ImpactAreas ;
+    skos:topConceptOf :ImpactAreas ;
+    skos:prefLabel "Democracy"@en ;
+    skos:definition "Impact on democratic processes and institutions."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Environment
+:Environment rdf:type skos:Concept ;
+    skos:inScheme :ImpactAreas ;
+    skos:topConceptOf :ImpactAreas ;
+    skos:prefLabel "Environment"@en ;
+    skos:definition "Impact on the environment, including energy use and emissions."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Wellbeing
+:Wellbeing rdf:type skos:Concept ;
+    skos:inScheme :ImpactAreas ;
+    skos:topConceptOf :ImpactAreas ;
+    skos:prefLabel "Well-being"@en ;
+    skos:definition "Impact on the physical and mental well-being of users."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#ProcedureTypes
+:ProcedureTypes rdf:type skos:ConceptScheme ;
+    skos:prefLabel "Procedure types"@en ;
+    skos:definition "Types of procedures of a provider."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 17(1)" .
+
+###  https://w3id.org/aidoc-ap/lex#QualityControl
+:QualityControl rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Quality control"@en ;
+    skos:definition "Examination, test and validation of an AI system before, during and after development."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#QualityAssurance
+:QualityAssurance rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Quality assurance"@en ;
+    skos:definition "Systematic actions that assure the quality of an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#DesignControl
+:DesignControl rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Design control"@en ;
+    skos:definition "Control and verification of the design of an AI system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#DataManagement
+:DataManagement rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Data management"@en ;
+    skos:definition "Data acquisition, collection, analysis, labelling, storage, filtration, mining, aggregation and retention."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#IncidentReporting
+:IncidentReporting rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Incident reporting"@en ;
+    skos:definition "Reporting of serious incidents."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#AuthorityCommunicationHandling
+:AuthorityCommunicationHandling rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Authority communication handling"@en ;
+    skos:definition "Communication with authorities, notified bodies and other interested parties."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#ResourceManagement
+:ResourceManagement rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Resource management"@en ;
+    skos:definition "Management of resources, including security of supply."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Rollback
+:Rollback rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Rollback"@en ;
+    skos:definition "Return of an AI system to an earlier version or a safe state."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#Reproducibility
+:Reproducibility rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Reproducibility"@en ;
+    skos:definition "Repetition of training and evaluation with the same results."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#DocumentRetention
+:DocumentRetention rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Document retention"@en ;
+    skos:definition "Keeping and deletion of documentation and logs."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#GenderSensitiveMethod
+:GenderSensitiveMethod rdf:type skos:Concept ;
+    skos:inScheme :ProcedureTypes ;
+    skos:topConceptOf :ProcedureTypes ;
+    skos:prefLabel "Gender-sensitive method"@en ;
+    skos:definition "Integration of gender-sensitive methods and inclusive language into research, design and documentation."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#LoggedEventTypes
+:LoggedEventTypes rdf:type skos:ConceptScheme ;
+    skos:prefLabel "Logged event types"@en ;
+    skos:definition "Types of events that an AI system logs."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Article 12(2) and (3)" .
+
+###  https://w3id.org/aidoc-ap/lex#RiskSituation
+:RiskSituation rdf:type skos:Concept ;
+    skos:inScheme :LoggedEventTypes ;
+    skos:topConceptOf :LoggedEventTypes ;
+    skos:prefLabel "Risk situation"@en ;
+    skos:definition "Situation that may result in a risk or a substantial modification."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#PostMarketMonitoringEvent
+:PostMarketMonitoringEvent rdf:type skos:Concept ;
+    skos:inScheme :LoggedEventTypes ;
+    skos:topConceptOf :LoggedEventTypes ;
+    skos:prefLabel "Post-market monitoring event"@en ;
+    skos:definition "Event relevant to the post-market monitoring."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#OperationalMonitoringEvent
+:OperationalMonitoringEvent rdf:type skos:Concept ;
+    skos:inScheme :LoggedEventTypes ;
+    skos:topConceptOf :LoggedEventTypes ;
+    skos:prefLabel "Operational monitoring event"@en ;
+    skos:definition "Event relevant to monitoring the operation by the deployer."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#UsagePeriod
+:UsagePeriod rdf:type skos:Concept ;
+    skos:inScheme :LoggedEventTypes ;
+    skos:topConceptOf :LoggedEventTypes ;
+    skos:prefLabel "Usage period"@en ;
+    skos:definition "Start and end of each use of the system."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#ReferenceDatabaseCheck
+:ReferenceDatabaseCheck rdf:type skos:Concept ;
+    skos:inScheme :LoggedEventTypes ;
+    skos:topConceptOf :LoggedEventTypes ;
+    skos:prefLabel "Reference database check"@en ;
+    skos:definition "Check of input data against a reference database."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#InputDataMatch
+:InputDataMatch rdf:type skos:Concept ;
+    skos:inScheme :LoggedEventTypes ;
+    skos:topConceptOf :LoggedEventTypes ;
+    skos:prefLabel "Input data match"@en ;
+    skos:definition "Input data for which the search led to a match."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#ResultVerification
+:ResultVerification rdf:type skos:Concept ;
+    skos:inScheme :LoggedEventTypes ;
+    skos:topConceptOf :LoggedEventTypes ;
+    skos:prefLabel "Result verification"@en ;
+    skos:definition "Verification of the results by natural persons."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#IncidentCategories
+:IncidentCategories rdf:type skos:ConceptScheme ;
+    skos:prefLabel "Serious incident categories"@en ;
+    skos:definition "Categories of serious incidents."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
+    dcterms:source "Regulation (EU) 2024/1689 (AI Act), Articles 3(49) and 73" .
+
+###  https://w3id.org/aidoc-ap/lex#DeathOrHealthHarm
+:DeathOrHealthHarm rdf:type skos:Concept ;
+    skos:inScheme :IncidentCategories ;
+    skos:topConceptOf :IncidentCategories ;
+    skos:prefLabel "Death or serious harm to health"@en ;
+    skos:definition "Death of a person or serious harm to the health of a person."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#CriticalInfrastructureDisruption
+:CriticalInfrastructureDisruption rdf:type skos:Concept ;
+    skos:inScheme :IncidentCategories ;
+    skos:topConceptOf :IncidentCategories ;
+    skos:prefLabel "Critical infrastructure disruption"@en ;
+    skos:definition "Serious and irreversible disruption of the management or operation of critical infrastructure."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#FundamentalRightsInfringement
+:FundamentalRightsInfringement rdf:type skos:Concept ;
+    skos:inScheme :IncidentCategories ;
+    skos:topConceptOf :IncidentCategories ;
+    skos:prefLabel "Fundamental rights infringement"@en ;
+    skos:definition "Infringement of obligations under Union law that protect fundamental rights."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#PropertyOrEnvironmentHarm
+:PropertyOrEnvironmentHarm rdf:type skos:Concept ;
+    skos:inScheme :IncidentCategories ;
+    skos:topConceptOf :IncidentCategories ;
+    skos:prefLabel "Property or environment harm"@en ;
+    skos:definition "Serious harm to property or the environment."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .
+
+###  https://w3id.org/aidoc-ap/lex#WidespreadInfringement
+:WidespreadInfringement rdf:type skos:Concept ;
+    skos:inScheme :IncidentCategories ;
+    skos:topConceptOf :IncidentCategories ;
+    skos:prefLabel "Widespread infringement"@en ;
+    skos:definition "Infringement that affects persons in several Member States."@en ;
+    rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> .

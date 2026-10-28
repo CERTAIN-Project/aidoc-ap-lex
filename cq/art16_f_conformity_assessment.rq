@@ -1,0 +1,19 @@
+# CQ: What conformity assessment procedure is the high-risk AI system undergone before being placed on the market or put into service?
+# Question: lexreq:aiact-art16-f-cq1
+# Requirement: lexreq:aiact-art16-f
+# Terms: aidoc-lex:ConformityAssessment, aidoc-lex:assesses, aidoc-lex:documentedIn
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?assessment ?ended ?documentation WHERE {
+  ?assessment a aidoc-lex:ConformityAssessment ;
+              aidoc-lex:assesses ?system .
+  OPTIONAL { ?assessment prov:endedAtTime ?ended }
+  OPTIONAL { ?assessment aidoc-lex:documentedIn ?documentation }
+}

@@ -1,0 +1,20 @@
+# CQ: What possible biases are examined in the datasets that are likely to affect the health and safety of persons, have a negative impact on fundamental rights or lead to discrimination prohibited under Union law?
+# Question: lexreq:aiact-art10-2-f-cq1
+# Requirement: lexreq:aiact-art10-2-f
+# Terms: aidoc-lex:BiasAssessment, aidoc-lex:assesses, aidoc-lex:identifiesRisk
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+PREFIX dcterms: <http://purl.org/dc/terms/>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?assessment ?examined ?risk WHERE {
+  ?assessment a ?type ;
+              aidoc-lex:assesses ?examined .
+  ?type rdfs:subClassOf* aidoc-lex:BiasAssessment .
+  OPTIONAL { ?assessment aidoc-lex:identifiesRisk ?risk }
+}
+ORDER BY ?assessment ?examined
