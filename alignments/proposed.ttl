@@ -61,8 +61,6 @@ aidoc-lex:PrivacyPreservingMeasure skos:broadMatch dpv:TechnicalOrganisationalMe
 aidoc-lex:DataSubjectRightsMechanism skos:closeMatch dpv:DataSubjectRightsManagement .  # handling of data subject rights requests.
 
 # Oversight and transparency
-aidoc-lex:ProviderOversightMeasure skos:exactMatch dpv-aiact:ProviderHumanOversightMeasure .  # Article 14(3)(a) AI Act.
-aidoc-lex:DeployerOversightMeasure skos:exactMatch dpv-aiact:DeployerHumanOversightMeasure .  # Article 14(3)(b) AI Act.
 aidoc-lex:StopMechanism skos:relatedMatch vair:Interruption .  # VAIR names the human intervention; the module names the mechanism that allows it.
 aidoc-lex:OverrideMechanism skos:relatedMatch vair:OverridingOutcome .  # VAIR names the intervention; the module names the mechanism.
 aidoc-lex:OverrideMechanism skos:relatedMatch vair:ReverseOutput .  # reversing an output is one use of the override mechanism.
@@ -78,8 +76,7 @@ aidoc-lex:DataGap skos:relatedMatch vair:UnavailabilityOfData .  # missing data 
 # Agents
 aidoc-lex:SME skos:exactMatch dpv:SMEOrganisation .  # small and medium-sized enterprise.
 aidoc-lex:StartUp skos:exactMatch dpv:StartupOrganisation .  # start-up enterprise.
-aidoc-lex:AuthorisedRepresentative skos:exactMatch dpv-aiact:AuthorisedRepresentative .  # Article 3(5) AI Act.
-aidoc-lex:AuthorisedRepresentative skos:exactMatch vair:AuthorisedRepresentative .  # VAIR models the same AI Act role.
+aidoc-lex:AuthorisedRepresentative skos:closeMatch vair:AuthorisedRepresentative .  # VAIR models the same AI Act role.
 aidoc-lex:CompetentAuthority skos:narrowMatch dpv-aiact:MarketSurveillanceAuthority .  # a market surveillance authority is one kind of competent authority.
 aidoc-lex:CompetentAuthority skos:closeMatch dpv-aiact:NationalCompetentAuthority .  # Article 3(48) AI Act, which includes market surveillance authorities.
 aidoc-lex:NotifiedBody skos:exactMatch dpv-aiact:NotifiedBody .  # Article 3(22) AI Act.

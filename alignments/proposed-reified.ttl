@@ -58,15 +58,6 @@ rec:0ec4181d-3fa6-566a-a661-fc58c66762a2 a prov:Entity,
     align:source aidoc-lex:ReasonablyForeseeableMisuse ;
     align:target dpv-aiact:ReasonablyForeseeableMisuse .
 
-rec:126307c1-6ab9-58ef-95bb-c82d3e96a983 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo rec:LexExtensionMaintainers ;
-    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "VAIR models the same AI Act role."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:AuthorisedRepresentative ;
-    align:target vair:AuthorisedRepresentative .
-
 rec:1f138167-5994-5c1d-9039-9258868f6495 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
@@ -193,6 +184,15 @@ rec:403e0226-8948-5597-9a4b-85298d04da0e a prov:Entity,
     align:source aidoc-lex:SeriousIncident ;
     align:target dpv-aiact:SeriousIncident .
 
+rec:4221a090-2b68-530e-b3bc-2ef71b9b642d a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo rec:LexExtensionMaintainers ;
+    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
+    align:rationale "VAIR models the same AI Act role."@en ;
+    align:relation skos:closeMatch ;
+    align:source aidoc-lex:AuthorisedRepresentative ;
+    align:target vair:AuthorisedRepresentative .
+
 rec:45ef57c2-8fa2-5583-b086-5fa6e12fc53f a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
@@ -255,15 +255,6 @@ rec:71c0e557-1145-51eb-a88e-76b2f3663ff0 a prov:Entity,
     align:relation skos:closeMatch ;
     align:source aidoc-lex:RiskControlMeasure ;
     align:target dpv:RiskMitigationMeasure .
-
-rec:785c79e3-ffc3-5b0e-bfad-30cd0b932715 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo rec:LexExtensionMaintainers ;
-    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "Article 14(3)(a) AI Act."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:ProviderOversightMeasure ;
-    align:target dpv-aiact:ProviderHumanOversightMeasure .
 
 rec:96e41797-5fde-5b15-b355-fd51d46bbf6b a prov:Entity,
         align:Mapping ;
@@ -373,15 +364,6 @@ rec:af4429dd-589f-5a7e-8c30-ffdb0d5213b9 a prov:Entity,
     align:source aidoc-lex:SecurityAssessment ;
     align:target dpv:CybersecurityAssessment .
 
-rec:b29e5c38-6420-5900-8f91-a3a888ee9486 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo rec:LexExtensionMaintainers ;
-    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "Article 14(3)(b) AI Act."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:DeployerOversightMeasure ;
-    align:target dpv-aiact:DeployerHumanOversightMeasure .
-
 rec:b4e5d9da-831d-5d2a-a822-5fbc1838dca3 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
@@ -489,15 +471,6 @@ rec:e874cce7-291a-542b-a143-33344167417f a prov:Entity,
     align:relation skos:relatedMatch ;
     align:source aidoc-lex:affectsGroup ;
     align:target airo:hasImpactOnStakeholder .
-
-rec:e8e95f59-b103-5700-af2e-55bfe0320b6f a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo rec:LexExtensionMaintainers ;
-    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "Article 3(5) AI Act."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:AuthorisedRepresentative ;
-    align:target dpv-aiact:AuthorisedRepresentative .
 
 rec:ecb06a79-bfae-5ba0-a275-562e06feb7b2 a prov:Entity,
         align:Mapping ;

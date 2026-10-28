@@ -485,6 +485,7 @@
 ###  https://w3id.org/aidoc-ap/lex#ProviderOversightMeasure
 :ProviderOversightMeasure rdf:type owl:Class ;
     rdfs:subClassOf aidoc:HumanOversightMechanism ;
+    rdfs:subClassOf dpv-aiact:ProviderHumanOversightMeasure ;
     rdfs:label "provider oversight measure"@en ;
     rdfs:comment "Human oversight measure that the provider identifies and builds into a high-risk AI system before it is placed on the market or put into service."@en ;
     rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
@@ -493,6 +494,7 @@
 ###  https://w3id.org/aidoc-ap/lex#DeployerOversightMeasure
 :DeployerOversightMeasure rdf:type owl:Class ;
     rdfs:subClassOf aidoc:HumanOversightMechanism ;
+    rdfs:subClassOf dpv-aiact:DeployerHumanOversightMeasure ;
     rdfs:label "deployer oversight measure"@en ;
     rdfs:comment "Human oversight measure that the provider identifies as appropriate to be implemented by the deployer."@en ;
     rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
@@ -621,6 +623,7 @@
 ###  https://w3id.org/aidoc-ap/lex#AuthorisedRepresentative
 :AuthorisedRepresentative rdf:type owl:Class ;
     rdfs:subClassOf aidoc:AIAgent ;
+    rdfs:subClassOf dpv-aiact:AuthorisedRepresentative ;
     rdfs:label "authorised representative"@en ;
     rdfs:comment "Natural or legal person in the Union who has a written mandate from a provider to perform the AI Act obligations on its behalf."@en ;
     rdfs:isDefinedBy <https://w3id.org/aidoc-ap/lex#> ;
