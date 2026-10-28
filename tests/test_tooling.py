@@ -22,6 +22,7 @@ from common import (CORE_TTL, CQ_DIR, LEX_NS, MODULE_TTL, REQUIREMENTS_TTL, TERM
 
 FIX = ROOT / "tests" / "fixtures"
 REQ = Namespace("https://w3id.org/aidoc-ap/lex/requirements#")
+AIACT = Namespace("https://w3id.org/aidoc-ap/requirements#")
 REQS = load_graph([REQUIREMENTS_TTL])
 
 
@@ -55,9 +56,15 @@ def test_requirements_size():
     assert frameworks == {REQ.AIAct, REQ.ALTAI, REQ.OECD, REQ.GenderD32}
 
 
+def test_requirements_schema_extends_annex_iv_module():
+    assert (REQ.Requirement, RDFS.subClassOf, AIACT.Requirement) in REQS
+    assert (REQ.CompetencyQuestion, RDFS.subClassOf, AIACT.CompetencyQuestion) in REQS
+    assert not list(REQS.triples((None, REQ.hasCompetencyQuestion, None)))
+
+
 def test_every_competency_question_belongs_to_one_requirement():
     for cq in REQS.subjects(RDF.type, REQ.CompetencyQuestion):
-        owners = list(REQS.subjects(REQ.hasCompetencyQuestion, cq))
+        owners = list(REQS.subjects(AIACT.hasCompetencyQuestion, cq))
         assert len(owners) == 1, cq
         assert REQS.value(cq, RDFS.label), cq
 
