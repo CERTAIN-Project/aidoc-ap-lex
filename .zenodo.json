@@ -1,0 +1,52 @@
+{
+  "title": "AIDOC-AP LEX Extension: Legal and Ethical Requirements",
+  "upload_type": "dataset",
+  "version": "1.0",
+  "description": "<p>Extension module of the AIDOC-AP application profile for legal and ethical requirements. It adds the terms needed to document how an AI system meets the obligations of providers and deployers in Articles 9 to 17, 72 and 73 of the EU AI Act (risk management, data governance, technical documentation, record-keeping, transparency, human oversight, accuracy and cybersecurity, quality management, post-market monitoring, serious incidents) and the ethical requirements of the Assessment List for Trustworthy AI (ALTAI), the OECD AI Principles and the gender requirements of CERTAIN deliverable D3.2. The 180 requirements, their competency questions, the ontology terms that answer them and the evidence an organisation is expected to keep are published with the module. The module imports the core without changing it and is aligned to DPV, the DPV AI Act extension, DPV-AI, AIRO and VAIR.</p><p>Developed in the CERTAIN project (Horizon Europe, grant agreement 101189650).</p>",
+  "creators": [
+    {
+      "name": "Kovac, Fabian",
+      "affiliation": "University of Applied Sciences St. Pölten"
+    },
+    {
+      "name": "Amplianitis, Konstantinos",
+      "affiliation": "University College Dublin"
+    },
+    {
+      "name": "Neumaier, Sebastian",
+      "affiliation": "University of Applied Sciences St. Pölten"
+    },
+    {
+      "name": "Dam, Tobias",
+      "affiliation": "University of Applied Sciences St. Pölten"
+    }
+  ],
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "keywords": [
+    "ontology",
+    "EU AI Act",
+    "ALTAI",
+    "trustworthy AI",
+    "compliance",
+    "AIDOC-AP"
+  ],
+  "grants": [
+    {
+      "id": "10.13039/501100000780::101189650"
+    }
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.17787786",
+      "relation": "requires",
+      "resource_type": "dataset",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "https://w3id.org/aidoc-ap/lex",
+      "relation": "isDocumentedBy",
+      "scheme": "url"
+    }
+  ]
+}

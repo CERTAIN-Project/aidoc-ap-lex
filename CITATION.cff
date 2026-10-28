@@ -1,0 +1,51 @@
+cff-version: 1.2.0
+message: "If you use the AIDOC-AP LEX Extension, please cite it as below."
+type: dataset
+title: "AIDOC-AP LEX Extension: Legal and Ethical Requirements"
+version: "1.0"
+abstract: >-
+  Extension module of the AIDOC-AP application profile for legal and ethical requirements. It adds
+  the terms needed to document how an AI system meets the obligations of providers and deployers
+  in Articles 9 to 17, 72 and 73 of the EU AI Act and the ethical requirements of ALTAI, the OECD
+  AI Principles and the gender requirements of CERTAIN D3.2. The requirements, their competency
+  questions and the expected evidence are published with the module. The module imports the core
+  without changing it.
+authors:
+  - family-names: Kovac
+    given-names: Fabian
+    affiliation: "University of Applied Sciences St. Pölten"
+  - family-names: Amplianitis
+    given-names: Konstantinos
+    affiliation: "University College Dublin"
+    email: konstantinos.amplianitis@ucd.ie
+  - family-names: Neumaier
+    given-names: Sebastian
+    affiliation: "University of Applied Sciences St. Pölten"
+  - family-names: Dam
+    given-names: Tobias
+    affiliation: "University of Applied Sciences St. Pölten"
+license:
+  - CC-BY-4.0
+  - Apache-2.0
+repository-code: "https://github.com/CERTAIN-Project/aidoc-ap-lex"
+url: "https://w3id.org/aidoc-ap/lex"
+keywords:
+  - ontology
+  - EU AI Act
+  - ALTAI
+  - trustworthy AI
+  - compliance
+  - AIDOC-AP
+references:
+  - type: data
+    title: "AIDOC-AP: AI Documentation Application Profile"
+    version: "1.2"
+    doi: "10.5281/zenodo.17787786"
+    url: "https://w3id.org/aidoc-ap"
+    authors:
+      - family-names: Neumaier
+        given-names: Sebastian
+      - family-names: Dam
+        given-names: Tobias
+      - family-names: Kovac
+        given-names: Fabian

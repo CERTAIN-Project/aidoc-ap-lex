@@ -1,0 +1,10 @@
+.venv/
+reports/
+vendor/aidoc-ap/
+__pycache__/
+*.pyc
+.pytest_cache/
+.DS_Store
+site/
+site-extra/
+widoco.jar

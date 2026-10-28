@@ -1,0 +1,117 @@
+name: Build & deploy documentation (Widoco)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "ontology/**"
+      - "documentation/**"
+      - "examples/**"
+      - "cq/**"
+      - "requirements/**"
+      - "alignments/**"
+      - "scripts/build_docs_pages.py"
+      - "versions/**"
+      - ".github/workflows/widoco.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+env:
+  WIDOCO_VERSION: "1.4.25"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tooling and fetch the pinned core
+        run: |
+          pip install -r requirements.txt
+          bash scripts/fetch_core.sh
+
+      - name: Extra pages (worked examples) and alignment records
+        run: |
+          python scripts/build_docs_pages.py --out site-extra
+          python scripts/alignments.py --split-dir site-extra/resources
+          cp alignments/proposed-reified.ttl site-extra/resources/aidoc-lex-alignments.ttl
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Cache Widoco
+        id: cache-widoco
+        uses: actions/cache@v4
+        with:
+          path: widoco.jar
+          key: widoco-${{ env.WIDOCO_VERSION }}
+
+      - name: Download Widoco
+        if: steps.cache-widoco.outputs.cache-hit != 'true'
+        run: >
+          wget -q -O widoco.jar
+          "https://github.com/dgarijo/Widoco/releases/download/v${WIDOCO_VERSION}/widoco-${WIDOCO_VERSION}-jar-with-dependencies_JDK-17.jar"
+
+      - name: Generate the term reference
+        run: >
+          java -Xmx1G -jar widoco.jar
+          -ontFile ontology/aidoc-lex.ttl
+          -outFolder site
+          -confFile documentation/config.properties
+          -includeAnnotationProperties
+          -rewriteAll
+          -webVowl
+          -excludeProvenance
+          -noPlaceHolderText
+          -uniteSections
+
+      - name: Assemble the site
+        run: |
+          [ -f site/index-en.html ] && cp site/index-en.html site/index.html
+          cp -R site-extra/. site/
+          cp ontology/aidoc-lex.ttl site/aidoc-lex.ttl
+          # requirements and alignments pages (client-side, read the Turtle files below)
+          mkdir -p site/assets
+          cp documentation/requirements.html documentation/alignments.html site/
+          cp documentation/assets/*.css documentation/assets/*.js site/assets/
+          cp requirements/requirements.ttl site/requirements.ttl
+          # release snapshots (written by `make release`), served under the version IRIs
+          if [ -d versions ]; then cp -R versions/. site/; fi
+
+      # Downloadable preview of the site, also while GitHub Pages is not enabled
+      - uses: actions/upload-artifact@v4
+        with:
+          name: documentation-site
+          path: site
+
+      - uses: actions/upload-pages-artifact@v3
+        if: vars.PAGES_ENABLED == 'true'
+        with:
+          path: site
+
+  # Deploys only when the repository variable PAGES_ENABLED is 'true' (Settings, Secrets and
+  # variables, Actions, Variables) and GitHub Pages uses "GitHub Actions" as source.
+  deploy:
+    needs: build
+    if: vars.PAGES_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
