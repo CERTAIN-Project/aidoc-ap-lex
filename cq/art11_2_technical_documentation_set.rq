@@ -1,0 +1,10 @@
+# CQ: Is there a single set of technical documentation in place for the high-risk AI system?
+# Question: lexreq:aiact-art11-2-cq2
+# Requirement: lexreq:aiact-art11-2
+# Terms: aidoc:TechnicalDocumentation, aidoc:hasTechnicalDocumentation
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?system ?documentation ?type WHERE {
+  ?system aidoc:hasTechnicalDocumentation ?documentation .
+  ?documentation a ?type .
+}

@@ -1,0 +1,10 @@
+# CQ: What type and degree of transparency is ensured?
+# Question: lexreq:aiact-art13-1-cq2
+# Requirement: lexreq:aiact-art13-1
+# Terms: aidoc:TransparencyMeasure, aidoc:hasTransparencyMeasure
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?system ?measure ?type WHERE {
+  ?system aidoc:hasTransparencyMeasure ?measure .
+  ?measure a ?type .
+}

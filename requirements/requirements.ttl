@@ -916,7 +916,7 @@ lexreq:aiact-art11-2 a lexreq:Requirement ;
     lexreq:expectedEvidence "Combined conformity dossier"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art11-2-cq1 , lexreq:aiact-art11-2-cq2 , lexreq:aiact-art11-2-cq3 , lexreq:aiact-art11-2-cq4 .
 lexreq:aiact-art11-2-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Is this high-risk AI system related to a product covered by the Union harmonisation legislation listed in Section A of Annex I?"@en .
-lexreq:aiact-art11-2-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Is there a single set of technical documentation in place for the high-risk AI system?"@en .
+lexreq:aiact-art11-2-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Is there a single set of technical documentation in place for the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art11_2_technical_documentation_set.rq" .
 lexreq:aiact-art11-2-cq3 a lexreq:CompetencyQuestion ; rdfs:label "Does the single set of technical documentation contain all the information set out in paragraph 1?"@en .
 lexreq:aiact-art11-2-cq4 a lexreq:CompetencyQuestion ; rdfs:label "Does the single set of technical documentation contain all the information set out in the Union harmonisation legislation listed in Section A of Annex I?"@en .
 
@@ -955,7 +955,7 @@ lexreq:aiact-art12-1 a lexreq:Requirement ;
     lexreq:expectedEvidence "Logging architecture diagram"@en ;
     lexreq:expectedEvidence "Lifecycle log retention record"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art12-1-cq1 , lexreq:aiact-art12-1-cq2 .
-lexreq:aiact-art12-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What events are automatically recorded over the lifetime of the high-risk AI system?"@en .
+lexreq:aiact-art12-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What events are automatically recorded over the lifetime of the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art12_1_recorded_events.rq" .
 lexreq:aiact-art12-1-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does the high-risk AI system technically allow for the automatic recording of events (logs) over its lifetime?"@en .
 
 lexreq:aiact-art12-2 a lexreq:Requirement ;
@@ -993,7 +993,7 @@ lexreq:aiact-art12-2-a a lexreq:Requirement ;
     lexreq:expectedEvidence "Change records"@en ;
     lexreq:expectedEvidence "Alert records"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art12-2-a-cq1 , lexreq:aiact-art12-2-a-cq2 , lexreq:aiact-art12-2-a-cq3 .
-lexreq:aiact-art12-2-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What situations may result in the high-risk AI system presenting a risk within the meaning of Article 79(1)?"@en .
+lexreq:aiact-art12-2-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What situations may result in the high-risk AI system presenting a risk within the meaning of Article 79(1)?"@en ; lexreq:formalisedBy "cq/art12_2a_risk_situations.rq" .
 lexreq:aiact-art12-2-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What situations may result in a substantial modification?"@en .
 lexreq:aiact-art12-2-a-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How are those situations identified through the recording of events?"@en .
 
@@ -1013,7 +1013,7 @@ lexreq:aiact-art12-2-b a lexreq:Requirement ;
     lexreq:expectedEvidence "Trend reports"@en ;
     lexreq:expectedEvidence "Post-market monitoring plan"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art12-2-b-cq1 , lexreq:aiact-art12-2-b-cq2 .
-lexreq:aiact-art12-2-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What events are recorded to facilitate the post-market monitoring referred to in Article 72?"@en .
+lexreq:aiact-art12-2-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What events are recorded to facilitate the post-market monitoring referred to in Article 72?"@en ; lexreq:formalisedBy "cq/art12_2b_post_market_events.rq" .
 lexreq:aiact-art12-2-b-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Is there a logging in place for recording these events?"@en .
 
 lexreq:aiact-art12-2-c a lexreq:Requirement ;
@@ -1032,7 +1032,7 @@ lexreq:aiact-art12-2-c a lexreq:Requirement ;
     lexreq:expectedEvidence "Usage monitoring reports"@en ;
     lexreq:expectedEvidence "Supervisory review records"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art12-2-c-cq1 , lexreq:aiact-art12-2-c-cq2 .
-lexreq:aiact-art12-2-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What events are recorded for monitoring the operation of the high-risk AI system referred to in Article 26(5)?"@en .
+lexreq:aiact-art12-2-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What events are recorded for monitoring the operation of the high-risk AI system referred to in Article 26(5)?"@en ; lexreq:formalisedBy "cq/art12_2c_operational_events.rq" .
 lexreq:aiact-art12-2-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Is there a logging in place for recording these events?"@en .
 
 lexreq:aiact-art12-3 a lexreq:Requirement ;
@@ -1069,7 +1069,7 @@ lexreq:aiact-art12-3-a a lexreq:Requirement ;
     lexreq:expectedEvidence "Audit trail with start/end times"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art12-3-a-cq1 , lexreq:aiact-art12-3-a-cq2 .
 lexreq:aiact-art12-3-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the period of each use of the system?"@en .
-lexreq:aiact-art12-3-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What are the start date and time and the end date and time of each use of the system?"@en .
+lexreq:aiact-art12-3-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What are the start date and time and the end date and time of each use of the system?"@en ; lexreq:formalisedBy "cq/art12_3a_usage_periods.rq" .
 
 lexreq:aiact-art12-3-b a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1143,7 +1143,7 @@ lexreq:aiact-art13-1 a lexreq:Requirement ;
     lexreq:expectedEvidence "Compliance rationale"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-1-cq1 , lexreq:aiact-art13-1-cq2 , lexreq:aiact-art13-1-cq3 .
 lexreq:aiact-art13-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the operation of the high-risk AI system sufficiently transparent to enable deployers to interpret a system’s output and use it appropriately?"@en .
-lexreq:aiact-art13-1-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What type and degree of transparency is ensured?"@en .
+lexreq:aiact-art13-1-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What type and degree of transparency is ensured?"@en ; lexreq:formalisedBy "cq/art13_1_transparency_measures.rq" .
 lexreq:aiact-art13-1-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does that transparency achieve compliance with the relevant obligations of the provider and deployer set out in Section 3?"@en .
 
 lexreq:aiact-art13-2 a lexreq:Requirement ;
@@ -1162,7 +1162,7 @@ lexreq:aiact-art13-2 a lexreq:Requirement ;
     lexreq:expectedEvidence "Online help pages"@en ;
     lexreq:expectedEvidence "Document accessibility record"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-2-cq1 , lexreq:aiact-art13-2-cq2 , lexreq:aiact-art13-2-cq3 .
-lexreq:aiact-art13-2-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Is the high-risk AI system accompanied by instruction for use?"@en .
+lexreq:aiact-art13-2-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Is the high-risk AI system accompanied by instruction for use?"@en ; lexreq:formalisedBy "cq/art13_2_instructions_for_use.rq" .
 lexreq:aiact-art13-2-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Are the instructions for use provided in an appropriate digital format or otherwise?"@en .
 lexreq:aiact-art13-2-cq3 a lexreq:CompetencyQuestion ; rdfs:label "Do the instructions for use include concise, complete, correct and clear information that is relevant, accessible and comprehensible to deployers?"@en .
 
@@ -1204,7 +1204,7 @@ lexreq:aiact-art13-3-b a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-3-b-cq1 , lexreq:aiact-art13-3-b-cq2 , lexreq:aiact-art13-3-b-cq3 .
 lexreq:aiact-art13-3-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Are the characteristics of the high-risk AI system captured?"@en .
 lexreq:aiact-art13-3-b-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Are the capabilities of the high-risk AI system captured?"@en .
-lexreq:aiact-art13-3-b-cq3 a lexreq:CompetencyQuestion ; rdfs:label "Are the limitations of performance of the high-risk AI system captured?"@en .
+lexreq:aiact-art13-3-b-cq3 a lexreq:CompetencyQuestion ; rdfs:label "Are the limitations of performance of the high-risk AI system captured?"@en ; lexreq:formalisedBy "cq/art13_3b_performance_limitations.rq" .
 
 lexreq:aiact-art13-3-b-i a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1221,7 +1221,7 @@ lexreq:aiact-art13-3-b-i a lexreq:Requirement ;
     lexreq:expectedEvidence "Technical documentation"@en ;
     lexreq:expectedEvidence "Product description"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-3-b-i-cq1 .
-lexreq:aiact-art13-3-b-i-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the intended purpose of the high-risk AI system?"@en .
+lexreq:aiact-art13-3-b-i-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the intended purpose of the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art13_3bi_intended_purpose.rq" .
 
 lexreq:aiact-art13-3-b-ii a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1259,7 +1259,7 @@ lexreq:aiact-art13-3-b-iv a lexreq:Requirement ;
     lexreq:expectedEvidence "User-facing explanation guidance"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-3-b-iv-cq1 , lexreq:aiact-art13-3-b-iv-cq2 .
 lexreq:aiact-art13-3-b-iv-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Are the technical capabilities and characteristics of the high-risk AI system captured by the high-risk AI system?"@en .
-lexreq:aiact-art13-3-b-iv-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Do the technical capabilities and characteristics of the high-risk AI system provide information that are relevant to explain its output?"@en .
+lexreq:aiact-art13-3-b-iv-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Do the technical capabilities and characteristics of the high-risk AI system provide information that are relevant to explain its output?"@en ; lexreq:formalisedBy "cq/art13_3biv_explanation_features.rq" .
 
 lexreq:aiact-art13-3-b-v a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1295,7 +1295,7 @@ lexreq:aiact-art13-3-b-vi a lexreq:Requirement ;
     lexreq:expectedEvidence "Intended-purpose mapping"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-3-b-vi-cq1 , lexreq:aiact-art13-3-b-vi-cq2 , lexreq:aiact-art13-3-b-vi-cq3 .
 lexreq:aiact-art13-3-b-vi-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What specifications are provided for the input data?"@en .
-lexreq:aiact-art13-3-b-vi-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What relevant information is provided in terms of the training, validation and testing data sets used?"@en .
+lexreq:aiact-art13-3-b-vi-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What relevant information is provided in terms of the training, validation and testing data sets used?"@en ; lexreq:formalisedBy "cq/art13_3bvi_data_information.rq" .
 lexreq:aiact-art13-3-b-vi-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How does that information take into account the intended purpose of the high-risk AI system?"@en .
 
 lexreq:aiact-art13-3-b-vii a lexreq:Requirement ;
@@ -1313,7 +1313,7 @@ lexreq:aiact-art13-3-b-vii a lexreq:Requirement ;
     lexreq:expectedEvidence "Explanation screens"@en ;
     lexreq:expectedEvidence "Operator quick reference guide"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-3-b-vii-cq1 .
-lexreq:aiact-art13-3-b-vii-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Does the high-risk system capture the information required, to enable deployers interpret its output and use it appropriately?"@en .
+lexreq:aiact-art13-3-b-vii-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Does the high-risk system capture the information required, to enable deployers interpret its output and use it appropriately?"@en ; lexreq:formalisedBy "cq/art13_3bvii_output_interpretation.rq" .
 
 lexreq:aiact-art13-3-c a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1349,7 +1349,7 @@ lexreq:aiact-art13-3-d a lexreq:Requirement ;
     lexreq:expectedEvidence "Oversight dashboard"@en ;
     lexreq:expectedEvidence "Training material for reviewers"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-3-d-cq1 , lexreq:aiact-art13-3-d-cq2 .
-lexreq:aiact-art13-3-d-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What human oversight measures referred to in Article 14 are put in place in the high-risk AI system?"@en .
+lexreq:aiact-art13-3-d-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What human oversight measures referred to in Article 14 are put in place in the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art13_3d_oversight_measures.rq" .
 lexreq:aiact-art13-3-d-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What technical measures are put in place to facilitate the interpretation of the outputs of the high-risk AI systems by the deployers?"@en .
 
 lexreq:aiact-art13-3-e a lexreq:Requirement ;
@@ -1369,7 +1369,7 @@ lexreq:aiact-art13-3-e a lexreq:Requirement ;
     lexreq:expectedEvidence "Update schedule"@en ;
     lexreq:expectedEvidence "Support and care instructions"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-3-e-cq1 , lexreq:aiact-art13-3-e-cq2 , lexreq:aiact-art13-3-e-cq3 .
-lexreq:aiact-art13-3-e-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What computational and hardware resources are needed for the high-risk AI system?"@en .
+lexreq:aiact-art13-3-e-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What computational and hardware resources are needed for the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art13_3e_computational_resources.rq" .
 lexreq:aiact-art13-3-e-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What is the expected lifetime of the high-risk AI system?"@en .
 lexreq:aiact-art13-3-e-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What maintenance and care measures, including their frequency, are necessary to ensure the proper functioning of that AI system, including software updates?"@en .
 
@@ -1389,7 +1389,7 @@ lexreq:aiact-art13-3-f a lexreq:Requirement ;
     lexreq:expectedEvidence "Log interpretation manual"@en ;
     lexreq:expectedEvidence "Audit trail documentation"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art13-3-f-cq1 .
-lexreq:aiact-art13-3-f-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms included within the high-risk AI system allow deployers to properly collect, store and interpret the logs in accordance with Article 12?"@en .
+lexreq:aiact-art13-3-f-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What mechanisms included within the high-risk AI system allow deployers to properly collect, store and interpret the logs in accordance with Article 12?"@en ; lexreq:formalisedBy "cq/art13_3f_log_access.rq" .
 
 lexreq:aiact-art14-1 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1408,7 +1408,7 @@ lexreq:aiact-art14-1 a lexreq:Requirement ;
     lexreq:expectedEvidence "Oversight assignment record"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art14-1-cq1 , lexreq:aiact-art14-1-cq2 .
 lexreq:aiact-art14-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Is the high-risk AI system being designed and developed in such a way that it can be effectively overseen by natural persons during the period in which it is in use?"@en .
-lexreq:aiact-art14-1-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What appropriate human-machine interface tools are included for that oversight?"@en .
+lexreq:aiact-art14-1-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What appropriate human-machine interface tools are included for that oversight?"@en ; lexreq:formalisedBy "cq/art14_1_oversight_interfaces.rq" .
 
 lexreq:aiact-art14-2 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1426,7 +1426,7 @@ lexreq:aiact-art14-2 a lexreq:Requirement ;
     lexreq:expectedEvidence "Fundamental-rights risk assessment"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art14-2-cq1 , lexreq:aiact-art14-2-cq2 .
 lexreq:aiact-art14-2-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What risks to health, safety or fundamental rights may emerge when the high-risk AI system is used in accordance with its intended purpose or under conditions of reasonably foreseeable misuse?"@en .
-lexreq:aiact-art14-2-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does human oversight prevent or minimise those risks?"@en .
+lexreq:aiact-art14-2-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does human oversight prevent or minimise those risks?"@en ; lexreq:formalisedBy "cq/art14_2_oversight_against_risks.rq" .
 
 lexreq:aiact-art14-3 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1463,7 +1463,7 @@ lexreq:aiact-art14-3-a a lexreq:Requirement ;
     lexreq:expectedEvidence "Pre-market release documentation"@en ;
     lexreq:expectedEvidence "Feasibility assessment"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art14-3-a-cq1 , lexreq:aiact-art14-3-a-cq2 .
-lexreq:aiact-art14-3-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What measures are identified and built into the high-risk AI system by the provider before it is placed on the market or put into service?"@en .
+lexreq:aiact-art14-3-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What measures are identified and built into the high-risk AI system by the provider before it is placed on the market or put into service?"@en ; lexreq:formalisedBy "cq/art14_3a_provider_measures.rq" .
 lexreq:aiact-art14-3-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are those measures built into the high-risk AI system when technically feasible?"@en .
 
 lexreq:aiact-art14-3-b a lexreq:Requirement ;
@@ -1481,7 +1481,7 @@ lexreq:aiact-art14-3-b a lexreq:Requirement ;
     lexreq:expectedEvidence "Provider-deployer responsibility matrix"@en ;
     lexreq:expectedEvidence "Deployment checklist"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art14-3-b-cq1 .
-lexreq:aiact-art14-3-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What measures are identified by the provider before placing the high-risk AI system on the market or putting it into service and are appropriate to be implemented by the deployer?"@en .
+lexreq:aiact-art14-3-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What measures are identified by the provider before placing the high-risk AI system on the market or putting it into service and are appropriate to be implemented by the deployer?"@en ; lexreq:formalisedBy "cq/art14_3b_deployer_measures.rq" .
 
 lexreq:aiact-art14-4 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1499,7 +1499,7 @@ lexreq:aiact-art14-4 a lexreq:Requirement ;
     lexreq:expectedEvidence "Onboarding materials"@en ;
     lexreq:expectedEvidence "Role assignment records"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art14-4-cq1 .
-lexreq:aiact-art14-4-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the high-risk AI system provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate?"@en .
+lexreq:aiact-art14-4-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the high-risk AI system provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate?"@en ; lexreq:formalisedBy "cq/art14_4_assigned_overseers.rq" .
 
 lexreq:aiact-art14-4-a a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1517,7 +1517,7 @@ lexreq:aiact-art14-4-a a lexreq:Requirement ;
     lexreq:expectedEvidence "Incident log"@en ;
     lexreq:expectedEvidence "Operator monitoring guide"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art14-4-a-cq1 , lexreq:aiact-art14-4-a-cq2 .
-lexreq:aiact-art14-4-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What are the relevant capacities and limitations of the high-risk AI system?"@en .
+lexreq:aiact-art14-4-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What are the relevant capacities and limitations of the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art14_4a_capacities_and_limitations.rq" .
 lexreq:aiact-art14-4-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are natural persons enabled to duly monitor its operation, including in view of detecting and addressing anomalies, dysfunctions and unexpected performance?"@en .
 
 lexreq:aiact-art14-4-b a lexreq:Requirement ;
@@ -1536,7 +1536,7 @@ lexreq:aiact-art14-4-b a lexreq:Requirement ;
     lexreq:expectedEvidence "Training materials"@en ;
     lexreq:expectedEvidence "UI prompts discouraging over-reliance"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art14-4-b-cq1 .
-lexreq:aiact-art14-4-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are natural persons enabled to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system?"@en .
+lexreq:aiact-art14-4-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are natural persons enabled to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system?"@en ; lexreq:formalisedBy "cq/art14_4b_automation_bias.rq" .
 
 lexreq:aiact-art14-4-c a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1553,7 +1553,7 @@ lexreq:aiact-art14-4-c a lexreq:Requirement ;
     lexreq:expectedEvidence "Interpretation method documentation"@en ;
     lexreq:expectedEvidence "Reviewer handbook"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art14-4-c-cq1 .
-lexreq:aiact-art14-4-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What interpretation tools and methods are available in the high-risk AI system for the natural persons to correctly interpret the system’s output?"@en .
+lexreq:aiact-art14-4-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What interpretation tools and methods are available in the high-risk AI system for the natural persons to correctly interpret the system’s output?"@en ; lexreq:formalisedBy "cq/art14_4c_interpretation_tools.rq" .
 
 lexreq:aiact-art14-4-d a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1571,7 +1571,7 @@ lexreq:aiact-art14-4-d a lexreq:Requirement ;
     lexreq:expectedEvidence "Interface controls"@en ;
     lexreq:expectedEvidence "Decision log"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art14-4-d-cq1 .
-lexreq:aiact-art14-4-d-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are natural persons enabled to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system?"@en .
+lexreq:aiact-art14-4-d-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are natural persons enabled to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art14_4d_override.rq" .
 
 lexreq:aiact-art14-4-e a lexreq:Requirement ;
     skos:inScheme lexreq: ;

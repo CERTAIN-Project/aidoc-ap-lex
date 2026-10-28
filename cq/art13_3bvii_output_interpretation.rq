@@ -1,0 +1,14 @@
+# CQ: Does the high-risk system capture the information required, to enable deployers interpret its output and use it appropriately?
+# Question: lexreq:aiact-art13-3-b-vii-cq1
+# Requirement: lexreq:aiact-art13-3-b-vii
+# Terms: aidoc-lex:OutputInterpretationGuidance, aidoc:hasTransparencyMeasure, aidoc:isDeployedBy
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?deployer ?guidance ?label WHERE {
+  ?guidance a aidoc-lex:OutputInterpretationGuidance ;
+            rdfs:label ?label .
+  ?system aidoc:hasTransparencyMeasure ?guidance ;
+          aidoc:isDeployedBy ?deployer .
+}

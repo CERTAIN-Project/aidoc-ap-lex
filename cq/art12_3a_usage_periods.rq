@@ -1,0 +1,15 @@
+# CQ: What are the start date and time and the end date and time of each use of the system?
+# Question: lexreq:aiact-art12-3-a-cq2
+# Requirement: lexreq:aiact-art12-3-a
+# Terms: aidoc-lex:LogEntry, aidoc-lex:UsagePeriod, prov:startedAtTime
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?entry ?system ?start ?end WHERE {
+  ?entry a aidoc-lex:LogEntry ;
+         aidoc-lex:loggedEventType aidoc-lex:UsagePeriod ;
+         aidoc-lex:concernsSystem ?system ;
+         prov:startedAtTime ?start .
+  OPTIONAL { ?entry prov:endedAtTime ?end }
+}
+ORDER BY ?start
