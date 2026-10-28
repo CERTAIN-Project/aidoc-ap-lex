@@ -1,0 +1,15 @@
+# CQ: How are the risks estimated when the high-risk AI system is used in accordance with its intended purpose?
+# Question: lexreq:aiact-art9-2-b-cq1
+# Requirement: lexreq:aiact-art9-2-b
+# Terms: aidoc-lex:RiskAssessment, aidoc:hasIntendedPurpose, aidoc:hasRisk
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?purpose ?assessment ?risk WHERE {
+  ?system aidoc:hasIntendedPurpose ?purpose ;
+          aidoc:hasRisk ?risk .
+  ?assessment a aidoc-lex:RiskAssessment ;
+              aidoc-lex:assesses ?system ;
+              aidoc-lex:identifiesRisk ?risk .
+}
+ORDER BY ?assessment ?risk

@@ -149,7 +149,7 @@ lexreq:aiact-art9-2 a lexreq:Requirement ;
 lexreq:aiact-art9-2-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What makes the process continuous and iterative?"@en .
 lexreq:aiact-art9-2-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How is it run across the lifecycle?"@en .
 lexreq:aiact-art9-2-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What review cycle exists?"@en .
-lexreq:aiact-art9-2-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How are updates recorded and implemented?"@en .
+lexreq:aiact-art9-2-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How are updates recorded and implemented?"@en ; lexreq:formalisedBy "cq/art09_2_rms_updates.rq" .
 
 lexreq:aiact-art9-2-a a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -188,7 +188,7 @@ lexreq:aiact-art9-2-b a lexreq:Requirement ;
     lexreq:expectedEvidence "Risk evaluation report"@en ;
     lexreq:expectedEvidence "Assumptions log"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art9-2-b-cq1 , lexreq:aiact-art9-2-b-cq2 , lexreq:aiact-art9-2-b-cq3 , lexreq:aiact-art9-2-b-cq4 .
-lexreq:aiact-art9-2-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are the risks estimated when the high-risk AI system is used in accordance with its intended purpose?"@en .
+lexreq:aiact-art9-2-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are the risks estimated when the high-risk AI system is used in accordance with its intended purpose?"@en ; lexreq:formalisedBy "cq/art09_2b_risk_estimation.rq" .
 lexreq:aiact-art9-2-b-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are the risks evaluated when the high-risk AI system is used in accordance with its intended purpose?"@en .
 lexreq:aiact-art9-2-b-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What assumptions define foreseeable misuse?"@en .
 lexreq:aiact-art9-2-b-cq4 a lexreq:CompetencyQuestion ; rdfs:label "What risks are estimated under reasonably foreseeable misuse?"@en .
@@ -209,7 +209,7 @@ lexreq:aiact-art9-2-c a lexreq:Requirement ;
     lexreq:expectedEvidence "Field performance reviews"@en ;
     lexreq:expectedEvidence "Updated risk register"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art9-2-c-cq1 , lexreq:aiact-art9-2-c-cq2 , lexreq:aiact-art9-2-c-cq3 .
-lexreq:aiact-art9-2-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What additional risks are being identified from the post-market monitoring?"@en .
+lexreq:aiact-art9-2-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What additional risks are being identified from the post-market monitoring?"@en ; lexreq:formalisedBy "cq/art09_2c_post_market_risks.rq" .
 lexreq:aiact-art9-2-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are the monitoring data analysed?"@en .
 lexreq:aiact-art9-2-c-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What evidence shows ongoing evaluation of new risks?"@en .
 
@@ -248,7 +248,7 @@ lexreq:aiact-art9-3 a lexreq:Requirement ;
     lexreq:expectedEvidence "Warnings/limitations"@en ;
     lexreq:expectedEvidence "Technical documentation"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art9-3-cq1 , lexreq:aiact-art9-3-cq2 .
-lexreq:aiact-art9-3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What risks can reasonably be mitigated or eliminated through the design or development of the high-risk system?"@en .
+lexreq:aiact-art9-3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What risks can reasonably be mitigated or eliminated through the design or development of the high-risk system?"@en ; lexreq:formalisedBy "cq/art09_3_risks_reduced_by_design.rq" .
 lexreq:aiact-art9-3-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What design or development architecture is required for the high-risk AI system to be almost risk free?"@en .
 
 lexreq:aiact-art9-4 a lexreq:Requirement ;
@@ -270,7 +270,7 @@ lexreq:aiact-art9-4 a lexreq:Requirement ;
 lexreq:aiact-art9-4-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What possible interactions result from the combined application of the requirements set out in this Section?"@en .
 lexreq:aiact-art9-4-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How do the risk management measures take those effects and interactions into account?"@en .
 lexreq:aiact-art9-4-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How do the risk management measures minimise risks more effectively?"@en .
-lexreq:aiact-art9-4-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How is an appropriate balance achieved in implementing the measures?"@en .
+lexreq:aiact-art9-4-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How is an appropriate balance achieved in implementing the measures?"@en ; lexreq:formalisedBy "cq/art09_4_balance_of_measures.rq" .
 
 lexreq:aiact-art9-5 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -290,7 +290,7 @@ lexreq:aiact-art9-5 a lexreq:Requirement ;
 lexreq:aiact-art9-5-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the residual risk associated with each hazard?"@en .
 lexreq:aiact-art9-5-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What is the overall residual risk of the high-risk AI system?"@en .
 lexreq:aiact-art9-5-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How is the acceptability of the residual risk associated with each hazard determined?"@en .
-lexreq:aiact-art9-5-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How is the acceptability of the overall residual risk of the high-risk AI system determined?"@en .
+lexreq:aiact-art9-5-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How is the acceptability of the overall residual risk of the high-risk AI system determined?"@en ; lexreq:formalisedBy "cq/art09_5_residual_risk_acceptance.rq" .
 
 lexreq:aiact-art9-5-a a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -309,7 +309,7 @@ lexreq:aiact-art9-5-a a lexreq:Requirement ;
     lexreq:expectedEvidence "Verification results"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art9-5-a-cq1 , lexreq:aiact-art9-5-a-cq2 .
 lexreq:aiact-art9-5-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "To what extent is the elimination or reduction of those risks technically feasible given the design and development of the high-risk AI system?"@en .
-lexreq:aiact-art9-5-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What design and development measures are adopted to eliminate or reduce those risks?"@en .
+lexreq:aiact-art9-5-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What design and development measures are adopted to eliminate or reduce those risks?"@en ; lexreq:formalisedBy "cq/art09_5a_design_measures.rq" .
 
 lexreq:aiact-art9-5-b a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -327,7 +327,7 @@ lexreq:aiact-art9-5-b a lexreq:Requirement ;
     lexreq:expectedEvidence "Human review controls"@en ;
     lexreq:expectedEvidence "Evidence of active risk management"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art9-5-b-cq1 , lexreq:aiact-art9-5-b-cq2 , lexreq:aiact-art9-5-b-cq3 .
-lexreq:aiact-art9-5-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What mitigation measures are implemented to address risks that cannot be eliminated?"@en .
+lexreq:aiact-art9-5-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What mitigation measures are implemented to address risks that cannot be eliminated?"@en ; lexreq:formalisedBy "cq/art09_5b_mitigation_measures.rq" .
 lexreq:aiact-art9-5-b-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What control measures are implemented to address risks that cannot be eliminated?"@en .
 lexreq:aiact-art9-5-b-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How is adequacy determined?"@en .
 
@@ -349,7 +349,7 @@ lexreq:aiact-art9-5-c a lexreq:Requirement ;
     lexreq:expectedEvidence "LMS logs"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art9-5-c-cq1 , lexreq:aiact-art9-5-c-cq2 , lexreq:aiact-art9-5-c-cq3 .
 lexreq:aiact-art9-5-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Does the system provide the information required by Article 13?"@en .
-lexreq:aiact-art9-5-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What training is provided to deployers, where appropriate?"@en .
+lexreq:aiact-art9-5-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What training is provided to deployers, where appropriate?"@en ; lexreq:formalisedBy "cq/art09_5c_deployer_training.rq" .
 lexreq:aiact-art9-5-c-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How is the provision of that information and training ensured?"@en .
 
 lexreq:aiact-art9-5-closing a lexreq:Requirement ;
@@ -369,7 +369,7 @@ lexreq:aiact-art9-5-closing a lexreq:Requirement ;
     lexreq:expectedEvidence "Role-based requirements"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art9-5-closing-cq1 , lexreq:aiact-art9-5-closing-cq2 .
 lexreq:aiact-art9-5-closing-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What technical knowledge, experience, education, and training are expected of the deployer?"@en .
-lexreq:aiact-art9-5-closing-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What is the presumable context in which the high-risk AI system is intended to be used?"@en .
+lexreq:aiact-art9-5-closing-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What is the presumable context in which the high-risk AI system is intended to be used?"@en ; lexreq:formalisedBy "cq/art09_5_context_of_use.rq" .
 
 lexreq:aiact-art9-6 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -428,7 +428,7 @@ lexreq:aiact-art9-8 a lexreq:Requirement ;
 lexreq:aiact-art9-8-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is appropriate testing being defined, assessed and validated for the specific high-risk AI system?"@en .
 lexreq:aiact-art9-8-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Is testing being performed throughout the development process of the high-risk AI system?"@en .
 lexreq:aiact-art9-8-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What testing is performed prior to the high-risk AI system being placed on the market or put into service?"@en .
-lexreq:aiact-art9-8-cq4 a lexreq:CompetencyQuestion ; rdfs:label "What prior defined metrics and probabilistic thresholds are used for testing the high-risk AI system?"@en .
+lexreq:aiact-art9-8-cq4 a lexreq:CompetencyQuestion ; rdfs:label "What prior defined metrics and probabilistic thresholds are used for testing the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art09_8_test_metrics.rq" .
 lexreq:aiact-art9-8-cq5 a lexreq:CompetencyQuestion ; rdfs:label "How are those metrics and probabilistic thresholds appropriate to the intended purpose of the high-risk AI system?"@en .
 
 lexreq:aiact-art9-9 a lexreq:Requirement ;
@@ -466,7 +466,7 @@ lexreq:aiact-art9-10 a lexreq:Requirement ;
     lexreq:expectedEvidence "Audit trail"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art9-10-cq1 , lexreq:aiact-art9-10-cq2 , lexreq:aiact-art9-10-cq3 .
 lexreq:aiact-art9-10-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What internal risk management processes under other relevant provisions of Union law apply to the provider?"@en .
-lexreq:aiact-art9-10-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are the aspects provided in paragraphs 1 to 9 incorporated into those risk management processes?"@en .
+lexreq:aiact-art9-10-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are the aspects provided in paragraphs 1 to 9 incorporated into those risk management processes?"@en ; lexreq:formalisedBy "cq/art09_10_integrated_rms.rq" .
 lexreq:aiact-art9-10-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How are those aspects combined with the risk management procedures established pursuant to Union law?"@en .
 
 lexreq:aiact-art10-1 a lexreq:Requirement ;
@@ -485,7 +485,7 @@ lexreq:aiact-art10-1 a lexreq:Requirement ;
     lexreq:expectedEvidence "Training data sheet"@en ;
     lexreq:expectedEvidence "Data quality assessment"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-1-cq1 , lexreq:aiact-art10-1-cq2 .
-lexreq:aiact-art10-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Are training, validation and testing datasets used for the training of the AI model?"@en .
+lexreq:aiact-art10-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Are training, validation and testing datasets used for the training of the AI model?"@en ; lexreq:formalisedBy "cq/art10_1_data_splits.rq" .
 lexreq:aiact-art10-1-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How do those datasets meet the quality criteria referred to in paragraphs 2 to 5?"@en .
 
 lexreq:aiact-art10-2 a lexreq:Requirement ;
@@ -505,7 +505,7 @@ lexreq:aiact-art10-2 a lexreq:Requirement ;
     lexreq:expectedEvidence "Governance roles and responsibilities"@en ;
     lexreq:expectedEvidence "Intended-purpose statement"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-2-cq1 , lexreq:aiact-art10-2-cq2 .
-lexreq:aiact-art10-2-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What data governance and management practices apply to the training, validation and testing datasets?"@en .
+lexreq:aiact-art10-2-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What data governance and management practices apply to the training, validation and testing datasets?"@en ; lexreq:formalisedBy "cq/art10_2_data_governance_practices.rq" .
 lexreq:aiact-art10-2-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are those practices appropriate to the intended purpose of the high-risk AI system?"@en .
 
 lexreq:aiact-art10-2-a a lexreq:Requirement ;
@@ -567,7 +567,7 @@ lexreq:aiact-art10-2-c a lexreq:Requirement ;
     lexreq:expectedEvidence "Before/after dataset lineage"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-2-c-cq1 , lexreq:aiact-art10-2-c-cq2 , lexreq:aiact-art10-2-c-cq3 .
 lexreq:aiact-art10-2-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What data-preparation processing operations are carried out on the datasets?"@en .
-lexreq:aiact-art10-2-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are annotation, labelling and cleaning carried out?"@en .
+lexreq:aiact-art10-2-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are annotation, labelling and cleaning carried out?"@en ; lexreq:formalisedBy "cq/art10_2c_labelling_and_cleaning.rq" .
 lexreq:aiact-art10-2-c-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How are updating, enrichment and aggregation carried out?"@en .
 
 lexreq:aiact-art10-2-d a lexreq:Requirement ;
@@ -608,7 +608,7 @@ lexreq:aiact-art10-2-e a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-2-e-cq1 , lexreq:aiact-art10-2-e-cq2 , lexreq:aiact-art10-2-e-cq3 .
 lexreq:aiact-art10-2-e-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the availability of the dataset assessed?"@en .
 lexreq:aiact-art10-2-e-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What is the quantity of the datasets needed?"@en .
-lexreq:aiact-art10-2-e-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How is the suitability of the datasets assessed?"@en .
+lexreq:aiact-art10-2-e-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How is the suitability of the datasets assessed?"@en ; lexreq:formalisedBy "cq/art10_2e_dataset_suitability.rq" .
 
 lexreq:aiact-art10-2-f a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -687,7 +687,7 @@ lexreq:aiact-art10-3 a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-3-cq1 , lexreq:aiact-art10-3-cq2 , lexreq:aiact-art10-3-cq3 , lexreq:aiact-art10-3-cq4 , lexreq:aiact-art10-3-cq5 .
 lexreq:aiact-art10-3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are the training, validation and testing datasets sufficiently represented?"@en .
 lexreq:aiact-art10-3-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are the training, validation and testing datasets, to the best extent possible, free of errors and complete?"@en .
-lexreq:aiact-art10-3-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What statistical properties do the datasets have?"@en .
+lexreq:aiact-art10-3-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What statistical properties do the datasets have?"@en ; lexreq:formalisedBy "cq/art10_3_statistical_properties.rq" .
 lexreq:aiact-art10-3-cq4 a lexreq:CompetencyQuestion ; rdfs:label "How do those statistical properties relate to the persons or groups in relation to whom the system is intended to be used?"@en .
 lexreq:aiact-art10-3-cq5 a lexreq:CompetencyQuestion ; rdfs:label "How are those characteristics meet at the level of individual datasets or at the level of a combination of datasets?"@en .
 
@@ -709,7 +709,7 @@ lexreq:aiact-art10-4 a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-4-cq1 , lexreq:aiact-art10-4-cq2 , lexreq:aiact-art10-4-cq3 .
 lexreq:aiact-art10-4-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What geographical characteristics or elements are taken into account in the datasets?"@en .
 lexreq:aiact-art10-4-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What contextual, behavioural or functional characteristics or elements are taken into account in the datasets?"@en .
-lexreq:aiact-art10-4-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How do the datasets reflect the functional setting in which the high-risk AI system is intended to be used?"@en .
+lexreq:aiact-art10-4-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How do the datasets reflect the functional setting in which the high-risk AI system is intended to be used?"@en ; lexreq:formalisedBy "cq/art10_4_functional_setting.rq" .
 
 lexreq:aiact-art10-5 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -728,7 +728,7 @@ lexreq:aiact-art10-5 a lexreq:Requirement ;
     lexreq:expectedEvidence "Access-control policy"@en ;
     lexreq:expectedEvidence "Processing record"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-5-cq1 , lexreq:aiact-art10-5-cq2 , lexreq:aiact-art10-5-cq3 .
-lexreq:aiact-art10-5-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What special categories of personal data are processed for bias detection and correction?"@en .
+lexreq:aiact-art10-5-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What special categories of personal data are processed for bias detection and correction?"@en ; lexreq:formalisedBy "cq/art10_5_special_category_data.rq" .
 lexreq:aiact-art10-5-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How is that processing of special categories of personal data strictly necessary for bias detection and correction?"@en .
 lexreq:aiact-art10-5-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What safeguard measures are applied for the processing of special categories of personal data ensuring the fundamental rights and freedoms of natural persons?"@en .
 
@@ -748,7 +748,7 @@ lexreq:aiact-art10-5-a a lexreq:Requirement ;
     lexreq:expectedEvidence "Decision record on necessity"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-5-a-cq1 , lexreq:aiact-art10-5-a-cq2 .
 lexreq:aiact-art10-5-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What other data were considered for bias detection and correction?"@en .
-lexreq:aiact-art10-5-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How was it determined that bias detection and correction could not be effectively fulfilled by processing other data, including synthetic or anonymised data?"@en .
+lexreq:aiact-art10-5-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How was it determined that bias detection and correction could not be effectively fulfilled by processing other data, including synthetic or anonymised data?"@en ; lexreq:formalisedBy "cq/art10_5a_other_data_considered.rq" .
 
 lexreq:aiact-art10-5-b a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -767,7 +767,7 @@ lexreq:aiact-art10-5-b a lexreq:Requirement ;
     lexreq:expectedEvidence "Technical safeguards documentation"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-5-b-cq1 , lexreq:aiact-art10-5-b-cq2 .
 lexreq:aiact-art10-5-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What technical limitations on re-use are applied to the special categories of personal data?"@en .
-lexreq:aiact-art10-5-b-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What security and privacy-preserving measures are applied, including pseudonymisation?"@en .
+lexreq:aiact-art10-5-b-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What security and privacy-preserving measures are applied, including pseudonymisation?"@en ; lexreq:formalisedBy "cq/art10_5b_privacy_measures.rq" .
 
 lexreq:aiact-art10-5-c a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -788,7 +788,7 @@ lexreq:aiact-art10-5-c a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-5-c-cq1 , lexreq:aiact-art10-5-c-cq2 , lexreq:aiact-art10-5-c-cq3 .
 lexreq:aiact-art10-5-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What measures ensure that the special categories of personal data are secured and protected?"@en .
 lexreq:aiact-art10-5-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What safeguards, controls and access documentation apply to those data?"@en .
-lexreq:aiact-art10-5-c-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How is access restricted to authorised persons with appropriate confidentiality obligations?"@en .
+lexreq:aiact-art10-5-c-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How is access restricted to authorised persons with appropriate confidentiality obligations?"@en ; lexreq:formalisedBy "cq/art10_5c_access_restriction.rq" .
 
 lexreq:aiact-art10-5-d a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -806,7 +806,7 @@ lexreq:aiact-art10-5-d a lexreq:Requirement ;
     lexreq:expectedEvidence "Monitoring logs"@en ;
     lexreq:expectedEvidence "Contractual restrictions"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-5-d-cq1 , lexreq:aiact-art10-5-d-cq2 .
-lexreq:aiact-art10-5-d-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What restrictions prevent the transmission, transfer or other access to the special categories of personal data by other parties?"@en .
+lexreq:aiact-art10-5-d-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What restrictions prevent the transmission, transfer or other access to the special categories of personal data by other parties?"@en ; lexreq:formalisedBy "cq/art10_5d_transfer_restrictions.rq" .
 lexreq:aiact-art10-5-d-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How is compliance with those restrictions ensured?"@en .
 
 lexreq:aiact-art10-5-e a lexreq:Requirement ;
@@ -825,7 +825,7 @@ lexreq:aiact-art10-5-e a lexreq:Requirement ;
     lexreq:expectedEvidence "Bias-correction closure record"@en ;
     lexreq:expectedEvidence "Data lifecycle register"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-5-e-cq1 , lexreq:aiact-art10-5-e-cq2 .
-lexreq:aiact-art10-5-e-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the retention period for the special categories of personal data?"@en .
+lexreq:aiact-art10-5-e-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the retention period for the special categories of personal data?"@en ; lexreq:formalisedBy "cq/art10_5e_retention_period.rq" .
 lexreq:aiact-art10-5-e-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How is the deletion of those data ensured once the bias has been corrected or the retention period has ended, whichever occurs first?"@en .
 
 lexreq:aiact-art10-5-f a lexreq:Requirement ;
@@ -863,7 +863,7 @@ lexreq:aiact-art10-6 a lexreq:Requirement ;
     lexreq:expectedEvidence "Data governance records for testing data"@en ;
     lexreq:expectedEvidence "Applicability analysis showing that paragraphs 2 to 5 are applied only to testing data"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art10-6-cq1 , lexreq:aiact-art10-6-cq2 .
-lexreq:aiact-art10-6-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What testing datasets are used for the development of the high-risk AI system not using techniques involving the training of AI models?"@en .
+lexreq:aiact-art10-6-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What testing datasets are used for the development of the high-risk AI system not using techniques involving the training of AI models?"@en ; lexreq:formalisedBy "cq/art10_6_testing_datasets.rq" .
 lexreq:aiact-art10-6-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How do paragraphs 2 to 5 apply to those testing datasets?"@en .
 
 lexreq:aiact-art11-1 a lexreq:Requirement ;

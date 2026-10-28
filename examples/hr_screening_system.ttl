@@ -152,6 +152,14 @@ ex:Measure_Pseudonymisation a aidoc-lex:PrivacyPreservingMeasure ;
     aidoc-lex:controlFunction aidoc-lex:Prevention ;
     aidoc-lex:addressesRequirement lexreq:aiact-art10-5-b .
 
+ex:Measure_AccessControl a vair:SecurityMeasure ;
+    rdfs:label "Access to the gender data only for two named analysts bound by confidentiality agreements, with access logging" ;
+    aidoc-lex:controlFunction aidoc-lex:Prevention ;
+    aidoc-lex:accountableAgent ex:HirewiseDPO .
+ex:Measure_NoTransfer a aidoc-lex:PrivacyPreservingMeasure ;
+    rdfs:label "Gender data stay in the bias analysis environment and are not transferred to the deployer or third parties" ;
+    aidoc-lex:controlFunction aidoc-lex:Prevention .
+
 ex:ComplianceTest_2026 a aidoc-lex:ComplianceTest ;
     rdfs:label "Pre-release test of TalentScreen 2.1 against the declared metrics" ;
     aidoc-lex:assesses ex:TalentScreen ;

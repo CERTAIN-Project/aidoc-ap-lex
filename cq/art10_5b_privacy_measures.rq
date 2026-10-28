@@ -1,0 +1,12 @@
+# CQ: What security and privacy-preserving measures are applied, including pseudonymisation?
+# Question: lexreq:aiact-art10-5-b-cq2
+# Requirement: lexreq:aiact-art10-5-b
+# Terms: aidoc-lex:PrivacyPreservingMeasure, vair:SecurityMeasure
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX vair: <https://w3id.org/vair#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?measure ?type ?label WHERE {
+  ?measure a ?type ; rdfs:label ?label .
+  VALUES ?type { aidoc-lex:PrivacyPreservingMeasure vair:SecurityMeasure }
+}
