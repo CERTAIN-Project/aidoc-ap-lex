@@ -22,15 +22,6 @@ rec:052df6e6-a2e5-5b6a-b51c-e9b3f2b87c1b a prov:Entity,
     align:source aidoc-lex:SME ;
     align:target dpv:SMEOrganisation .
 
-rec:063110c5-1c36-5c26-9b6c-dcbb3ef3edfd a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo rec:LexExtensionMaintainers ;
-    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "the fundamental rights impact assessment of Article 27 AI Act."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:FundamentalRightsImpactAssessment ;
-    align:target dpv-aiact:FRIA .
-
 rec:06f30cb9-2188-58d6-9fd6-4a418036d87c a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
@@ -148,15 +139,6 @@ rec:3ad09884-06fd-5bff-9354-a4548f7950d8 a prov:Entity,
     align:source aidoc-lex:RiskControlMeasure ;
     align:target vair:MitigationMeasure .
 
-rec:3d6ba7d9-8597-570f-9f32-322009c81e22 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo rec:LexExtensionMaintainers ;
-    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "the conformity assessment of Article 43 AI Act."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:ConformityAssessment ;
-    align:target dpv-aiact:ConformityAssessment .
-
 rec:3dba3ffc-1dd7-57f8-af03-051c1e79c25b a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
@@ -165,15 +147,6 @@ rec:3dba3ffc-1dd7-57f8-af03-051c1e79c25b a prov:Entity,
     align:relation skos:exactMatch ;
     align:source aidoc-lex:DataProtectionOfficer ;
     align:target dpv:DataProtectionOfficer .
-
-rec:3faddfc7-bcd8-5042-9c3c-1bbeae3285d4 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo rec:LexExtensionMaintainers ;
-    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "assessment of bias in data, models or outputs."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:BiasAssessment ;
-    align:target dpv-ai:BiasAssessment .
 
 rec:403e0226-8948-5597-9a4b-85298d04da0e a prov:Entity,
         align:Mapping ;
@@ -220,15 +193,6 @@ rec:4c71aa22-cf14-5bd2-9d8d-975ed59d5eab a prov:Entity,
     align:source aidoc-lex:Policy ;
     align:target dpv:Policy .
 
-rec:51080624-ce06-5518-9327-16ec153e9400 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo rec:LexExtensionMaintainers ;
-    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "Article 13(3)(c) AI Act."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:PredeterminedChange ;
-    align:target dpv-aiact:PredeterminedChange .
-
 rec:56deedb5-2a92-57fc-afc5-2f14c01ffdb4 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
@@ -238,14 +202,14 @@ rec:56deedb5-2a92-57fc-afc5-2f14c01ffdb4 a prov:Entity,
     align:source aidoc-lex:NotifiedBody ;
     align:target dpv-aiact:NotifiedBody .
 
-rec:6d8b9f04-fc93-506b-b842-14d74b9e6fdf a prov:Entity,
+rec:65ddcbea-e929-53e2-98ff-35cf3eeaf642 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
     prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "identification, analysis and evaluation of risks."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:RiskAssessment ;
-    align:target dpv:RiskAssessment .
+    align:rationale "DPV models assessments as organisational measures, the module as activities."@en ;
+    align:relation skos:closeMatch ;
+    align:source aidoc-lex:FundamentalRightsImpactAssessment ;
+    align:target dpv-aiact:FRIA .
 
 rec:71c0e557-1145-51eb-a88e-76b2f3663ff0 a prov:Entity,
         align:Mapping ;
@@ -328,12 +292,12 @@ rec:a20601a6-523c-51d4-a850-dafb362fc035 a prov:Entity,
     align:source aidoc-lex:HumanOverseer ;
     align:target dpv-aiact:HumanOverseer .
 
-rec:a63392f3-8a9d-5d89-974e-641b47a061fa a prov:Entity,
+rec:a55d1a8a-1f42-509d-9940-4ae063f0b322 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
     prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "Article 3(23) AI Act."@en ;
-    align:relation skos:exactMatch ;
+    align:rationale "the module term is the change record that documents a substantial modification; DPV names the modification."@en ;
+    align:relation skos:relatedMatch ;
     align:source aidoc-lex:SubstantialModification ;
     align:target dpv-aiact:SubstantialModification .
 
@@ -373,6 +337,24 @@ rec:b4e5d9da-831d-5d2a-a822-5fbc1838dca3 a prov:Entity,
     align:source aidoc-lex:RiskManagementSystem ;
     align:target dpv-aiact:RiskManagementSystem .
 
+rec:ba5e25f6-428c-528e-ac24-d740cfe673b5 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo rec:LexExtensionMaintainers ;
+    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
+    align:rationale "the module term is the change record that documents a predetermined change; DPV names the change category."@en ;
+    align:relation skos:relatedMatch ;
+    align:source aidoc-lex:PredeterminedChange ;
+    align:target dpv-aiact:PredeterminedChange .
+
+rec:ba700272-6772-50c7-8b24-f80b73546835 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo rec:LexExtensionMaintainers ;
+    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
+    align:rationale "DPV models assessments as organisational measures, the module as activities."@en ;
+    align:relation skos:closeMatch ;
+    align:source aidoc-lex:BiasAssessment ;
+    align:target dpv-ai:BiasAssessment .
+
 rec:bbbacf49-8c36-51e0-9b62-d9fec300cb00 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
@@ -381,6 +363,15 @@ rec:bbbacf49-8c36-51e0-9b62-d9fec300cb00 a prov:Entity,
     align:relation skos:exactMatch ;
     align:source aidoc-lex:CEMarking ;
     align:target dpv-aiact:CEMarking .
+
+rec:c807606c-7e73-5983-9617-6c49d343eb27 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo rec:LexExtensionMaintainers ;
+    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
+    align:rationale "DPV models assessments as organisational measures, the module as activities."@en ;
+    align:relation skos:closeMatch ;
+    align:source aidoc-lex:ImpactAssessment ;
+    align:target dpv:ImpactAssessment .
 
 rec:c8992971-34d3-53e7-9efe-41ac6bc27a93 a prov:Entity,
         align:Mapping ;
@@ -463,6 +454,15 @@ rec:dd227a9b-2c81-57dc-a5bb-0e54bc6e5a31 a prov:Entity,
     align:source aidoc-lex:DataGovernanceFramework ;
     align:target dpv:DataGovernance .
 
+rec:de30551e-4612-579e-ae8d-d728188042f3 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo rec:LexExtensionMaintainers ;
+    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
+    align:rationale "DPV models assessments as organisational measures, the module as activities."@en ;
+    align:relation skos:closeMatch ;
+    align:source aidoc-lex:ConformityAssessment ;
+    align:target dpv-aiact:ConformityAssessment .
+
 rec:e874cce7-291a-542b-a143-33344167417f a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
@@ -499,15 +499,6 @@ rec:f2781486-fe0e-5e59-ae44-48a76f9f5202 a prov:Entity,
     align:source aidoc-lex:InstructionsForUse ;
     align:target vair:InstructionForUse .
 
-rec:f40a170d-a30c-5540-af04-b69bbcd6db20 a prov:Entity,
-        align:Mapping ;
-    prov:wasAttributedTo rec:LexExtensionMaintainers ;
-    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
-    align:rationale "assessment of impacts in a given area."@en ;
-    align:relation skos:exactMatch ;
-    align:source aidoc-lex:ImpactAssessment ;
-    align:target dpv:ImpactAssessment .
-
 rec:fb10c0fc-df52-5830-b29f-5753d1a50208 a prov:Entity,
         align:Mapping ;
     prov:wasAttributedTo rec:LexExtensionMaintainers ;
@@ -525,6 +516,15 @@ rec:fd568f4c-9345-5d28-884c-1ca84d84fe6e a prov:Entity,
     align:relation skos:closeMatch ;
     align:source aidoc-lex:Assessment ;
     align:target dpv:Assessment .
+
+rec:ff5cd013-b222-53b7-b2b6-e58a01e1dcd2 a prov:Entity,
+        align:Mapping ;
+    prov:wasAttributedTo rec:LexExtensionMaintainers ;
+    prov:wasGeneratedBy rec:proposal-2026-10-28 ;
+    align:rationale "DPV models assessments as organisational measures, the module as activities."@en ;
+    align:relation skos:closeMatch ;
+    align:source aidoc-lex:RiskAssessment ;
+    align:target dpv:RiskAssessment .
 
 rec:proposal-2026-10-28 a prov:Activity ;
     rdfs:label "Proposal of alignments for the AIDOC-AP LEX Extension, reviewed by the maintainer" ;

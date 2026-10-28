@@ -35,14 +35,14 @@ aidoc-lex:CEMarking skos:exactMatch dpv-aiact:CEMarking .  # the CE marking of A
 
 # Assessments
 aidoc-lex:Assessment skos:closeMatch dpv:Assessment .  # DPV assessments are organisational measures; the module models them as activities.
-aidoc-lex:RiskAssessment skos:exactMatch dpv:RiskAssessment .  # identification, analysis and evaluation of risks.
-aidoc-lex:ImpactAssessment skos:exactMatch dpv:ImpactAssessment .  # assessment of impacts in a given area.
-aidoc-lex:FundamentalRightsImpactAssessment skos:exactMatch dpv-aiact:FRIA .  # the fundamental rights impact assessment of Article 27 AI Act.
+aidoc-lex:RiskAssessment skos:closeMatch dpv:RiskAssessment .  # DPV models assessments as organisational measures, the module as activities.
+aidoc-lex:ImpactAssessment skos:closeMatch dpv:ImpactAssessment .  # DPV models assessments as organisational measures, the module as activities.
+aidoc-lex:FundamentalRightsImpactAssessment skos:closeMatch dpv-aiact:FRIA .  # DPV models assessments as organisational measures, the module as activities.
 aidoc-lex:FundamentalRightsImpactAssessment skos:broadMatch dpv:RightsImpactAssessment .  # a rights impact assessment restricted to fundamental rights.
 aidoc-lex:DataProtectionImpactAssessment skos:broadMatch dpv:ImpactAssessment .  # the GDPR DPIA is a kind of impact assessment; the DPV GDPR extension is not vendored.
-aidoc-lex:BiasAssessment skos:exactMatch dpv-ai:BiasAssessment .  # assessment of bias in data, models or outputs.
+aidoc-lex:BiasAssessment skos:closeMatch dpv-ai:BiasAssessment .  # DPV models assessments as organisational measures, the module as activities.
 aidoc-lex:DatasetSuitabilityAssessment skos:closeMatch dpv:DataSuitabilityAssessment .  # DPV assesses suitability for a purpose; Article 10 adds availability and quantity.
-aidoc-lex:ConformityAssessment skos:exactMatch dpv-aiact:ConformityAssessment .  # the conformity assessment of Article 43 AI Act.
+aidoc-lex:ConformityAssessment skos:closeMatch dpv-aiact:ConformityAssessment .  # DPV models assessments as organisational measures, the module as activities.
 aidoc-lex:SecurityAssessment skos:closeMatch dpv:CybersecurityAssessment .  # the module includes security tests and abuse test scenarios.
 aidoc-lex:Audit skos:closeMatch dpv:Audit .  # DPV audits are organisational measures; the module models them as activities.
 
@@ -68,8 +68,8 @@ aidoc-lex:AIInteractionDisclosure skos:closeMatch dpv:AINotice .  # a notice abo
 
 # Occurrences and changes
 aidoc-lex:SeriousIncident skos:exactMatch dpv-aiact:SeriousIncident .  # Article 3(49) AI Act.
-aidoc-lex:SubstantialModification skos:exactMatch dpv-aiact:SubstantialModification .  # Article 3(23) AI Act.
-aidoc-lex:PredeterminedChange skos:exactMatch dpv-aiact:PredeterminedChange .  # Article 13(3)(c) AI Act.
+aidoc-lex:SubstantialModification skos:relatedMatch dpv-aiact:SubstantialModification .  # the module term is the change record that documents a substantial modification; DPV names the modification.
+aidoc-lex:PredeterminedChange skos:relatedMatch dpv-aiact:PredeterminedChange .  # the module term is the change record that documents a predetermined change; DPV names the change category.
 aidoc-lex:ReasonablyForeseeableMisuse skos:exactMatch dpv-aiact:ReasonablyForeseeableMisuse .  # Article 3(13) AI Act.
 aidoc-lex:DataGap skos:relatedMatch vair:UnavailabilityOfData .  # missing data is one cause of a data gap.
 
