@@ -1,0 +1,15 @@
+# CQ: How are those levels and metrics declared in the accompanying instructions of use?
+# Question: lexreq:aiact-art15-3-cq3
+# Requirement: lexreq:aiact-art15-3
+# Terms: dpv-aiact:InstructionForUse, aidoc-lex:declaresMetric, aidoc:PerformanceMetric
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+SELECT ?ifu ?metric ?value WHERE {
+  ?system aidoc-lex:hasInstructionsForUse ?ifu .
+  ?ifu aidoc-lex:declaresMetric ?metric .
+  ?measurement dqv:isMeasurementOf ?metric ;
+               dqv:computedOn ?system ;
+               dqv:value ?value .
+  FILTER NOT EXISTS { ?measurement aidoc-lex:measuredForGroup ?group }
+}

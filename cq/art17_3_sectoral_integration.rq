@@ -1,0 +1,12 @@
+# CQ: What obligations regarding quality management systems or an equivalent function under relevant sectoral Union law apply to the provider? How are the aspects listed in paragraph 1 included as part of the quality management systems pursuant to that law?
+# Question: lexreq:aiact-art17-3-cq1
+# Requirement: lexreq:aiact-art17-3
+# Terms: aidoc-lex:integratedWith, aidoc:AIProvider, aidoc:appliesStandard
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?provider ?system ?other WHERE {
+  ?provider a aidoc:AIProvider ;
+            aidoc-lex:hasManagementSystem ?system .
+  ?other aidoc-lex:integratedWith ?system .
+}

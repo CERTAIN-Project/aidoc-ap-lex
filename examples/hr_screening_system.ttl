@@ -311,7 +311,7 @@ ex:OverseerTraining_2026 a aidoc-lex:CompetenceTraining ;
 ex:HirewiseQMS a dpv-aiact:QualityManagementSystem ;
     rdfs:label "Hirewise quality management system" ;
     aidoc-lex:includesDocument ex:ComplianceStrategy , ex:QCProcedure , ex:DesignControlProcedure , ex:IncidentProcedure ,
-        ex:AuthorityProcedure , ex:RetentionProcedure ;
+        ex:AuthorityProcedure , ex:RetentionProcedure , ex:ResourceProcedure ;
     aidoc-lex:addressesRequirement lexreq:aiact-art17-1 .
 ex:ComplianceStrategy a dpv:Policy ; rdfs:label "Regulatory compliance strategy" ;
     aidoc-lex:addressesRequirement lexreq:aiact-art17-1-a .
@@ -325,6 +325,9 @@ ex:AuthorityProcedure a aidoc-lex:Procedure ; rdfs:label "Procedure for communic
     aidoc-lex:procedureType aidoc-lex:AuthorityCommunicationHandling ; aidoc-lex:addressesRequirement lexreq:aiact-art17-1-j .
 ex:RetentionProcedure a aidoc-lex:Procedure ; rdfs:label "Document and log retention procedure" ;
     aidoc-lex:procedureType aidoc-lex:DocumentRetention ; aidoc-lex:addressesRequirement lexreq:aiact-art17-1-k .
+
+ex:ResourceProcedure a aidoc-lex:Procedure ; rdfs:label "Resource management and security-of-supply procedure for compute and data providers" ;
+    aidoc-lex:procedureType aidoc-lex:ResourceManagement .
 
 ex:HirewiseRecordKeeping a aidoc-lex:RecordKeepingSystem ;
     rdfs:label "Hirewise document management system" ;

@@ -1,0 +1,14 @@
+# CQ: What quality management system is in place?
+# Question: lexreq:aiact-art16-c-cq1
+# Requirement: lexreq:aiact-art16-c
+# Terms: dpv-aiact:QualityManagementSystem, aidoc-lex:hasManagementSystem, aidoc:appliesStandard
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+SELECT ?provider ?qms ?standard WHERE {
+  ?system aidoc:isProvidedBy ?provider .
+  ?provider aidoc-lex:hasManagementSystem ?qms .
+  ?qms a dpv-aiact:QualityManagementSystem .
+  OPTIONAL { ?system aidoc:appliesStandard ?standard }
+}

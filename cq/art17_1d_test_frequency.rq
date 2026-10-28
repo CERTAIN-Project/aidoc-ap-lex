@@ -1,0 +1,11 @@
+# CQ: What is the frequency of those procedures?
+# Question: lexreq:aiact-art17-1-d-cq2
+# Requirement: lexreq:aiact-art17-1-d
+# Terms: aidoc:BuildAndIntegrationTesting, aidoc:PostMarketPerformanceEvaluationActivity, aidoc:hasFrequency
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?activity ?type ?frequency WHERE {
+  ?activity a ?type ;
+            aidoc:hasFrequency ?frequency .
+  VALUES ?type { aidoc:BuildAndIntegrationTesting aidoc:PostMarketPerformanceEvaluationActivity aidoc:ModelEvaluation }
+}

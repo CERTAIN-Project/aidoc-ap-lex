@@ -1,0 +1,11 @@
+# CQ: What systems and procedures are in the high-risk AI system for data management, including data acquisition, collection, analysis, labelling, storage, filtration, mining, aggregation and retention, and any other operation regarding the data that is performed before and for the purpose of the placing on the market or the putting into service?
+# Question: lexreq:aiact-art17-1-f-cq1
+# Requirement: lexreq:aiact-art17-1-f
+# Terms: aidoc-lex:Procedure, aidoc-lex:DataManagement, aidoc:DataPipeline, aidoc:producesDataset
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?procedure ?activity ?dataset WHERE {
+  ?procedure aidoc-lex:procedureType aidoc-lex:DataManagement .
+  OPTIONAL { ?activity aidoc:producesDataset ?dataset }
+}

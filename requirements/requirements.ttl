@@ -1632,7 +1632,7 @@ lexreq:aiact-art15-1 a lexreq:Requirement ;
     lexreq:expectedEvidence "Lifecycle performance monitoring records"@en ;
     lexreq:expectedEvidence "Validation documentation"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art15-1-cq1 , lexreq:aiact-art15-1-cq2 .
-lexreq:aiact-art15-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the level of accuracy, robustness, and cybersecurity achieved by the high-risk AI system?"@en .
+lexreq:aiact-art15-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the level of accuracy, robustness, and cybersecurity achieved by the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art15_1_achieved_levels.rq" .
 lexreq:aiact-art15-1-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does the high-risk AI system perform consistently in those respects throughout its lifecycle?"@en .
 
 lexreq:aiact-art15-2 a lexreq:Requirement ;
@@ -1671,7 +1671,7 @@ lexreq:aiact-art15-3 a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:aiact-art15-3-cq1 , lexreq:aiact-art15-3-cq2 , lexreq:aiact-art15-3-cq3 .
 lexreq:aiact-art15-3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What are the levels of accuracy of the high-risk AI system?"@en .
 lexreq:aiact-art15-3-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What are the relevant accuracy metrics of the high-risk AI system?"@en .
-lexreq:aiact-art15-3-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How are those levels and metrics declared in the accompanying instructions of use?"@en .
+lexreq:aiact-art15-3-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How are those levels and metrics declared in the accompanying instructions of use?"@en ; lexreq:formalisedBy "cq/art15_3_declared_accuracy_levels.rq" .
 
 lexreq:aiact-art15-4 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1701,7 +1701,7 @@ lexreq:aiact-art15-4-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What errors, 
 lexreq:aiact-art15-4-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How is the high-risk AI system as resilient as possible regarding errors, faults or inconsistencies?"@en .
 lexreq:aiact-art15-4-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What technical and organisational measures are taken in this regard?"@en .
 lexreq:aiact-art15-4-cq4 a lexreq:CompetencyQuestion ; rdfs:label "What technical redundancy solutions are used to achieve the robustness of the high-risk AI system?"@en .
-lexreq:aiact-art15-4-cq5 a lexreq:CompetencyQuestion ; rdfs:label "What backup or fail-safe plans are included?"@en .
+lexreq:aiact-art15-4-cq5 a lexreq:CompetencyQuestion ; rdfs:label "What backup or fail-safe plans are included?"@en ; lexreq:formalisedBy "cq/art15_4_fail_safe.rq" .
 lexreq:aiact-art15-4-cq6 a lexreq:CompetencyQuestion ; rdfs:label "How does the high-risk AI system that continues to learn after being placed on the market or put into service eliminate or reduce as far as possible the risk of possibly biased outputs influencing input for future operations?"@en .
 lexreq:aiact-art15-4-cq7 a lexreq:CompetencyQuestion ; rdfs:label "What mitigation measures address such feedback loops?"@en .
 
@@ -1750,7 +1750,7 @@ lexreq:aiact-art16-a a lexreq:Requirement ;
     lexreq:expectedEvidence "Internal compliance checklist"@en ;
     lexreq:expectedEvidence "Requirements traceability matrix"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art16-a-cq1 .
-lexreq:aiact-art16-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the high-risk AI system comply with the requirements set out in Section 2?"@en .
+lexreq:aiact-art16-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How does the high-risk AI system comply with the requirements set out in Section 2?"@en ; lexreq:formalisedBy "cq/art16_a_section2_evidence.rq" .
 
 lexreq:aiact-art16-b a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1768,7 +1768,7 @@ lexreq:aiact-art16-b a lexreq:Requirement ;
     lexreq:expectedEvidence "Contact-details page"@en ;
     lexreq:expectedEvidence "Annotated photos of markings"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art16-b-cq1 .
-lexreq:aiact-art16-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Is the provider’s name, registered trade name or registered trade mark, and their contact address available on all their packaging and/or accompanying documentation?"@en .
+lexreq:aiact-art16-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Is the provider’s name, registered trade name or registered trade mark, and their contact address available on all their packaging and/or accompanying documentation?"@en ; lexreq:formalisedBy "cq/art16_b_provider_identification.rq" .
 
 lexreq:aiact-art16-c a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1786,7 +1786,7 @@ lexreq:aiact-art16-c a lexreq:Requirement ;
     lexreq:expectedEvidence "Audit reports"@en ;
     lexreq:expectedEvidence "ISO or internal quality controls mapping"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art16-c-cq1 , lexreq:aiact-art16-c-cq2 .
-lexreq:aiact-art16-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What quality management system is in place?"@en .
+lexreq:aiact-art16-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What quality management system is in place?"@en ; lexreq:formalisedBy "cq/art16_c_quality_management_system.rq" .
 lexreq:aiact-art16-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Does that quality management system comply with Article 17?"@en .
 
 lexreq:aiact-art16-d a lexreq:Requirement ;
@@ -1807,7 +1807,7 @@ lexreq:aiact-art16-d a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:aiact-art16-d-cq1 , lexreq:aiact-art16-d-cq2 , lexreq:aiact-art16-d-cq3 .
 lexreq:aiact-art16-d-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What documentation referred to in Article 18 is kept by the provider?"@en .
 lexreq:aiact-art16-d-cq2 a lexreq:CompetencyQuestion ; rdfs:label "Does the documentation comply with Article 18?"@en .
-lexreq:aiact-art16-d-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How is that documentation kept?"@en .
+lexreq:aiact-art16-d-cq3 a lexreq:CompetencyQuestion ; rdfs:label "How is that documentation kept?"@en ; lexreq:formalisedBy "cq/art16_d_documentation_keeping.rq" .
 
 lexreq:aiact-art16-e a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1826,7 +1826,7 @@ lexreq:aiact-art16-e a lexreq:Requirement ;
     lexreq:expectedEvidence "Monitoring system configuration"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art16-e-cq1 , lexreq:aiact-art16-e-cq2 .
 lexreq:aiact-art16-e-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Does the provider keep the logs automatically generated by their high-risk AI system?"@en .
-lexreq:aiact-art16-e-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are those logs kept?"@en .
+lexreq:aiact-art16-e-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How are those logs kept?"@en ; lexreq:formalisedBy "cq/art16_e_log_keeping.rq" .
 
 lexreq:aiact-art16-f a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1862,7 +1862,7 @@ lexreq:aiact-art16-g a lexreq:Requirement ;
     lexreq:expectedEvidence "Signed declaration"@en ;
     lexreq:expectedEvidence "Document control record"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art16-g-cq1 , lexreq:aiact-art16-g-cq2 .
-lexreq:aiact-art16-g-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What EU declaration of conformity is drawn up for the high-risk AI system?"@en .
+lexreq:aiact-art16-g-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What EU declaration of conformity is drawn up for the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art16_g_declaration_of_conformity.rq" .
 lexreq:aiact-art16-g-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How is that EU declaration of conformity drawn up in accordance with Article 47?"@en .
 
 lexreq:aiact-art16-h a lexreq:Requirement ;
@@ -1881,7 +1881,7 @@ lexreq:aiact-art16-h a lexreq:Requirement ;
     lexreq:expectedEvidence "Accompanying documentation showing CE marking"@en ;
     lexreq:expectedEvidence "Marking-control procedure"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art16-h-cq1 , lexreq:aiact-art16-h-cq2 .
-lexreq:aiact-art16-h-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the CE marking affixed to the high-risk AI system, its packaging, or its accompanying documentation?"@en .
+lexreq:aiact-art16-h-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the CE marking affixed to the high-risk AI system, its packaging, or its accompanying documentation?"@en ; lexreq:formalisedBy "cq/art16_h_ce_marking.rq" .
 lexreq:aiact-art16-h-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does that CE marking indicate conformity with Article 48?"@en .
 
 lexreq:aiact-art16-i a lexreq:Requirement ;
@@ -1936,7 +1936,7 @@ lexreq:aiact-art16-k a lexreq:Requirement ;
     lexreq:expectedEvidence "Conformity demonstration report"@en ;
     lexreq:expectedEvidence "Correspondence log"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art16-k-cq1 .
-lexreq:aiact-art16-k-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the conformity of the high-risk AI system, when requested from the national competent authority as set out in Section 2, demonstrated?"@en .
+lexreq:aiact-art16-k-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the conformity of the high-risk AI system, when requested from the national competent authority as set out in Section 2, demonstrated?"@en ; lexreq:formalisedBy "cq/art16_k_demonstrated_conformity.rq" .
 
 lexreq:aiact-art16-l a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1954,7 +1954,7 @@ lexreq:aiact-art16-l a lexreq:Requirement ;
     lexreq:expectedEvidence "Accessible UI specification"@en ;
     lexreq:expectedEvidence "Remediation log"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art16-l-cq1 .
-lexreq:aiact-art16-l-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are the Directives (EU) 2016/2102 and (EU) 2019/882 requirements being implemented in the high-risk AI system?"@en .
+lexreq:aiact-art16-l-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How are the Directives (EU) 2016/2102 and (EU) 2019/882 requirements being implemented in the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art16_l_accessibility.rq" .
 
 lexreq:aiact-art17-1 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -1991,7 +1991,7 @@ lexreq:aiact-art17-1-a a lexreq:Requirement ;
     lexreq:expectedEvidence "Change log"@en ;
     lexreq:expectedEvidence "Change approval records"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-a-cq1 , lexreq:aiact-art17-1-a-cq2 , lexreq:aiact-art17-1-a-cq3 .
-lexreq:aiact-art17-1-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the strategy for regulatory compliance for the high-risk AI system?"@en .
+lexreq:aiact-art17-1-a-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What is the strategy for regulatory compliance for the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art17_1a_compliance_strategy.rq" .
 lexreq:aiact-art17-1-a-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What conformity assessment procedures are included for the high-risk AI system?"@en .
 lexreq:aiact-art17-1-a-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What procedures are implemented for the management of modifications to the high-risk AI system?"@en .
 
@@ -2012,7 +2012,7 @@ lexreq:aiact-art17-1-b a lexreq:Requirement ;
     lexreq:expectedEvidence "Engineering workflow documentation"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-b-cq1 , lexreq:aiact-art17-1-b-cq2 .
 lexreq:aiact-art17-1-b-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What techniques, procedures and systematic actions are used for the design of the high-risk AI system?"@en .
-lexreq:aiact-art17-1-b-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What techniques, procedures and systematic actions are used for design control and design verification?"@en .
+lexreq:aiact-art17-1-b-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What techniques, procedures and systematic actions are used for design control and design verification?"@en ; lexreq:formalisedBy "cq/art17_1b_design_control.rq" .
 
 lexreq:aiact-art17-1-c a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2031,7 +2031,7 @@ lexreq:aiact-art17-1-c a lexreq:Requirement ;
     lexreq:expectedEvidence "Development lifecycle records"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-c-cq1 , lexreq:aiact-art17-1-c-cq2 .
 lexreq:aiact-art17-1-c-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What techniques, procedures and systematic actions are used for the development of the high-risk AI system?"@en .
-lexreq:aiact-art17-1-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What techniques, procedures and systematic actions are used for quality control and quality assurance?"@en .
+lexreq:aiact-art17-1-c-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What techniques, procedures and systematic actions are used for quality control and quality assurance?"@en ; lexreq:formalisedBy "cq/art17_1c_quality_procedures.rq" .
 
 lexreq:aiact-art17-1-d a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2050,7 +2050,7 @@ lexreq:aiact-art17-1-d a lexreq:Requirement ;
     lexreq:expectedEvidence "Frequency calendar"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-d-cq1 , lexreq:aiact-art17-1-d-cq2 .
 lexreq:aiact-art17-1-d-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What examination, test and validation procedures are carried out before, during and after the development of the high-risk AI system?"@en .
-lexreq:aiact-art17-1-d-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What is the frequency of those procedures?"@en .
+lexreq:aiact-art17-1-d-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What is the frequency of those procedures?"@en ; lexreq:formalisedBy "cq/art17_1d_test_frequency.rq" .
 
 lexreq:aiact-art17-1-e a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2068,7 +2068,7 @@ lexreq:aiact-art17-1-e a lexreq:Requirement ;
     lexreq:expectedEvidence "Alternative compliance rationale"@en ;
     lexreq:expectedEvidence "Compliance crosswalk"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-e-cq1 , lexreq:aiact-art17-1-e-cq2 .
-lexreq:aiact-art17-1-e-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What technical specifications, including standards, are applied to the high-risk AI system?"@en .
+lexreq:aiact-art17-1-e-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What technical specifications, including standards, are applied to the high-risk AI system?"@en ; lexreq:formalisedBy "cq/art17_1e_applied_standards.rq" .
 lexreq:aiact-art17-1-e-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What means are used to ensure that the high-risk AI system complies with the relevant Section 2 requirements where harmonised standards are not fully applied or do not cover all of them?"@en .
 
 lexreq:aiact-art17-1-f a lexreq:Requirement ;
@@ -2088,7 +2088,7 @@ lexreq:aiact-art17-1-f a lexreq:Requirement ;
     lexreq:expectedEvidence "Retention schedule"@en ;
     lexreq:expectedEvidence "Data lineage record"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-f-cq1 .
-lexreq:aiact-art17-1-f-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What systems and procedures are in the high-risk AI system for data management, including data acquisition, collection, analysis, labelling, storage, filtration, mining, aggregation and retention, and any other operation regarding the data that is performed before and for the purpose of the placing on the market or the putting into service?"@en .
+lexreq:aiact-art17-1-f-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What systems and procedures are in the high-risk AI system for data management, including data acquisition, collection, analysis, labelling, storage, filtration, mining, aggregation and retention, and any other operation regarding the data that is performed before and for the purpose of the placing on the market or the putting into service?"@en ; lexreq:formalisedBy "cq/art17_1f_data_management.rq" .
 
 lexreq:aiact-art17-1-g a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2105,7 +2105,7 @@ lexreq:aiact-art17-1-g a lexreq:Requirement ;
     lexreq:expectedEvidence "Article 9 compliance mapping"@en ;
     lexreq:expectedEvidence "Integrated QMS-RMS documentation"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-g-cq1 .
-lexreq:aiact-art17-1-g-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What risk management system referred to in Article 9 is included in the quality management system?"@en .
+lexreq:aiact-art17-1-g-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What risk management system referred to in Article 9 is included in the quality management system?"@en ; lexreq:formalisedBy "cq/art17_1g_rms_in_qms.rq" .
 
 lexreq:aiact-art17-1-h a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2123,7 +2123,7 @@ lexreq:aiact-art17-1-h a lexreq:Requirement ;
     lexreq:expectedEvidence "Maintenance records"@en ;
     lexreq:expectedEvidence "Article 72 mapping"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-h-cq1 .
-lexreq:aiact-art17-1-h-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What post-market monitoring system is set up, implemented and maintained in accordance with Article 72?"@en .
+lexreq:aiact-art17-1-h-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What post-market monitoring system is set up, implemented and maintained in accordance with Article 72?"@en ; lexreq:formalisedBy "cq/art17_1h_post_market_monitoring.rq" .
 
 lexreq:aiact-art17-1-i a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2140,7 +2140,7 @@ lexreq:aiact-art17-1-i a lexreq:Requirement ;
     lexreq:expectedEvidence "Escalation workflow"@en ;
     lexreq:expectedEvidence "Incident register"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-i-cq1 .
-lexreq:aiact-art17-1-i-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What procedures are implemented for the reporting of a serious incident in accordance with Article 73?"@en .
+lexreq:aiact-art17-1-i-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What procedures are implemented for the reporting of a serious incident in accordance with Article 73?"@en ; lexreq:formalisedBy "cq/art17_1i_incident_procedure.rq" .
 
 lexreq:aiact-art17-1-j a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2157,7 +2157,7 @@ lexreq:aiact-art17-1-j a lexreq:Requirement ;
     lexreq:expectedEvidence "Stakeholder contact matrix"@en ;
     lexreq:expectedEvidence "Notified-body communication records"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-j-cq1 .
-lexreq:aiact-art17-1-j-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What procedures are implemented for the handling of communication with national competent authorities, other relevant authorities, notified bodies, other operators, customers and other interested parties?"@en .
+lexreq:aiact-art17-1-j-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What procedures are implemented for the handling of communication with national competent authorities, other relevant authorities, notified bodies, other operators, customers and other interested parties?"@en ; lexreq:formalisedBy "cq/art17_1j_authority_communication.rq" .
 
 lexreq:aiact-art17-1-k a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2175,7 +2175,7 @@ lexreq:aiact-art17-1-k a lexreq:Requirement ;
     lexreq:expectedEvidence "Archival logs"@en ;
     lexreq:expectedEvidence "Records inventory"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-k-cq1 .
-lexreq:aiact-art17-1-k-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What systems and procedures are implemented for record-keeping of all relevant documentation and information?"@en .
+lexreq:aiact-art17-1-k-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What systems and procedures are implemented for record-keeping of all relevant documentation and information?"@en ; lexreq:formalisedBy "cq/art17_1k_record_keeping.rq" .
 
 lexreq:aiact-art17-1-l a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2193,7 +2193,7 @@ lexreq:aiact-art17-1-l a lexreq:Requirement ;
     lexreq:expectedEvidence "Supplier-risk assessment"@en ;
     lexreq:expectedEvidence "Contingency plan"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-1-l-cq1 , lexreq:aiact-art17-1-l-cq2 .
-lexreq:aiact-art17-1-l-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What resource management measures are included in the quality management system?"@en .
+lexreq:aiact-art17-1-l-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What resource management measures are included in the quality management system?"@en ; lexreq:formalisedBy "cq/art17_1l_resource_management.rq" .
 lexreq:aiact-art17-1-l-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What security-of-supply related measures are included?"@en .
 
 lexreq:aiact-art17-1-m a lexreq:Requirement ;
@@ -2233,7 +2233,7 @@ lexreq:aiact-art17-2 a lexreq:Requirement ;
     lexreq:expectedEvidence "Risk-based protection rationale"@en ;
     lexreq:expectedEvidence "Internal audit results"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-2-cq1 , lexreq:aiact-art17-2-cq2 .
-lexreq:aiact-art17-2-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the implementation of the aspects referred to in paragraph 1 proportionate to the size of the provider’s organisation?"@en .
+lexreq:aiact-art17-2-cq1 a lexreq:CompetencyQuestion ; rdfs:label "How is the implementation of the aspects referred to in paragraph 1 proportionate to the size of the provider’s organisation?"@en ; lexreq:formalisedBy "cq/art17_2_proportionality.rq" .
 lexreq:aiact-art17-2-cq2 a lexreq:CompetencyQuestion ; rdfs:label "How does the provider respect the degree of rigour and the level of protection required to ensure the compliance of the high-risk AI system with the Regulation?"@en .
 
 lexreq:aiact-art17-3 a lexreq:Requirement ;
@@ -2251,7 +2251,7 @@ lexreq:aiact-art17-3 a lexreq:Requirement ;
     lexreq:expectedEvidence "Legal applicability analysis"@en ;
     lexreq:expectedEvidence "Control mapping"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art17-3-cq1 .
-lexreq:aiact-art17-3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What obligations regarding quality management systems or an equivalent function under relevant sectoral Union law apply to the provider? How are the aspects listed in paragraph 1 included as part of the quality management systems pursuant to that law?"@en .
+lexreq:aiact-art17-3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What obligations regarding quality management systems or an equivalent function under relevant sectoral Union law apply to the provider? How are the aspects listed in paragraph 1 included as part of the quality management systems pursuant to that law?"@en ; lexreq:formalisedBy "cq/art17_3_sectoral_integration.rq" .
 
 lexreq:aiact-art17-4 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2307,7 +2307,7 @@ lexreq:aiact-art73-1 a lexreq:Requirement ;
     lexreq:expectedEvidence "Incident register"@en ;
     lexreq:expectedEvidence "Provider notification procedure"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art73-1-cq1 .
-lexreq:aiact-art73-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Is there a process in place for the high-risk AI system to report any serious incidents to the market surveillance authorities of the Member State where the incident occurred?"@en .
+lexreq:aiact-art73-1-cq1 a lexreq:CompetencyQuestion ; rdfs:label "Is there a process in place for the high-risk AI system to report any serious incidents to the market surveillance authorities of the Member State where the incident occurred?"@en ; lexreq:formalisedBy "cq/art73_1_incident_reporting_process.rq" .
 
 lexreq:aiact-art73-2 a lexreq:Requirement ;
     skos:inScheme lexreq: ;
@@ -2344,7 +2344,7 @@ lexreq:aiact-art73-3 a lexreq:Requirement ;
     lexreq:expectedEvidence "Expedited report submission"@en ;
     lexreq:expectedEvidence "Incident escalation file"@en ;
     aiact:hasCompetencyQuestion lexreq:aiact-art73-3-cq1 , lexreq:aiact-art73-3-cq2 .
-lexreq:aiact-art73-3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What processes are in place for the provider for providing the report within two days?"@en .
+lexreq:aiact-art73-3-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What processes are in place for the provider for providing the report within two days?"@en ; lexreq:formalisedBy "cq/art73_3_provider_reporting_procedure.rq" .
 lexreq:aiact-art73-3-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What processes are in place for the deployer for providing the report within two days?"@en .
 
 lexreq:aiact-art73-4 a lexreq:Requirement ;
@@ -2365,7 +2365,7 @@ lexreq:aiact-art73-4 a lexreq:Requirement ;
     aiact:hasCompetencyQuestion lexreq:aiact-art73-4-cq1 , lexreq:aiact-art73-4-cq2 , lexreq:aiact-art73-4-cq3 .
 lexreq:aiact-art73-4-cq1 a lexreq:CompetencyQuestion ; rdfs:label "What systems are in place for the provider or deployer to identify a suspected causal relationship between the high-risk AI system and a serious incident?"@en .
 lexreq:aiact-art73-4-cq2 a lexreq:CompetencyQuestion ; rdfs:label "What systems are in place for the provider or deployer to detect a serious incident?"@en .
-lexreq:aiact-art73-4-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What systems are in place to ensure that the report is submitted within 10 days?"@en .
+lexreq:aiact-art73-4-cq3 a lexreq:CompetencyQuestion ; rdfs:label "What systems are in place to ensure that the report is submitted within 10 days?"@en ; lexreq:formalisedBy "cq/art73_4_report_deadline.rq" .
 
 lexreq:aiact-art73-5 a lexreq:Requirement ;
     skos:inScheme lexreq: ;

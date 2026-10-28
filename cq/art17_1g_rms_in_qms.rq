@@ -1,0 +1,12 @@
+# CQ: What risk management system referred to in Article 9 is included in the quality management system?
+# Question: lexreq:aiact-art17-1-g-cq1
+# Requirement: lexreq:aiact-art17-1-g
+# Terms: dpv-aiact:RiskManagementSystem, dpv-aiact:QualityManagementSystem, aidoc-lex:integratedWith
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+SELECT ?rms ?qms WHERE {
+  ?rms a dpv-aiact:RiskManagementSystem ;
+       aidoc-lex:integratedWith ?qms .
+  ?qms a dpv-aiact:QualityManagementSystem .
+}
