@@ -25,6 +25,16 @@ Status: draft of version 1.0, not released.
 
 Each requirement has its text, competency questions, the ontology terms needed to answer them (`lexreq:usesTerm`) and the expected evidence (`lexreq:expectedEvidence`). The legal text follows the AI Act Service Desk of the European Commission at the time of the analysis. Terms proposed in the analysis were merged where they overlapped or mapped to existing AIDOC-AP, AIRO or DPV terms; [requirements/term-mapping.csv](requirements/term-mapping.csv) records the decision and rationale for each of the 364 proposed terms.
 
+## KPI 1.2
+
+CERTAIN measures the integration of legal and ethical requirements into the ontology framework with KPI 1.2, Integration Success Rate (target at least 90%). The KPI is computed over the requirements of this repository. A requirement counts as integrated when
+
+1. every term it uses (`lexreq:usesTerm`) is declared in the core, the module or a reused vocabulary,
+2. it has at least one competency question, and
+3. at least one of its competency questions is formalised as a query in [cq/](cq/README.md) that returns an answer over the example graphs.
+
+The Integration Success Rate is the share of integrated requirements. `make kpi` computes it, with the counts after each condition per framework, and writes `reports/kpi-1-2.md`. The third condition is the one that limits the rate: the terms and competency questions exist for all requirements, but only some of the questions are formalised so far.
+
 ## Example
 
 Any artefact, measure or activity can point to the requirement it is evidence for:
@@ -46,7 +56,7 @@ ex:Measure_Reweighting a aidoc-lex:BiasMitigationMeasure ;
 
 ```bash
 make setup      # Python virtual environment; fetches the pinned AIDOC-AP core
-make all        # module checks, tooling tests, competency queries, alignments
+make all        # module checks, tooling tests, competency queries, KPI 1.2, alignments
 ```
 
 | Command | Purpose |
