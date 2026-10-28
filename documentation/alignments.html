@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>AIDOC-AP LEX · Alignments</title>
+  <link rel="stylesheet" href="assets/widoco-like.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body class="widoco-theme">
+<header class="page-header">
+  <nav class="site-nav">
+    <a class="brand" href="index-en.html">AIDOC-AP <span>LEX</span></a>
+    <a class="nav-link" href="requirements.html">Requirements</a>
+    <a class="nav-link" href="examples.html">Worked Examples</a>
+    <a class="nav-link active" href="alignments.html">Alignments</a>
+    <a class="nav-link" href="https://github.com/CERTAIN-Project/aidoc-ap-lex">GitHub ↗</a>
+  </nav>
+  <div class="head-inner">
+    <h1 class="title">Cross-Ontology Alignments</h1>
+    <p class="subtitle">
+      Mappings between <code>aidoc-lex:</code> terms and DPV, the DPV AI Act extension, DPV-AI, AIRO and VAIR,
+      as SKOS mapping relations with a rationale and PROV-O provenance per mapping. The mappings were proposed
+      and reviewed by the maintainers of the module; every target is checked to exist in the vocabulary version
+      vendored with the AIDOC-AP core.
+    </p>
+  </div>
+</header>
+
+<main>
+  <section id="stats" class="stats"></section>
+
+  <section class="filters">
+    <div class="row">
+      <input id="q" class="search" placeholder="Filter by LEX term, target IRI, relation, rationale…">
+      <select id="vocabSel" title="Target vocabulary">
+        <option value="">All target vocabularies</option>
+      </select>
+      <select id="relationSel" title="Mapping relation">
+        <option value="">All relations</option>
+        <option value="skos:exactMatch">skos:exactMatch</option>
+        <option value="skos:closeMatch">skos:closeMatch</option>
+        <option value="skos:broadMatch">skos:broadMatch</option>
+        <option value="skos:narrowMatch">skos:narrowMatch</option>
+        <option value="skos:relatedMatch">skos:relatedMatch</option>
+      </select>
+    </div>
+    <div class="legend">
+      <span class="pill exact">exact</span>
+      <span class="pill close">close</span>
+      <span class="pill broad">broad</span>
+      <span class="pill narrow">narrow</span>
+      <span class="pill related">related</span>
+    </div>
+  </section>
+
+  <section id="summary" class="summary"></section>
+
+  <section class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width:22%">LEX Term</th>
+          <th style="width:22%">Relation</th>
+          <th>Target (Vocabulary)</th>
+          <th style="width:7%">TTL</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+
+  <section class="downloads">
+    <h2>Download</h2>
+    <p>
+      The alignments are published as Turtle files (SKOS mapping relation, rationale and PROV-O provenance per mapping):
+      <a class="btn ghost" href="resources/aidoc-lex-alignments.ttl" download>All alignments (TTL)</a>
+    </p>
+    <p id="ttlList" class="ttl-list"></p>
+  </section>
+
+  <section id="details" class="drawer hidden">
+    <header>
+      <h2>Mapping details</h2>
+      <button id="closeDetails" title="Close">×</button>
+    </header>
+    <div id="detailsBody"></div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <p><strong>Related pages:</strong> <a href="requirements.html">Requirements</a> | <a href="examples.html">Worked Examples</a> | <a href="index-en.html">Ontology Documentation</a> | <a href="https://certain-project.github.io/aidoc-ap/alignments.html">AIDOC-AP core alignments</a></p>
+  <ul>
+    <li><a target="_blank" href="https://www.w3.org/2004/02/skos/specs">SKOS spec</a></li>
+    <li><a target="_blank" href="https://www.w3.org/TR/prov-o/">PROV-O spec</a></li>
+  </ul>
+</footer>
+
+<script src="assets/alignments.js"></script>
+</body>
+</html>

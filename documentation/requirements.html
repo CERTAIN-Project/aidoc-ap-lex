@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <title>AIDOC-AP LEX · Legal and Ethical Requirements</title>
+  <link rel="stylesheet" href="assets/widoco-like.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    .summary{padding:0 20px}
+    .badge.fw{white-space:nowrap}
+    .muted{color:var(--muted)}
+    .terms code{display:inline-block;margin:0 4px 4px 0}
+    #detailsBody h4{margin:18px 0 6px}
+    #detailsBody ul{margin:0;padding-left:20px}
+    .formalised{font-size:.85em;margin-left:6px}
+  </style>
+</head>
+<body class="widoco-theme">
+<header class="page-header">
+  <nav class="site-nav">
+    <a class="brand" href="index-en.html">AIDOC-AP <span>LEX</span></a>
+    <a class="nav-link active" href="requirements.html">Requirements</a>
+    <a class="nav-link" href="examples.html">Worked Examples</a>
+    <a class="nav-link" href="alignments.html">Alignments</a>
+    <a class="nav-link" href="https://github.com/CERTAIN-Project/aidoc-ap-lex">GitHub ↗</a>
+  </nav>
+  <div class="head-inner">
+  <h1 class="title">Legal and Ethical Requirements</h1>
+  <p class="subtitle">
+    Obligations of providers and deployers in Articles 9 to 17, 72 and 73 of the EU AI Act, the ALTAI assessment list,
+    the OECD AI Principles and the gender requirements of CERTAIN D3.2, with competency questions,
+    the ontology terms that answer them and the evidence an organisation is expected to keep.
+  </p>
+  </div>
+</header>
+
+<main>
+  <section class="ontology-metadata">
+    <dl class="metadata-grid">
+      <dt>URI:</dt>
+      <dd><code>https://w3id.org/aidoc-ap/lex/requirements</code></dd>
+      <dt>Created on:</dt>
+      <dd id="meta-created">Loading...</dd>
+      <dt>Modified on:</dt>
+      <dd id="meta-modified">Loading...</dd>
+      <dt>Revision:</dt>
+      <dd id="meta-version">Loading...</dd>
+      <dt>Authors:</dt>
+      <dd id="meta-authors">Loading...</dd>
+      <dt>License:</dt>
+      <dd id="meta-license">Loading...</dd>
+      <dt>Download serialization:</dt>
+      <dd><a href="requirements.ttl" download>TTL</a></dd>
+    </dl>
+  </section>
+
+  <section class="filters">
+    <div class="row">
+      <input id="q" class="search" placeholder="Filter by requirement, text, competency question, evidence, ontology term…">
+      <select id="fwSel" title="Framework"><option value="">All frameworks</option></select>
+      <select id="secSel" title="Article, requirement, principle or section"><option value="">All sections</option></select>
+      <label><input type="checkbox" id="formalisedOnly"> with SPARQL queries only</label>
+    </div>
+  </section>
+
+  <section id="summary" class="summary"></section>
+
+  <section class="table-wrap">
+    <table class="table">
+      <thead>
+        <tr>
+          <th style="width:18%">Requirement</th>
+          <th style="width:9%">Framework</th>
+          <th>Text</th>
+          <th style="width:6%">CQs</th>
+          <th style="width:7%">Evidence</th>
+          <th style="width:6%">Terms</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+
+  <section id="details" class="drawer hidden">
+    <header>
+      <h2>Requirement details</h2>
+      <button id="closeDetails" title="Close">×</button>
+    </header>
+    <div id="detailsBody"></div>
+  </section>
+</main>
+
+<footer class="page-footer">
+  <p>Sources: <a target="_blank" href="http://data.europa.eu/eli/reg/2024/1689/oj">Regulation (EU) 2024/1689 (AI Act)</a>, worded as in the
+    <a target="_blank" href="https://ai-act-service-desk.ec.europa.eu/en/ai-act">AI Act Service Desk</a> at the time of the analysis;
+    <a target="_blank" href="https://digital-strategy.ec.europa.eu/en/library/assessment-list-trustworthy-artificial-intelligence-altai-self-assessment">ALTAI</a>;
+    <a target="_blank" href="https://oecd.ai/en/ai-principles">OECD AI Principles</a>;
+    <a target="_blank" href="https://certain-project.eu/wp-content/uploads/2026/02/CERTAIN_WP3_D3.2_Ethical-considerations-of-AI-compliance_V1.0-delivered.pdf">CERTAIN D3.2, Ethical considerations of AI compliance</a> (<a target="_blank" href="https://certain-project.eu/public-deliverables/">CERTAIN public deliverables</a>).</p>
+  <p><strong>Related pages:</strong> <a href="examples.html">Worked Examples</a> | <a href="alignments.html">Alignments</a> | <a href="index-en.html">Ontology Documentation</a> | <a href="https://certain-project.github.io/aidoc-ap/requirements.html">AIDOC-AP Annex IV requirements</a></p>
+</footer>
+
+<script>
+  /** Requirements, competency questions and evidence from requirements.ttl */
+  window.REQUIREMENTS_TTL = 'requirements.ttl';
+</script>
+<script src="assets/requirements.js"></script>
+<script>
+  // Deep links: requirements.html#show-<id> or #<id> (the fragment of a requirement IRI), for example #aiact-art9-1
+  function handleShowRequirementHash() {
+    const m = decodeURIComponent(window.location.hash).match(/^#(?:show-)?([a-z0-9-]+)$/);
+    if (!m || typeof window.showDetails !== 'function') return false;
+    const row = document.querySelector(`tr.requirement-row[data-reqid="${CSS.escape(m[1])}"]`);
+    if (!row) return false;
+    row.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    window.showDetails(m[1]);
+    return true;
+  }
+  window.addEventListener('hashchange', handleShowRequirementHash);
+  window.addEventListener('requirements:rendered', handleShowRequirementHash);
+</script>
+</body>
+</html>

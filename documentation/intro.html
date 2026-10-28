@@ -1,0 +1,146 @@
+<h2 id="intro" class="list">Introduction <span class="backlink"> back to <a href="#toc">ToC</a></span></h2>
+<span>
+    The AIDOC-AP LEX Extension adds to the <a href="https://w3id.org/aidoc-ap">AIDOC-AP</a> core what is needed to document how an AI system meets legal and ethical requirements: which management systems, assessments, measures and documents an organisation has in place, which risks and incidents they address, and which persons and authorities are involved.
+    The core describes the technical documentation required by Annex IV of the EU AI Act. The extension covers the obligations of providers and deployers in Articles 9 to 17 (risk management, data governance, technical documentation, record-keeping, transparency, human oversight, accuracy and cybersecurity, provider obligations, quality management) and Articles 72 and 73 (post-market monitoring, serious incidents), and the ethical requirements of the Assessment List for Trustworthy AI (ALTAI), the OECD AI Principles and the gender requirements of CERTAIN deliverable D3.2.
+    It imports the core without changing any of its definitions and is aligned to DPV, the DPV AI Act extension, DPV-AI, AIRO and VAIR.
+</span>
+
+<h3 id="method" class="list">Scope and method</h3>
+<span>
+    The requirements were analysed from the wording of the AI Act in the AI Act Service Desk of the European Commission at the time of the analysis. Only obligations of providers and deployers were analysed; sections on market surveillance authorities and other public bodies were left out. The ethical competency questions follow ALTAI, the operational successor of the assessment list in the Ethics Guidelines for Trustworthy AI, the OECD AI Principles, and the gender requirements of <a href="https://certain-project.eu/wp-content/uploads/2026/02/CERTAIN_WP3_D3.2_Ethical-considerations-of-AI-compliance_V1.0-delivered.pdf">D3.2, Ethical considerations of AI compliance</a> (Gender Audit Tool, GIA and SGIA method, QETAM framework, gender inclusivity checklist, ethical and gender risk register).
+    Each requirement lists competency questions, the ontology terms needed to answer them and the evidence an organisation is expected to keep. Terms proposed in the analysis were merged where they overlapped and mapped to existing AIDOC-AP, AIRO or DPV terms where these exist; the mapping of every proposed term is published in the repository (<a href="https://github.com/CERTAIN-Project/aidoc-ap-lex/blob/main/requirements/term-mapping.csv">term-mapping.csv</a>).
+</span>
+
+<h3 id="by-group" class="list">Terms by group</h3>
+<span>
+<table>
+<tr><th>Group</th><th>Upper class</th><th>Extension terms</th></tr>
+<tr><td>Management systems</td><td>ManagementSystem</td><td>RiskManagementSystem, QualityManagementSystem, PostMarketMonitoringSystem, RecordKeepingSystem, DataGovernanceFramework, AccountabilityFramework; hasManagementSystem, includesDocument, integratedWith</td></tr>
+<tr><td>Compliance documents</td><td>ComplianceDocument</td><td>Policy, Procedure, InstructionsForUse, RiskRegister, ProcessingRecord, IncidentReport, LogEntry, SafetyCase, DesignChoice; SimplifiedTechnicalDocumentation (under aidoc:TechnicalDocumentation); documentedIn, procedureType, loggedEventType</td></tr>
+<tr><td>Assessments</td><td>Assessment</td><td>RiskAssessment, ImpactAssessment, FundamentalRightsImpactAssessment, DataProtectionImpactAssessment, GenderImpactAssessment, BiasAssessment, GenderAudit, AccessibilityAssessment, DatasetSuitabilityAssessment, TradeOffAssessment, TechnologyAcceptanceStudy, ConformityAssessment, ComplianceTest, SecurityAssessment, Audit, IncidentInvestigation; assesses, identifiesRisk, impactArea</td></tr>
+<tr><td>Other governance activities</td><td>GovernanceActivity</td><td>CorrectiveAction, CompetenceTraining, StakeholderConsultation, EURegistration, AuthorityCommunication; submittedTo</td></tr>
+<tr><td>Measures</td><td>Measure</td><td>RiskControlMeasure, BiasMitigationMeasure, SecurityMeasure, PrivacyPreservingMeasure, ResilienceMeasure, AccessibilityMeasure, MaintenanceMeasure, RedressMechanism, ReportingChannel, DataSubjectRightsMechanism; addressesRisk, controlFunction</td></tr>
+<tr><td>Human oversight and transparency</td><td>aidoc:HumanOversightMechanism, aidoc:TransparencyMeasure</td><td>ProviderOversightMeasure, DeployerOversightMeasure, StopMechanism, OverrideMechanism, AIInteractionDisclosure, SyntheticContentLabel, OutputInterpretationGuidance; assignedOverseer</td></tr>
+<tr><td>Incidents, changes, misuse</td><td>prov:Activity, aidoc:ChangeRecord, airo:Misuse</td><td>Incident, SeriousIncident, SubstantialModification, PredeterminedChange, ReasonablyForeseeableMisuse, DataGap; reportsIncident, incidentCategory, awarenessDate, remediatedBy</td></tr>
+<tr><td>Organisations, persons and groups</td><td>prov:Organization, prov:Person, airo:Stakeholder</td><td>SME, Microenterprise, StartUp, FinancialInstitution, AuthorisedRepresentative, CompetentAuthority, NotifiedBody, HumanOverseer, DataProtectionOfficer, EthicsReviewBoard, AffectedGroup; affectsGroup, measuredForGroup, accountableAgent</td></tr>
+<tr><td>Link to the requirements</td><td></td><td>addressesRequirement relates any artefact, measure or activity to the requirement it is evidence for</td></tr>
+</table>
+Categorical values (risk categories, control functions, impact areas, procedure types, logged event types, serious incident categories) are SKOS concepts of small schemes shipped with the extension.
+</span>
+
+<h3 id="additional-resources" class="list">Additional resources</h3>
+<span>Pages and sources that accompany the AIDOC-AP LEX Extension.</span>
+
+<style>
+.resource-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin: 20px 0;
+}
+.resource-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  background: #f9f9f9;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+.resource-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: translateY(-2px);
+  border-color: #0066cc;
+}
+.resource-card h4 {
+  margin: 0 0 10px 0;
+  color: #0066cc;
+  font-size: 1.2em;
+}
+.resource-card p {
+  margin: 10px 0;
+  color: #555;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.resource-card .stats {
+  display: flex;
+  gap: 15px;
+  margin: 15px 0 10px 0;
+  flex-wrap: wrap;
+}
+.resource-card .stat-badge {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 0.85em;
+  color: #333;
+  white-space: nowrap;
+}
+.resource-card .stat-badge strong {
+  color: #0066cc;
+  font-size: 1.1em;
+}
+.resource-card .cta {
+  display: inline-block;
+  margin-top: 10px;
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: 500;
+}
+.resource-card .cta:hover {
+  text-decoration: underline;
+}
+</style>
+
+<div class="resource-cards">
+  <div class="resource-card">
+    <h4><a href="requirements.html">Legal and Ethical Requirements</a></h4>
+    <p>Requirements from Articles 9 to 17, 72 and 73 of the EU AI Act, ALTAI, the OECD AI Principles and CERTAIN D3.2, each with competency questions, the ontology terms that answer them and the expected evidence.</p>
+    <div class="stats">
+      <span class="stat-badge"><strong id="req-count">180</strong> requirements</span>
+      <span class="stat-badge"><strong id="cq-count">476</strong> competency questions</span>
+      <span class="stat-badge"><strong>4</strong> frameworks</span>
+    </div>
+    <a href="requirements.html" class="cta">View all requirements →</a>
+  </div>
+
+  <div class="resource-card">
+    <h4><a href="examples.html">Worked Examples</a></h4>
+    <p>Formalised competency questions with their SPARQL queries, answered over an example of a high-risk CV screening system (AI Act Annex III, point 4(a)).</p>
+    <div class="stats">
+      <span class="stat-badge"><strong id="query-count">45</strong> SPARQL queries</span>
+    </div>
+    <a href="examples.html" class="cta">View worked examples →</a>
+  </div>
+
+  <div class="resource-card">
+    <h4><a href="alignments.html">Cross-Ontology Alignments</a></h4>
+    <p>SKOS mappings of the extension terms to DPV, the DPV AI Act extension, DPV-AI, AIRO and VAIR, with rationale and provenance.</p>
+    <div class="stats">
+      <span class="stat-badge"><strong id="align-count">60</strong> mappings</span>
+      <span class="stat-badge"><strong id="align-ontos">5</strong> vocabularies</span>
+    </div>
+    <a href="alignments.html" class="cta">View alignments →</a>
+  </div>
+
+</div>
+
+<script>
+// Refresh the counts from the published Turtle files; the numbers above are the fallback.
+(async function loadResourceStats(){
+  const count = (txt, re) => (txt.match(re) || []).length;
+  try {
+    const txt = await (await fetch('requirements.ttl')).text();
+    document.getElementById('req-count').textContent = count(txt, /\ba lexreq:Requirement\b/g);
+    document.getElementById('cq-count').textContent = count(txt, /\ba lexreq:CompetencyQuestion\b/g);
+    document.getElementById('query-count').textContent = count(txt, /lexreq:formalisedBy "/g);
+  } catch(e) { console.log('Could not load requirements stats'); }
+  try {
+    const txt = await (await fetch('resources/aidoc-lex-alignments.ttl')).text();
+    document.getElementById('align-count').textContent = count(txt, /align:Mapping\s*;/g);
+    document.getElementById('align-ontos').textContent = new Set([...txt.matchAll(/align:target\s+([\w-]+):/g)].map(m => m[1])).size;
+  } catch(e) { console.log('Could not load alignment stats'); }
+})();
+</script>
