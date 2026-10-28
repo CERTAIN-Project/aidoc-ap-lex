@@ -1,0 +1,12 @@
+# CQ: How does the AI system incorporate Universal Design principles into each relevant step of planning and development?
+# Question: lexreq:altai-r5-08-cq1
+# Requirement: lexreq:altai-r5-08
+# Terms: aidoc-lex:AccessibilityMeasure, aidoc:Interface, aidoc:hasInterface
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?interface ?measure WHERE {
+  ?system aidoc:hasInterface ?interface .
+  ?measure a aidoc-lex:AccessibilityMeasure ;
+           aidoc-lex:concernsSystem ?system .
+}

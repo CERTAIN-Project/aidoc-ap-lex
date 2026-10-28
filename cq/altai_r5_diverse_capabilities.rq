@@ -1,0 +1,14 @@
+# CQ: What design or evaluation mechanisms does the AI system use to verify that it serves diverse user capabilities?
+# Question: lexreq:altai-r5-06-cq2
+# Requirement: lexreq:altai-r5-06
+# Terms: aidoc-lex:AccessibilityAssessment, aidoc:Interface
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?assessment ?label ?interface WHERE {
+  ?assessment a aidoc-lex:AccessibilityAssessment ;
+              aidoc-lex:assesses ?system ;
+              rdfs:label ?label .
+  OPTIONAL { ?system aidoc:hasInterface ?interface }
+}

@@ -1,0 +1,13 @@
+# CQ: What techniques, procedures and systematic actions are used for quality control and quality assurance?
+# Question: lexreq:aiact-art17-1-c-cq2
+# Requirement: lexreq:aiact-art17-1-c
+# Terms: aidoc-lex:Procedure, aidoc-lex:procedureType, aidoc-lex:QualityControl, aidoc-lex:QualityAssurance
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?procedure ?type ?label WHERE {
+  ?procedure a aidoc-lex:Procedure ;
+             aidoc-lex:procedureType ?type ;
+             rdfs:label ?label .
+  VALUES ?type { aidoc-lex:QualityControl aidoc-lex:QualityAssurance }
+}

@@ -21,8 +21,8 @@ jobs:
       - name: Fetch pinned AIDOC-AP core and verify checksums
         run: bash scripts/fetch_core.sh
 
-      - name: Module rules, tooling tests, competency queries, alignments
-        run: make PY=python check-strict test cq alignments
+      - name: Module rules, tooling tests, competency queries, KPI 1.2, alignments
+        run: make PY=python check-strict test cq kpi alignments
 
       - name: Upload reports
         if: always()

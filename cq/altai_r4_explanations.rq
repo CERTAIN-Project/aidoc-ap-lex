@@ -1,0 +1,13 @@
+# CQ: How does the AI system explain its decisions or outputs to users?
+# Question: lexreq:altai-r4-02-cq1
+# Requirement: lexreq:altai-r4-02
+# Terms: aidoc:ExplainableAIFeature, aidoc-lex:OutputInterpretationGuidance
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?explanation ?label WHERE {
+  ?system aidoc:hasTransparencyMeasure ?explanation .
+  ?explanation rdfs:label ?label .
+  { ?explanation a aidoc:ExplainableAIFeature } UNION { ?explanation a aidoc-lex:OutputInterpretationGuidance }
+}

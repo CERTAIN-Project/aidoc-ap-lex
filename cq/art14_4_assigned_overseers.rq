@@ -1,0 +1,12 @@
+# CQ: How is the high-risk AI system provided to the deployer in such a way that natural persons to whom human oversight is assigned are enabled, as appropriate and proportionate?
+# Question: lexreq:aiact-art14-4-cq1
+# Requirement: lexreq:aiact-art14-4
+# Terms: aidoc-lex:assignedOverseer, aidoc:hasHumanOversight
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?mechanism ?overseer WHERE {
+  ?system aidoc:hasHumanOversight ?mechanism .
+  ?mechanism aidoc-lex:assignedOverseer ?overseer .
+}
+ORDER BY ?mechanism

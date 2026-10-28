@@ -1,0 +1,12 @@
+# CQ: How does human oversight prevent or minimise those risks?
+# Question: lexreq:aiact-art14-2-cq2
+# Requirement: lexreq:aiact-art14-2
+# Terms: aidoc:hasHumanOversight, aidoc:hasRisk, aidoc-lex:addressesRisk
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?risk ?mechanism WHERE {
+  ?system aidoc:hasHumanOversight ?mechanism ;
+          aidoc:hasRisk ?risk .
+  ?mechanism aidoc-lex:addressesRisk ?risk .
+}

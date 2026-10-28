@@ -1,10 +1,12 @@
 # CQ: How is that quality management system documented in written policies, procedures and instructions?
 # Question: lexreq:aiact-art17-1-cq2
 # Requirement: lexreq:aiact-art17-1
-# Terms: aidoc-lex:Policy, aidoc-lex:Procedure, aidoc-lex:QualityManagementSystem, aidoc-lex:hasManagementSystem, aidoc-lex:includesDocument, aidoc-lex:procedureType
+# Terms: dpv:Policy, aidoc-lex:Procedure, dpv-aiact:QualityManagementSystem, aidoc-lex:hasManagementSystem, aidoc-lex:includesDocument, aidoc-lex:procedureType
 
 PREFIX aidoc: <https://w3id.org/aidoc-ap#>
 PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+PREFIX dpv: <https://w3id.org/dpv#>
 PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
 PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
 PREFIX dqv: <http://www.w3.org/ns/dqv#>
@@ -13,10 +15,10 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?provider ?qms ?document ?kind ?procedureType WHERE {
   ?provider aidoc-lex:hasManagementSystem ?qms .
-  ?qms a aidoc-lex:QualityManagementSystem ;
+  ?qms a dpv-aiact:QualityManagementSystem ;
        aidoc-lex:includesDocument ?document .
   ?document a ?kind .
-  FILTER (?kind IN (aidoc-lex:Policy, aidoc-lex:Procedure))
+  FILTER (?kind IN (dpv:Policy, aidoc-lex:Procedure))
   OPTIONAL { ?document aidoc-lex:procedureType ?procedureType }
 }
 ORDER BY ?kind ?document

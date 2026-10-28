@@ -1,0 +1,12 @@
+# CQ: What operational controls does the AI system apply to prevent bias during design, development, validation, and deployment?
+# Question: lexreq:altai-r5-01-cq2
+# Requirement: lexreq:altai-r5-01
+# Terms: aidoc-lex:BiasMitigationMeasure, aidoc-lex:controlFunction
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?measure ?label ?function WHERE {
+  ?measure a aidoc-lex:BiasMitigationMeasure ;
+           rdfs:label ?label ;
+           aidoc-lex:controlFunction ?function .
+}

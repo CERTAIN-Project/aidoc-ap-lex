@@ -1,0 +1,14 @@
+# CQ: How are the Directives (EU) 2016/2102 and (EU) 2019/882 requirements being implemented in the high-risk AI system?
+# Question: lexreq:aiact-art16-l-cq1
+# Requirement: lexreq:aiact-art16-l
+# Terms: aidoc-lex:AccessibilityAssessment, aidoc-lex:AccessibilityMeasure, aidoc:appliesStandard
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?item ?type ?standard WHERE {
+  { ?item a aidoc-lex:AccessibilityAssessment ; aidoc-lex:assesses ?system . BIND(aidoc-lex:AccessibilityAssessment AS ?type) }
+  UNION
+  { ?item a aidoc-lex:AccessibilityMeasure ; aidoc-lex:concernsSystem ?system . BIND(aidoc-lex:AccessibilityMeasure AS ?type) }
+  OPTIONAL { ?system aidoc:appliesStandard ?standard . ?standard rdfs:label ?l . FILTER(CONTAINS(?l, "301 549")) }
+}

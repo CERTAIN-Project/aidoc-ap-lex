@@ -1,0 +1,14 @@
+# CQ: How does the high-risk AI system comply with the requirements set out in Section 2?
+# Question: lexreq:aiact-art16-a-cq1
+# Requirement: lexreq:aiact-art16-a
+# Terms: aidoc-lex:addressesRequirement, aidoc:isProvidedBy
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
+SELECT ?section (COUNT(DISTINCT ?requirement) AS ?requirements) (COUNT(DISTINCT ?evidence) AS ?evidenceItems) WHERE {
+  ?evidence aidoc-lex:addressesRequirement ?requirement .
+  ?requirement lexreq:section ?section .
+  FILTER(REGEX(?section, "^Article 1[0-5]:|^Article 9:"))
+}
+GROUP BY ?section
+ORDER BY ?section

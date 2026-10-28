@@ -1,0 +1,13 @@
+# CQ: What events are automatically recorded over the lifetime of the high-risk AI system?
+# Question: lexreq:aiact-art12-1-cq1
+# Requirement: lexreq:aiact-art12-1
+# Terms: aidoc:DataMonitoringAndLogging, aidoc:Log, aidoc-lex:LogEntry, aidoc-lex:loggedEventType
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT DISTINCT ?logging ?log ?eventType WHERE {
+  ?logging a aidoc:DataMonitoringAndLogging ;
+           aidoc:producesLog ?log .
+  ?entry aidoc-lex:partOfLog ?log ;
+         aidoc-lex:loggedEventType ?eventType .
+}

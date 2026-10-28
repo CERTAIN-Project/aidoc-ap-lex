@@ -1,0 +1,15 @@
+# CQ: What is the strategy for regulatory compliance for the high-risk AI system?
+# Question: lexreq:aiact-art17-1-a-cq1
+# Requirement: lexreq:aiact-art17-1-a
+# Terms: dpv-aiact:QualityManagementSystem, dpv:Policy, aidoc-lex:includesDocument
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv: <https://w3id.org/dpv#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?qms ?policy ?label WHERE {
+  ?qms a dpv-aiact:QualityManagementSystem ;
+       aidoc-lex:includesDocument ?policy .
+  ?policy a dpv:Policy ;
+          rdfs:label ?label .
+}

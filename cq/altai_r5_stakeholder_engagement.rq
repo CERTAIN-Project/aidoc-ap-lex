@@ -1,0 +1,12 @@
+# CQ: What mechanisms does the AI system use to engage target end-users, subjects, and other stakeholders during design and development?
+# Question: lexreq:altai-r5-09-cq2
+# Requirement: lexreq:altai-r5-09
+# Terms: aidoc-lex:StakeholderConsultation
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?consultation ?label WHERE {
+  ?consultation a aidoc-lex:StakeholderConsultation ;
+                aidoc-lex:concernsSystem ?system ;
+                rdfs:label ?label .
+}

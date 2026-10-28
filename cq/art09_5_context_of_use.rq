@@ -1,0 +1,10 @@
+# CQ: What is the presumable context in which the high-risk AI system is intended to be used?
+# Question: lexreq:aiact-art9-5-closing-cq2
+# Requirement: lexreq:aiact-art9-5-closing
+# Terms: aidoc:hasIntendedPurpose, aidoc:isDeployedBy
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?system ?purpose ?deployer WHERE {
+  ?system aidoc:hasIntendedPurpose ?purpose ;
+          aidoc:isDeployedBy ?deployer .
+}

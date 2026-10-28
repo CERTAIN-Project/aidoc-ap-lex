@@ -1,0 +1,12 @@
+# CQ: How does the AI system ensure that oversight personnel are trained to exercise oversight effectively?
+# Question: lexreq:altai-r1-06-cq1
+# Requirement: lexreq:altai-r1-06
+# Terms: aidoc-lex:CompetenceTraining, aidoc-lex:assignedOverseer
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT DISTINCT ?training ?overseer WHERE {
+  ?training a aidoc-lex:CompetenceTraining ;
+            prov:wasAssociatedWith ?overseer .
+  ?mechanism aidoc-lex:assignedOverseer ?overseer .
+}

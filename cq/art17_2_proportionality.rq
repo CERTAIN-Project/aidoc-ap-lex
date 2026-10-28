@@ -1,0 +1,14 @@
+# CQ: How is the implementation of the aspects referred to in paragraph 1 proportionate to the size of the provider’s organisation?
+# Question: lexreq:aiact-art17-2-cq1
+# Requirement: lexreq:aiact-art17-2
+# Terms: dpv:SMEOrganisation, aidoc:isProvidedBy, aidoc-lex:SimplifiedTechnicalDocumentation
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv: <https://w3id.org/dpv#>
+SELECT ?system ?provider ?documentation WHERE {
+  ?system aidoc:isProvidedBy ?provider ;
+          aidoc:hasTechnicalDocumentation ?documentation .
+  ?provider a dpv:SMEOrganisation .
+  ?documentation a aidoc-lex:SimplifiedTechnicalDocumentation .
+}

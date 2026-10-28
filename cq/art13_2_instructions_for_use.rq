@@ -1,0 +1,13 @@
+# CQ: Is the high-risk AI system accompanied by instruction for use?
+# Question: lexreq:aiact-art13-2-cq1
+# Requirement: lexreq:aiact-art13-2
+# Terms: dpv-aiact:InstructionForUse, aidoc-lex:hasInstructionsForUse, aidoc:isDeployedBy
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+SELECT ?system ?ifu ?deployer WHERE {
+  ?system aidoc-lex:hasInstructionsForUse ?ifu .
+  ?ifu a dpv-aiact:InstructionForUse .
+  OPTIONAL { ?system aidoc:isDeployedBy ?deployer }
+}

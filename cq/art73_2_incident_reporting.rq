@@ -1,10 +1,11 @@
 # CQ: How is the report made immediately available within the applicable reporting period?
 # Question: lexreq:aiact-art73-2-cq1
 # Requirement: lexreq:aiact-art73-2
-# Terms: aidoc-lex:SeriousIncident, aidoc-lex:awarenessDate, aidoc-lex:incidentCategory, aidoc-lex:isInitialReport, aidoc-lex:reportsIncident, aidoc-lex:submittedTo
+# Terms: dpv-aiact:SeriousIncident, aidoc-lex:awarenessDate, aidoc-lex:incidentCategory, aidoc-lex:isInitialReport, aidoc-lex:reportsIncident, aidoc-lex:submittedTo
 
 PREFIX aidoc: <https://w3id.org/aidoc-ap#>
 PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
 PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
 PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
 PREFIX dqv: <http://www.w3.org/ns/dqv#>
@@ -12,7 +13,7 @@ PREFIX dcterms: <http://purl.org/dc/terms/>
 PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?incident ?category ?aware ?report ?initial ?submitted ?authority WHERE {
-  ?incident a aidoc-lex:SeriousIncident ;
+  ?incident a dpv-aiact:SeriousIncident ;
             aidoc-lex:awarenessDate ?aware .
   OPTIONAL { ?incident aidoc-lex:incidentCategory ?category }
   ?report aidoc-lex:reportsIncident ?incident ;

@@ -1,13 +1,13 @@
 # AIDOC-AP LEX Extension (aidoc-lex): Legal and Ethical Requirements
 
-Extension module of the [AIDOC-AP](https://w3id.org/aidoc-ap) application profile, developed in the CERTAIN project (Horizon Europe, grant agreement 101189650). The AIDOC-AP core describes the technical documentation of AI systems required by Annex IV of the EU AI Act. The extension adds the terms needed to document how an AI system meets legal and ethical requirements: the obligations of providers and deployers in Articles 9 to 17, 72 and 73 of the EU AI Act, and the ethical requirements of the Assessment List for Trustworthy AI (ALTAI), the OECD AI Principles and the gender requirements of CERTAIN deliverable D3.2. It covers management systems, assessments, measures, compliance documents, incidents and the organisations and persons involved, and publishes the requirements themselves with their competency questions and the evidence an organisation is expected to keep. It imports the core without changing any of its definitions and is aligned to DPV, the DPV AI Act extension, DPV-AI, AIRO and VAIR.
+Extension module of the [AIDOC-AP](https://w3id.org/aidoc-ap) application profile, developed in the CERTAIN project (Horizon Europe, grant agreement 101189650). The AIDOC-AP core describes the technical documentation of AI systems required by Annex IV of the EU AI Act. The extension adds the terms needed to document how an AI system meets legal and ethical requirements: the obligations of providers and deployers in Articles 9 to 17, 72 and 73 of the EU AI Act, and the ethical requirements of the Assessment List for Trustworthy AI (ALTAI), the OECD AI Principles and the gender requirements of CERTAIN deliverable D3.2. It covers management systems, assessments, measures, compliance documents, incidents and the organisations and persons involved, and publishes the requirements themselves with their competency questions and the evidence an organisation is expected to keep. It imports the core without changing any of its definitions. As in the core and the Lifecycle Extension, terms are reused before new ones are minted: where DPV, the DPV AI Act extension or VAIR define the same concept, the module uses that term; a module term that specialises a core class is a subclass of the corresponding external term; SKOS mappings are kept for correspondences that are not subsumption.
 
 Status: draft of version 1.0, not released.
 
 | | |
 |---|---|
 | Namespace | `https://w3id.org/aidoc-ap/lex#` (prefix `aidoc-lex`) |
-| Ontology | [ontology/aidoc-lex.ttl](ontology/aidoc-lex.ttl): 77 classes, 27 object properties, 10 datatype properties, 6 concept schemes |
+| Ontology | [ontology/aidoc-lex.ttl](ontology/aidoc-lex.ttl): 63 classes, 27 object properties, 10 datatype properties, 6 concept schemes |
 | Requirements | [requirements/requirements.ttl](requirements/requirements.ttl) (namespace `https://w3id.org/aidoc-ap/lex/requirements#`, prefix `lexreq`): 180 requirements, 476 competency questions, 45 of them formalised as SPARQL |
 | Imports | AIDOC-AP core 1.2 |
 | Documentation | [w3id.org/aidoc-ap/lex](https://certain-project.github.io/aidoc-ap-lex/): term reference, [requirements](https://certain-project.github.io/aidoc-ap-lex/requirements.html), [worked examples](https://certain-project.github.io/aidoc-ap-lex/examples.html), [alignments](https://certain-project.github.io/aidoc-ap-lex/alignments.html) |
@@ -24,6 +24,16 @@ Status: draft of version 1.0, not released.
 | [CERTAIN D3.2](https://certain-project.eu/wp-content/uploads/2026/02/CERTAIN_WP3_D3.2_Ethical-considerations-of-AI-compliance_V1.0-delivered.pdf) (Ethical considerations of AI compliance) | 7 | gender audit, QETAM, GIA and SGIA, gender risk register, gender balance, monitoring |
 
 Each requirement has its text, competency questions, the ontology terms needed to answer them (`lexreq:usesTerm`) and the expected evidence (`lexreq:expectedEvidence`). The legal text follows the AI Act Service Desk of the European Commission at the time of the analysis. Terms proposed in the analysis were merged where they overlapped or mapped to existing AIDOC-AP, AIRO or DPV terms; [requirements/term-mapping.csv](requirements/term-mapping.csv) records the decision and rationale for each of the 364 proposed terms.
+
+## KPI 1.2
+
+CERTAIN measures the integration of legal and ethical requirements into the ontology framework with KPI 1.2, Integration Success Rate (target at least 90%). The KPI is computed over the requirements of this repository. A requirement counts as integrated when
+
+1. every term it uses (`lexreq:usesTerm`) is declared in the core, the module or a reused vocabulary,
+2. it has at least one competency question, and
+3. at least one of its competency questions is formalised as a query in [cq/](cq/README.md) that returns an answer over the example graphs.
+
+The Integration Success Rate is the share of integrated requirements. `make kpi` computes it, with the counts after each condition per framework, and writes `reports/kpi-1-2.md`. With one formalised question per requirement, 169 of the 180 requirements are integrated (0.939). The eleven others are not answered over the example system: Article 11(3) and 15(2) concern acts of the Commission, Article 12(3) with its points (b) and (c) and Article 14(5) apply to biometric systems under Annex III, point 1(a), Article 17(4) and 73(9) to providers covered by other Union law, Article 9(7) to testing in real-world conditions and ALTAI requirement 1.4 to systems that simulate social interaction; Article 73(5) has no competency question.
 
 ## Example
 
@@ -46,7 +56,7 @@ ex:Measure_Reweighting a aidoc-lex:BiasMitigationMeasure ;
 
 ```bash
 make setup      # Python virtual environment; fetches the pinned AIDOC-AP core
-make all        # module checks, tooling tests, competency queries, alignments
+make all        # module checks, tooling tests, competency queries, KPI 1.2, alignments
 ```
 
 | Command | Purpose |
@@ -54,6 +64,7 @@ make all        # module checks, tooling tests, competency queries, alignments
 | `make check` | module rules (`make check-strict` before a release) |
 | `make test` | tooling tests and consistency of the requirements graph |
 | `make cq` | competency queries over the examples |
+| `make kpi` | KPI 1.2, Integration Success Rate, written to `reports/kpi-1-2.md` |
 | `make alignments` | check the SKOS alignment proposals in `alignments/` and write the alignment records |
 | `make docs-pages` | worked examples page of the documentation |
 | `make site`, `make serve` | build the documentation site locally with Widoco (needs Java 17 or later) and serve it on http://localhost:8000/ |

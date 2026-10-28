@@ -1,0 +1,15 @@
+# CQ: What is the level of accuracy, robustness, and cybersecurity achieved by the high-risk AI system?
+# Question: lexreq:aiact-art15-1-cq1
+# Requirement: lexreq:aiact-art15-1
+# Terms: aidoc:ModelEvaluation, aidoc:hasPerformanceMetric, vair:SecurityMeasure
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX vair: <https://w3id.org/vair#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+SELECT ?evaluation ?metric ?value ?securityMeasure WHERE {
+  ?evaluation a aidoc:ModelEvaluation ;
+              aidoc:hasPerformanceMetric ?metric .
+  ?measurement dqv:isMeasurementOf ?metric ;
+               dqv:value ?value .
+  OPTIONAL { ?securityMeasure a vair:SecurityMeasure }
+}

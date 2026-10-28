@@ -1,0 +1,11 @@
+# CQ: What statistical properties do the datasets have?
+# Question: lexreq:aiact-art10-3-cq3
+# Requirement: lexreq:aiact-art10-3
+# Terms: aidoc:usesTrainingData, aidoc:usesValidationData, aidoc:usesTestData, aidoc:dataCharacteristic
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?activity ?dataset ?characteristic WHERE {
+  ?activity aidoc:usesTrainingData|aidoc:usesValidationData|aidoc:usesTestData ?dataset .
+  ?dataset aidoc:dataCharacteristic ?characteristic .
+}
+ORDER BY ?dataset

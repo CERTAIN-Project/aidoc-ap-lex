@@ -1,0 +1,13 @@
+# CQ: How does the AI system provide fault tolerance, including duplicated or parallel fallback systems where needed?
+# Question: lexreq:altai-r2-06-cq3
+# Requirement: lexreq:altai-r2-06
+# Terms: aidoc-lex:ResilienceMeasure, aidoc:SoftwareComponent, aidoc:dependsOn
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?measure ?label ?component ?dependency WHERE {
+  ?measure a aidoc-lex:ResilienceMeasure ;
+           rdfs:label ?label .
+  OPTIONAL { ?component a aidoc:SoftwareComponent ; aidoc:dependsOn ?dependency }
+}

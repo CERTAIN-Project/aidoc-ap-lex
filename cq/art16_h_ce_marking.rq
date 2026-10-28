@@ -1,0 +1,13 @@
+# CQ: How is the CE marking affixed to the high-risk AI system, its packaging, or its accompanying documentation?
+# Question: lexreq:aiact-art16-h-cq1
+# Requirement: lexreq:aiact-art16-h
+# Terms: dpv-aiact:CEMarking, aidoc-lex:concernsSystem
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?marking ?label WHERE {
+  ?marking a dpv-aiact:CEMarking ;
+           aidoc-lex:concernsSystem ?system ;
+           rdfs:label ?label .
+}
