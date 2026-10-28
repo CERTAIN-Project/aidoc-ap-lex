@@ -54,6 +54,7 @@ make all        # module checks, tooling tests, competency queries, alignments
 | `make check` | module rules (`make check-strict` before a release) |
 | `make test` | tooling tests and consistency of the requirements graph |
 | `make cq` | competency queries over the examples |
+| `make kpi` | KPI 1.2, Integration Success Rate, written to `reports/kpi-1-2.md` |
 | `make alignments` | check the SKOS alignment proposals in `alignments/` and write the alignment records |
 | `make docs-pages` | worked examples page of the documentation |
 | `make site`, `make serve` | build the documentation site locally with Widoco (needs Java 17 or later) and serve it on http://localhost:8000/ |
