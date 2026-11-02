@@ -90,12 +90,10 @@
   // stats strip (computed from the loaded data)
   const vocabs = [...new Set(maps.map(m=>m.vocab))].sort();
   const nTerms = new Set(maps.map(m=>m.source)).size;
-  const nExact = maps.filter(m=>(m.relation||'').endsWith('exactMatch')).length;
   $('#stats').innerHTML = `
     <div class="stat"><strong>${maps.length}</strong><span>mappings</span></div>
     <div class="stat"><strong>${nTerms}</strong><span>LEX terms mapped</span></div>
     <div class="stat"><strong>${vocabs.length}</strong><span>target vocabularies</span></div>
-    <div class="stat"><strong>${nExact}</strong><span>exact matches</span></div>
   `;
 
   // per-vocabulary TTL download list
