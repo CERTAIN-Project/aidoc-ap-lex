@@ -8,7 +8,7 @@ Status: draft of version 1.0, not released.
 |---|---|
 | Namespace | `https://w3id.org/aidoc-ap/lex#` (prefix `aidoc-lex`) |
 | Ontology | [ontology/aidoc-lex.ttl](ontology/aidoc-lex.ttl): 63 classes, 27 object properties, 10 datatype properties, 6 concept schemes |
-| Requirements | [requirements/requirements.ttl](requirements/requirements.ttl) (namespace `https://w3id.org/aidoc-ap/lex/requirements#`, prefix `lexreq`): 180 requirements, 476 competency questions, 45 of them formalised as SPARQL |
+| Requirements | [requirements/requirements.ttl](requirements/requirements.ttl) (namespace `https://w3id.org/aidoc-ap/lex/requirements#`, prefix `lexreq`): 180 requirements, 476 competency questions, 173 of them formalised as SPARQL |
 | Imports | AIDOC-AP core 1.2 |
 | Documentation | [w3id.org/aidoc-ap/lex](https://certain-project.github.io/aidoc-ap-lex/): term reference, [requirements](https://certain-project.github.io/aidoc-ap-lex/requirements.html), [worked examples](https://certain-project.github.io/aidoc-ap-lex/examples.html), [alignments](https://certain-project.github.io/aidoc-ap-lex/alignments.html) |
 | Licence | CC BY 4.0 for the ontology, requirements and documentation ([LICENSE-CC-BY.txt](LICENSE-CC-BY.txt)), Apache-2.0 for code ([LICENSE](LICENSE)) |
