@@ -67,21 +67,38 @@ def turtle_of(data: Graph, nodes: list) -> str:
     return "\n".join(l for l in text.splitlines() if not l.startswith("@prefix")).strip()
 
 
-def page(title: str, body: str) -> str:
+def page(title: str, subtitle: str, body: str) -> str:
+    # same header and footer as documentation/requirements.html and documentation/alignments.html
     return f"""<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{html.escape(title)}</title>
+  <title>AIDOC-AP LEX · {html.escape(title)}</title>
+  <link rel="stylesheet" href="assets/widoco-like.css">
   <link rel="stylesheet" href="assets/pages.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
-<body>
-<header><nav><a href="index.html">AIDOC-AP LEX Extension</a> · <a href="requirements.html">Requirements</a> · <a href="examples.html">Worked examples</a> · <a href="alignments.html">Alignments</a></nav></header>
+<body class="widoco-theme">
+<header class="page-header">
+  <nav class="site-nav">
+    <a class="brand" href="index-en.html">AIDOC-AP <span>LEX</span></a>
+    <a class="nav-link" href="requirements.html">Requirements</a>
+    <a class="nav-link active" href="examples.html">Worked Examples</a>
+    <a class="nav-link" href="alignments.html">Alignments</a>
+    <a class="nav-link" href="https://github.com/CERTAIN-Project/aidoc-ap-lex">GitHub ↗</a>
+  </nav>
+  <div class="head-inner">
+    <h1 class="title">{html.escape(title)}</h1>
+    <p class="subtitle">{subtitle}</p>
+  </div>
+</header>
 <main>
 {body}
 </main>
-<footer>AIDOC-AP LEX Extension · CERTAIN project (Horizon Europe, grant agreement 101189650) · CC BY 4.0</footer>
+<footer class="page-footer">
+  <p><strong>Related pages:</strong> <a href="requirements.html">Requirements</a> | <a href="alignments.html">Alignments</a> | <a href="index-en.html">Ontology Documentation</a></p>
+  <p>AIDOC-AP LEX Extension · CERTAIN project (Horizon Europe, grant agreement 101189650) · CC BY 4.0</p>
+</footer>
 </body>
 </html>
 """
@@ -100,12 +117,11 @@ def examples_page() -> str:
         rid = header(text)["Requirement"].split(":", 1)[-1]
         by_fw.setdefault(rid.split("-", 1)[0], []).append((f, text, rid))
 
-    parts = ["<h1>Worked examples</h1>",
-             "<p class=\"lead\">How the module documents that an AI system meets legal and ethical requirements, shown on an "
-             "example graph of a high-risk CV screening system (AI Act Annex III, point 4(a)). Each competency question "
-             "comes from the <a href=\"requirements.html\">requirements</a>; below it are the SPARQL query, its answer over "
-             "the example and the example data behind the answer. Organisations, persons, figures and dates in the example are invented.</p>",
-             "<p>Example graphs: " + ", ".join(f'<a href="examples/{f.name}">{f.name}</a>' for f in files) + ".</p>",
+    subtitle = ("How the module documents that an AI system meets legal and ethical requirements, shown on an "
+                "example graph of a high-risk CV screening system (AI Act Annex III, point 4(a)). Each competency question "
+                "comes from the <a href=\"requirements.html\">requirements</a>; below it are the SPARQL query, its answer over "
+                "the example and the example data behind the answer. Organisations, persons, figures and dates in the example are invented.")
+    parts = ["<p>Example graphs: " + ", ".join(f'<a href="examples/{f.name}">{f.name}</a>' for f in files) + ".</p>",
              "<nav class=\"toc\">" + " ".join(f'<a href="#{k}">{html.escape(t)}</a>' for k, t in FRAMEWORKS if k in by_fw) + "</nav>"]
     for key, title in FRAMEWORKS:
         if key not in by_fw:
@@ -139,7 +155,7 @@ def examples_page() -> str:
             query = "\n".join(l for l in text.splitlines() if not l.startswith("#")).strip()
             parts.append(f"<details><summary>SPARQL query ({f.name})</summary><pre>" + html.escape(query) + "</pre></details></article>")
         parts.append("</section>")
-    return page("Worked examples · AIDOC-AP LEX Extension", "\n".join(parts))
+    return page("Worked Examples", subtitle, "\n".join(parts))
 
 
 def main() -> int:
@@ -150,7 +166,8 @@ def main() -> int:
     (out / "assets").mkdir(parents=True, exist_ok=True)
     (out / "examples").mkdir(exist_ok=True)
     (out / "examples.html").write_text(examples_page(), encoding="utf-8")
-    shutil.copy(ROOT / "documentation" / "assets" / "pages.css", out / "assets" / "pages.css")
+    for css in ("widoco-like.css", "pages.css"):
+        shutil.copy(ROOT / "documentation" / "assets" / css, out / "assets" / css)
     for f in EXAMPLES_DIR.glob("*.ttl"):
         shutil.copy(f, out / "examples" / f.name)
     print(f"wrote {out}/examples.html")
