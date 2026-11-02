@@ -79,7 +79,7 @@ def page(title: str, subtitle: str, body: str) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body class="widoco-theme">
-<header class="page-header">
+<header class="page-header" id="top" tabindex="-1">
   <nav class="site-nav">
     <a class="brand" href="index-en.html">AIDOC-AP <span>LEX</span></a>
     <a class="nav-link" href="requirements.html">Requirements</a>
@@ -99,6 +99,8 @@ def page(title: str, subtitle: str, body: str) -> str:
   <p><strong>Related pages:</strong> <a href="requirements.html">Requirements</a> | <a href="alignments.html">Alignments</a> | <a href="index-en.html">Ontology Documentation</a></p>
   <p>AIDOC-AP LEX Extension · CERTAIN project (Horizon Europe, grant agreement 101189650) · CC BY 4.0</p>
 </footer>
+<a class="back-to-top" href="#top" aria-label="Back to top" title="Back to top">↑</a>
+<script src="assets/back-to-top.js"></script>
 </body>
 </html>
 """
@@ -166,8 +168,8 @@ def main() -> int:
     (out / "assets").mkdir(parents=True, exist_ok=True)
     (out / "examples").mkdir(exist_ok=True)
     (out / "examples.html").write_text(examples_page(), encoding="utf-8")
-    for css in ("widoco-like.css", "pages.css"):
-        shutil.copy(ROOT / "documentation" / "assets" / css, out / "assets" / css)
+    for asset in ("widoco-like.css", "pages.css", "back-to-top.js"):
+        shutil.copy(ROOT / "documentation" / "assets" / asset, out / "assets" / asset)
     for f in EXAMPLES_DIR.glob("*.ttl"):
         shutil.copy(f, out / "examples" / f.name)
     print(f"wrote {out}/examples.html")
