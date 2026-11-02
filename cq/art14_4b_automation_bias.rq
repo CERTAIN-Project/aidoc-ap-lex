@@ -1,0 +1,13 @@
+# CQ: How are natural persons enabled to remain aware of the possible tendency of automatically relying or over-relying on the output produced by a high-risk AI system?
+# Question: lexreq:aiact-art14-4-b-cq1
+# Requirement: lexreq:aiact-art14-4-b
+# Terms: aidoc-lex:AutomationBiasRisk, aidoc-lex:riskCategory, aidoc-lex:addressesRisk, aidoc-lex:CompetenceTraining
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?risk ?measure ?training WHERE {
+  ?risk aidoc-lex:riskCategory aidoc-lex:AutomationBiasRisk .
+  ?measure aidoc-lex:addressesRisk ?risk .
+  OPTIONAL { ?training a aidoc-lex:CompetenceTraining ; prov:wasAssociatedWith ?person .
+             ?measure aidoc-lex:assignedOverseer ?person }
+}

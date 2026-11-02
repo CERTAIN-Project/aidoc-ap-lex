@@ -1,0 +1,10 @@
+# CQ: What appropriate human-machine interface tools are included for that oversight?
+# Question: lexreq:aiact-art14-1-cq2
+# Requirement: lexreq:aiact-art14-1
+# Terms: aidoc:HumanOversightMechanism, aidoc:hasHumanOversight, aidoc:Interface, aidoc:hasInterface
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?system ?interface ?mechanism WHERE {
+  ?system aidoc:hasInterface ?interface ;
+          aidoc:hasHumanOversight ?mechanism .
+}

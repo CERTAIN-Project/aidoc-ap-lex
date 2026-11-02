@@ -1,0 +1,12 @@
+# CQ: How does the AI system monitor, document, and review accuracy over time?
+# Question: lexreq:altai-r2-09-cq1
+# Requirement: lexreq:altai-r2-09
+# Terms: aidoc:PostMarketPerformanceEvaluationActivity, aidoc:hasFrequency, aidoc:PerformanceMetric
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?review ?frequency ?model ?metric WHERE {
+  ?review a aidoc:PostMarketPerformanceEvaluationActivity ;
+          aidoc:hasFrequency ?frequency ;
+          aidoc:affects ?model .
+  OPTIONAL { ?evaluation aidoc:affects ?model ; aidoc:hasPerformanceMetric ?metric }
+}

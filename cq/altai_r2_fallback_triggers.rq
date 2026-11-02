@@ -1,0 +1,12 @@
+# CQ: What mechanisms determine when the AI system must switch to fallback modes or manual handling?
+# Question: lexreq:altai-r2-12-cq2
+# Requirement: lexreq:altai-r2-12
+# Terms: aidoc-lex:ResilienceMeasure, aidoc-lex:StopMechanism
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?item ?type ?label WHERE {
+  ?item a ?type ;
+        rdfs:label ?label .
+  VALUES ?type { aidoc-lex:ResilienceMeasure aidoc-lex:StopMechanism }
+}

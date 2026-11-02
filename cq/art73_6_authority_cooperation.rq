@@ -1,10 +1,11 @@
 # CQ: How does the provider cooperate with the competent authorities and, where relevant, the notified body?
 # Question: lexreq:aiact-art73-6-cq3
 # Requirement: lexreq:aiact-art73-6
-# Terms: aidoc-lex:AuthorityCommunication, aidoc-lex:CompetentAuthority, aidoc-lex:NotifiedBody, aidoc-lex:concernsSystem, aidoc-lex:submittedTo
+# Terms: aidoc-lex:AuthorityCommunication, aidoc-lex:CompetentAuthority, dpv-aiact:NotifiedBody, aidoc-lex:concernsSystem, aidoc-lex:submittedTo
 
 PREFIX aidoc: <https://w3id.org/aidoc-ap#>
 PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
 PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
 PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
 PREFIX dqv: <http://www.w3.org/ns/dqv#>
@@ -15,6 +16,6 @@ SELECT ?system ?communication ?body ?bodyType WHERE {
   ?communication a aidoc-lex:AuthorityCommunication ;
                  aidoc-lex:submittedTo ?body .
   ?body a ?bodyType .
-  VALUES ?bodyType { aidoc-lex:CompetentAuthority aidoc-lex:NotifiedBody }
+  VALUES ?bodyType { aidoc-lex:CompetentAuthority dpv-aiact:NotifiedBody }
   OPTIONAL { ?communication prov:wasInformedBy+ ?incident . ?incident aidoc-lex:concernsSystem ?system }
 }

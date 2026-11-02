@@ -1,0 +1,15 @@
+# CQ: Is there a process in place for the high-risk AI system to report any serious incidents to the market surveillance authorities of the Member State where the incident occurred?
+# Question: lexreq:aiact-art73-1-cq1
+# Requirement: lexreq:aiact-art73-1
+# Terms: aidoc-lex:IncidentReport, aidoc-lex:CompetentAuthority, aidoc-lex:submittedTo, dpv-aiact:SeriousIncident
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?incident ?report ?authority ?time WHERE {
+  ?report a aidoc-lex:IncidentReport ;
+          aidoc-lex:reportsIncident ?incident ;
+          aidoc-lex:submittedTo ?authority .
+  ?authority a aidoc-lex:CompetentAuthority .
+  OPTIONAL { ?report prov:generatedAtTime ?time }
+}
+ORDER BY ?time

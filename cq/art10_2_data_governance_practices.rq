@@ -1,0 +1,14 @@
+# CQ: What data governance and management practices apply to the training, validation and testing datasets?
+# Question: lexreq:aiact-art10-2-cq1
+# Requirement: lexreq:aiact-art10-2
+# Terms: aidoc-lex:DataGovernanceFramework, aidoc-lex:includesDocument, aidoc:DataPipeline, aidoc:hasSourceDataset
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?framework ?document ?activity ?dataset WHERE {
+  ?system aidoc-lex:hasManagementSystem ?framework .
+  ?framework a aidoc-lex:DataGovernanceFramework ;
+             aidoc-lex:includesDocument ?document .
+  OPTIONAL { ?activity aidoc:hasSourceDataset ?dataset }
+}
+ORDER BY ?document ?activity

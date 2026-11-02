@@ -1,0 +1,15 @@
+# CQ: How are gender-related harms detected and reported after deployment?
+# Question: lexreq:gender-07-cq1
+# Requirement: lexreq:gender-07
+# Terms: aidoc-lex:LogEntry, aidoc-lex:RiskSituation, aidoc-lex:BiasMitigationMeasure, aidoc-lex:Detection
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?entry ?time ?note ?detection WHERE {
+  ?entry a aidoc-lex:LogEntry ;
+         aidoc-lex:loggedEventType aidoc-lex:RiskSituation ;
+         prov:generatedAtTime ?time .
+  OPTIONAL { ?entry rdfs:comment ?note }
+  OPTIONAL { ?detection a aidoc-lex:BiasMitigationMeasure ; aidoc-lex:controlFunction aidoc-lex:Detection }
+}

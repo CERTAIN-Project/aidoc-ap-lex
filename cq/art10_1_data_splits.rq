@@ -1,0 +1,11 @@
+# CQ: Are training, validation and testing datasets used for the training of the AI model?
+# Question: lexreq:aiact-art10-1-cq1
+# Requirement: lexreq:aiact-art10-1
+# Terms: aidoc:DataTraining, aidoc:DataValidation, aidoc:DataTesting, aidoc:usesTrainingData, aidoc:usesValidationData, aidoc:usesTestData
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?training ?trainingData ?validationData ?testData WHERE {
+  ?training a aidoc:DataTraining ; aidoc:usesTrainingData ?trainingData .
+  OPTIONAL { ?validation a aidoc:DataValidation ; aidoc:usesValidationData ?validationData }
+  OPTIONAL { ?test a aidoc:DataTesting ; aidoc:usesTestData ?testData }
+}

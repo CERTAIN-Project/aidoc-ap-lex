@@ -1,0 +1,11 @@
+# CQ: How is that documentation kept?
+# Question: lexreq:aiact-art16-d-cq3
+# Requirement: lexreq:aiact-art16-d
+# Terms: aidoc-lex:RecordKeepingSystem, aidoc-lex:includesDocument, aidoc-lex:procedureType
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?provider ?system ?procedure WHERE {
+  ?provider aidoc-lex:hasManagementSystem ?system .
+  ?system a aidoc-lex:RecordKeepingSystem ;
+          aidoc-lex:includesDocument ?procedure .
+}

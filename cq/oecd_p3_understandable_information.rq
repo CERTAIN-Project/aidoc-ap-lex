@@ -1,0 +1,13 @@
+# CQ: What understandable information does the AI system provide about its capabilities, limitations, data or input sources, and the factors, processes, or logic relevant to its outputs?
+# Question: lexreq:oecd-p3-cq1
+# Requirement: lexreq:oecd-p3
+# Terms: aidoc:hasCapability, aidoc:hasTransparencyMeasure, aidoc:hasIntendedPurpose
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?purpose ?limitation ?measure WHERE {
+  ?system aidoc:hasIntendedPurpose ?purpose ;
+          aidoc:hasCapability ?capability ;
+          aidoc:hasTransparencyMeasure ?measure .
+  OPTIONAL { ?capability rdfs:comment ?limitation }
+}

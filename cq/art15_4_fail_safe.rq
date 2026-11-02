@@ -1,0 +1,12 @@
+# CQ: What backup or fail-safe plans are included?
+# Question: lexreq:aiact-art15-4-cq5
+# Requirement: lexreq:aiact-art15-4
+# Terms: aidoc-lex:ResilienceMeasure, aidoc-lex:controlFunction
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?measure ?label ?function WHERE {
+  ?measure a aidoc-lex:ResilienceMeasure ;
+           rdfs:label ?label .
+  OPTIONAL { ?measure aidoc-lex:controlFunction ?function }
+}

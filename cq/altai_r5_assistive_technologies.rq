@@ -1,0 +1,12 @@
+# CQ: What makes the AI system information and interface accessible to assistive technologies such as screen readers?
+# Question: lexreq:altai-r5-07-cq2
+# Requirement: lexreq:altai-r5-07
+# Terms: aidoc-lex:AccessibilityMeasure
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?measure ?label WHERE {
+  ?measure a aidoc-lex:AccessibilityMeasure ;
+           aidoc-lex:concernsSystem ?system ;
+           rdfs:label ?label .
+}

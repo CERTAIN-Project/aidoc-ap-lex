@@ -1,6 +1,7 @@
 @prefix ex: <https://w3id.org/aidoc-ap/lex/example/> .
 @prefix aidoc: <https://w3id.org/aidoc-ap#> .
 @prefix aidoc-lex: <https://w3id.org/aidoc-ap/lex#> .
+@prefix vair: <https://w3id.org/vair#> .
 @prefix lexreq: <https://w3id.org/aidoc-ap/lex/requirements#> .
 @prefix aiact: <https://w3id.org/aidoc-ap/requirements#> .
 @prefix airo: <https://w3id.org/airo#> .
@@ -12,6 +13,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix freq: <http://purl.org/cld/freq/> .
 
 # Example: compliance documentation of a high-risk CV screening system (AI Act Annex III, point 4(a)).
 # The organisations, persons, figures and dates are invented; the graph is an example, not a record.
@@ -20,7 +22,7 @@
 #    Organisations and persons
 #################################################################
 
-ex:Hirewise a aidoc:AIProvider , aidoc-lex:SME ;
+ex:Hirewise a aidoc:AIProvider , dpv:SMEOrganisation ;
     rdfs:label "Hirewise GmbH" ;
     aidoc-lex:contactDetails "Hirewise GmbH, Example Street 1, 1010 Vienna, Austria, compliance@hirewise.example" ;
     aidoc-lex:hasManagementSystem ex:HirewiseQMS , ex:HirewiseRecordKeeping , ex:HirewiseAccountability .
@@ -33,11 +35,11 @@ ex:HirewiseEURep a aidoc-lex:AuthorisedRepresentative ;
     aidoc-lex:contactDetails "Hirewise EU Representative, Example Lane 5, Dublin, Ireland" .
 
 ex:AustrianMSA a aidoc-lex:CompetentAuthority ; rdfs:label "Austrian market surveillance authority for AI" .
-ex:CertBody a aidoc-lex:NotifiedBody ; rdfs:label "Example Certification Body" .
+ex:CertBody a dpv-aiact:NotifiedBody ; rdfs:label "Example Certification Body" .
 
-ex:Overseer_Anna a aidoc-lex:HumanOverseer ; rdfs:label "Anna Berger, HR team lead at Metro Logistics" .
-ex:Overseer_Ben a aidoc-lex:HumanOverseer ; rdfs:label "Ben Huber, recruiter at Metro Logistics" .
-ex:HirewiseDPO a aidoc-lex:DataProtectionOfficer ; rdfs:label "Data protection officer of Hirewise" .
+ex:Overseer_Anna a dpv-aiact:HumanOverseer ; rdfs:label "Anna Berger, HR team lead at Metro Logistics" .
+ex:Overseer_Ben a dpv-aiact:HumanOverseer ; rdfs:label "Ben Huber, recruiter at Metro Logistics" .
+ex:HirewiseDPO a dpv:DataProtectionOfficer ; rdfs:label "Data protection officer of Hirewise" .
 ex:HirewiseCTO a prov:Person ; rdfs:label "Chief technology officer of Hirewise" .
 ex:EthicsBoard a aidoc-lex:EthicsReviewBoard ; rdfs:label "Hirewise AI ethics review board" .
 
@@ -80,7 +82,7 @@ ex:TalentScreenSimplifiedDoc a aidoc-lex:SimplifiedTechnicalDocumentation ;
 
 ex:TalentScreenDoC a aidoc:DeclarationOfConformity ; rdfs:label "EU declaration of conformity for TalentScreen 2.1" .
 
-ex:TalentScreenCE a aidoc-lex:CEMarking ;
+ex:TalentScreenCE a dpv-aiact:CEMarking ;
     rdfs:label "CE marking on the TalentScreen user interface and instructions for use" ;
     aidoc-lex:concernsSystem ex:TalentScreen ;
     aidoc-lex:addressesRequirement lexreq:aiact-art16-h .
@@ -89,7 +91,7 @@ ex:TalentScreenCE a aidoc-lex:CEMarking ;
 #    Risk management (Article 9)
 #################################################################
 
-ex:TalentScreenRMS a aidoc-lex:RiskManagementSystem ;
+ex:TalentScreenRMS a dpv-aiact:RiskManagementSystem ;
     rdfs:label "TalentScreen risk management system" ;
     aidoc-lex:riskAcceptanceCriteria "Residual risks are acceptable when the selection rate ratio between groups stays above 0.8 and every rejection is reviewed by a recruiter." ;
     aidoc-lex:includesDocument ex:RiskPolicy , ex:RiskProcedure , ex:TalentScreenRiskRegister ;
@@ -97,7 +99,7 @@ ex:TalentScreenRMS a aidoc-lex:RiskManagementSystem ;
     aidoc-lex:integratedWith ex:HirewiseQMS ;
     aidoc-lex:addressesRequirement lexreq:aiact-art9-1 , lexreq:aiact-art9-2 .
 
-ex:RiskPolicy a aidoc-lex:Policy ; rdfs:label "Risk management policy" .
+ex:RiskPolicy a dpv:Policy ; rdfs:label "Risk management policy" .
 ex:RiskProcedure a aidoc-lex:Procedure ; rdfs:label "Risk identification and evaluation procedure" ;
     aidoc-lex:procedureType aidoc-lex:QualityControl .
 ex:TalentScreenRiskRegister a aidoc-lex:RiskRegister ; rdfs:label "TalentScreen risk register" ;
@@ -123,7 +125,7 @@ ex:Risk_DataPoisoning a airo:Risk ;
     rdfs:label "Manipulated applications in the retraining data change the ranking" ;
     aidoc-lex:riskCategory aidoc-lex:SafetyRisk .
 
-ex:Misuse_PromotionDecisions a aidoc-lex:ReasonablyForeseeableMisuse ;
+ex:Misuse_PromotionDecisions a dpv-aiact:ReasonablyForeseeableMisuse ;
     rdfs:label "Use of the ranking for decisions on internal promotions" .
 
 ex:Measure_Reweighting a aidoc-lex:BiasMitigationMeasure ;
@@ -136,7 +138,7 @@ ex:Measure_BiasMonitor a aidoc-lex:BiasMitigationMeasure ;
     aidoc-lex:controlFunction aidoc-lex:Detection ;
     aidoc-lex:addressesRisk ex:Risk_GenderBias ;
     aidoc-lex:addressesRequirement lexreq:aiact-art10-2-g .
-ex:Measure_InputValidation a aidoc-lex:SecurityMeasure ;
+ex:Measure_InputValidation a vair:SecurityMeasure ;
     rdfs:label "Validation and provenance check of applications before they enter the retraining data" ;
     aidoc-lex:controlFunction aidoc-lex:Prevention ;
     aidoc-lex:addressesRisk ex:Risk_DataPoisoning , dpv-ai:DataPoisoning ;
@@ -149,6 +151,14 @@ ex:Measure_Pseudonymisation a aidoc-lex:PrivacyPreservingMeasure ;
     rdfs:label "Pseudonymisation of names and photos before ranking" ;
     aidoc-lex:controlFunction aidoc-lex:Prevention ;
     aidoc-lex:addressesRequirement lexreq:aiact-art10-5-b .
+
+ex:Measure_AccessControl a vair:SecurityMeasure ;
+    rdfs:label "Access to the gender data only for two named analysts bound by confidentiality agreements, with access logging" ;
+    aidoc-lex:controlFunction aidoc-lex:Prevention ;
+    aidoc-lex:accountableAgent ex:HirewiseDPO .
+ex:Measure_NoTransfer a aidoc-lex:PrivacyPreservingMeasure ;
+    rdfs:label "Gender data stay in the bias analysis environment and are not transferred to the deployer or third parties" ;
+    aidoc-lex:controlFunction aidoc-lex:Prevention .
 
 ex:ComplianceTest_2026 a aidoc-lex:ComplianceTest ;
     rdfs:label "Pre-release test of TalentScreen 2.1 against the declared metrics" ;
@@ -249,7 +259,7 @@ ex:Log_0002 a aidoc-lex:LogEntry ;
 #    Transparency and instructions for use (Article 13)
 #################################################################
 
-ex:TalentScreenIFU a aidoc-lex:InstructionsForUse ;
+ex:TalentScreenIFU a dpv-aiact:InstructionForUse ;
     rdfs:label "TalentScreen instructions for use, version 2.1" ;
     aidoc-lex:declaresMetric ex:Metric_Accuracy , ex:Metric_SelectionRate ;
     aidoc-lex:addressesRequirement lexreq:aiact-art13-2 , lexreq:aiact-art13-3-b-ii .
@@ -298,12 +308,12 @@ ex:OverseerTraining_2026 a aidoc-lex:CompetenceTraining ;
 #    Provider obligations and quality management (Articles 16, 17)
 #################################################################
 
-ex:HirewiseQMS a aidoc-lex:QualityManagementSystem ;
+ex:HirewiseQMS a dpv-aiact:QualityManagementSystem ;
     rdfs:label "Hirewise quality management system" ;
     aidoc-lex:includesDocument ex:ComplianceStrategy , ex:QCProcedure , ex:DesignControlProcedure , ex:IncidentProcedure ,
-        ex:AuthorityProcedure , ex:RetentionProcedure ;
+        ex:AuthorityProcedure , ex:RetentionProcedure , ex:ResourceProcedure , ex:ReproducibilityProcedure ;
     aidoc-lex:addressesRequirement lexreq:aiact-art17-1 .
-ex:ComplianceStrategy a aidoc-lex:Policy ; rdfs:label "Regulatory compliance strategy" ;
+ex:ComplianceStrategy a dpv:Policy ; rdfs:label "Regulatory compliance strategy" ;
     aidoc-lex:addressesRequirement lexreq:aiact-art17-1-a .
 ex:QCProcedure a aidoc-lex:Procedure ; rdfs:label "Test and validation procedure" ; aidoc-lex:procedureType aidoc-lex:QualityControl ;
     aidoc-lex:addressesRequirement lexreq:aiact-art17-1-d .
@@ -315,6 +325,12 @@ ex:AuthorityProcedure a aidoc-lex:Procedure ; rdfs:label "Procedure for communic
     aidoc-lex:procedureType aidoc-lex:AuthorityCommunicationHandling ; aidoc-lex:addressesRequirement lexreq:aiact-art17-1-j .
 ex:RetentionProcedure a aidoc-lex:Procedure ; rdfs:label "Document and log retention procedure" ;
     aidoc-lex:procedureType aidoc-lex:DocumentRetention ; aidoc-lex:addressesRequirement lexreq:aiact-art17-1-k .
+
+ex:ResourceProcedure a aidoc-lex:Procedure ; rdfs:label "Resource management and security-of-supply procedure for compute and data providers" ;
+    aidoc-lex:procedureType aidoc-lex:ResourceManagement .
+
+ex:ReproducibilityProcedure a aidoc-lex:Procedure ; rdfs:label "Reproducible training runs with fixed seeds, versioned data snapshots and pinned dependencies" ;
+    aidoc-lex:procedureType aidoc-lex:Reproducibility .
 
 ex:HirewiseRecordKeeping a aidoc-lex:RecordKeepingSystem ;
     rdfs:label "Hirewise document management system" ;
@@ -351,14 +367,14 @@ ex:Accessibility_ScreenReader a aidoc-lex:AccessibilityMeasure ;
 #    Post-market monitoring and serious incidents (Articles 72, 73)
 #################################################################
 
-ex:TalentScreenPMM a aidoc-lex:PostMarketMonitoringSystem ;
+ex:TalentScreenPMM a dpv-aiact:PostMarketMonitoringSystem ;
     rdfs:label "TalentScreen post-market monitoring system" ;
     aidoc-lex:includesDocument ex:PMMPlan ;
     aidoc-lex:addressesRequirement lexreq:aiact-art72-1 .
 ex:PMMPlan a aidoc-lex:Procedure ; rdfs:label "Post-market monitoring plan" ;
     aidoc-lex:procedureType aidoc-lex:QualityAssurance .
 
-ex:Incident_2026_07 a aidoc-lex:SeriousIncident ;
+ex:Incident_2026_07 a dpv-aiact:SeriousIncident ;
     rdfs:label "Systematic exclusion of applicants over 55 after the June retraining" ;
     aidoc-lex:concernsSystem ex:TalentScreen ;
     aidoc-lex:incidentCategory aidoc-lex:FundamentalRightsInfringement ;
@@ -464,3 +480,175 @@ ex:Cooperation_CertBody a aidoc-lex:AuthorityCommunication ;
     rdfs:label "Information of the notified body about the investigation results" ;
     prov:wasInformedBy ex:Investigation_2026_07 ;
     aidoc-lex:submittedTo ex:CertBody .
+
+#################################################################
+#    Core documentation: data, model, software, interfaces
+#################################################################
+
+ex:TalentScreen aidoc:hasInterface ex:RecruiterUI , ex:ApplicantPortal ;
+    aidoc:appliesStandard ex:ISO42001 , ex:EN301549 , ex:ISO27001 ;
+    aidoc:hasCapability ex:Capability_Ranking ;
+    aidoc:hasSoftwareComponent ex:RankingService , ex:FeatureExtractor ;
+    aidoc:requiresHardware ex:InferenceServer ;
+    aidoc:hasChangeLog ex:TalentScreenChangeLog ;
+    aidoc:hasTransparencyMeasure ex:FeatureAttribution ;
+    aidoc:hasLifecycleStage ex:Stage_Development , ex:Stage_Operation .
+
+ex:RecruiterUI a aidoc:Interface ;
+    rdfs:label "Recruiter web interface with the ranked list, score explanations, override and pause switch" .
+ex:ApplicantPortal a aidoc:Interface ;
+    rdfs:label "Applicant portal for applications, notices and data subject requests" .
+
+ex:ISO42001 a aidoc:Standard ; rdfs:label "ISO/IEC 42001:2023, AI management system" .
+ex:EN301549 a aidoc:Standard ; rdfs:label "EN 301 549, accessibility requirements for ICT products and services" .
+ex:ISO27001 a aidoc:Standard ; rdfs:label "ISO/IEC 27001:2022, information security management" .
+
+ex:Capability_Ranking a aidoc:AISystemCapability ;
+    rdfs:label "Ranks applications for warehouse and office positions by predicted fit" ;
+    rdfs:comment "Not designed for promotion decisions or management positions; recall is lower for applications without a work history." .
+
+ex:FeatureAttribution a aidoc:ExplainableAIFeature ;
+    rdfs:label "Per-application feature attribution shown next to each score" .
+
+ex:Acquisition a aidoc:DataAcquisitionActivity ;
+    rdfs:label "Export of historical applications and hiring outcomes from the applicant tracking system" ;
+    aidoc:producesDataset ex:ApplicationsDataset .
+
+ex:ApplicationsDataset aidoc:dataScope "Applications for 14 warehouse and office positions in Austria and Germany, 2019 to 2025" ;
+    aidoc:dataCharacteristic "41,200 applications; 48% from women; 9% from applicants aged 55 and over" .
+
+ex:Cleaning a aidoc:DataCleaningProcedure ;
+    rdfs:label "Removal of duplicates and incomplete applications" ;
+    aidoc:hasSourceDataset ex:ApplicationsDataset ;
+    aidoc:missingDataStrategy "Applications without a CV are removed; missing education fields are coded as unknown" ;
+    aidoc:outlierHandlingMethod "Applications with more than 60 years of stated experience are removed" ;
+    aidoc:qualityMetricsUsed "Completeness per field, duplicate rate" .
+
+ex:Labelling a aidoc:LabelingProcedure ;
+    rdfs:label "Labelling of applications as hired or not hired" ;
+    aidoc:hasSourceDataset ex:ApplicationsDataset ;
+    aidoc:labelingGuideline "An application is positive if the applicant was hired and stayed at least six months" ;
+    aidoc:annotatorType "HR staff of Metro Logistics" ;
+    aidoc:annotationTool "Applicant tracking system export" .
+
+ex:Splitting a aidoc:DataProcessing ;
+    rdfs:label "Split by application date into training, validation and test data" ;
+    aidoc:hasSourceDataset ex:ApplicationsDataset ;
+    aidoc:producesDataset ex:TrainingSplit , ex:ValidationSplit , ex:TestSplit .
+
+ex:TrainingSplit a aidoc:Dataset ; rdfs:label "Training data, applications 2019 to 2023" ;
+    aidoc:dataCharacteristic "31,500 applications; 47% from women" .
+ex:ValidationSplit a aidoc:Dataset ; rdfs:label "Validation data, applications of 2024" ;
+    aidoc:dataCharacteristic "4,900 applications; 49% from women" .
+ex:TestSplit a aidoc:Dataset ; rdfs:label "Test data, applications of 2025" ;
+    aidoc:dataCharacteristic "4,800 applications; 50% from women" .
+ex:TrainingDataSheet a aidoc:TrainingDataSheet ; rdfs:label "Datasheet of the TalentScreen training data" .
+
+ex:Training a aidoc:DataTraining ; rdfs:label "Training of the ranking model" ; aidoc:usesTrainingData ex:TrainingSplit .
+ex:Validation a aidoc:DataValidation ; rdfs:label "Hyperparameter selection" ; aidoc:usesValidationData ex:ValidationSplit .
+ex:Testing a aidoc:DataTesting ; rdfs:label "Hold-out test before release" ; aidoc:usesTestData ex:TestSplit .
+
+ex:RankingModel a aidoc:AIModel ; rdfs:label "TalentScreen ranking model" ; aidoc:version "2.1" ;
+    aidoc:usesAIMethod ex:GradientBoostedTrees .
+ex:GradientBoostedTrees a aidoc:AIMethod ; rdfs:label "Gradient-boosted trees for learning to rank" .
+
+ex:Evaluation_2026 a aidoc:ModelEvaluation ;
+    rdfs:label "Evaluation of the ranking model 2.1 on the test data" ;
+    aidoc:hasPerformanceMetric ex:Metric_Accuracy , ex:Metric_SelectionRate ;
+    aidoc:evaluationMethod "Hold-out test on applications of 2025, per group of applicants and per position type, against the thresholds declared in the instructions for use" ;
+    aidoc:affects ex:RankingModel .
+
+ex:IntegrationTests a aidoc:BuildAndIntegrationTesting ;
+    rdfs:label "Automated integration tests of ranking service, recruiter interface and fallback" ;
+    aidoc:hasFrequency freq:weekly .
+
+ex:Development a aidoc:SoftwareDevelopment ;
+    rdfs:label "Development of TalentScreen 2.1" ;
+    aidoc:hasResponsibleDeveloper ex:DevTeam .
+ex:DevTeam a airo:AIDeveloper ; rdfs:label "Hirewise data science team" .
+
+ex:ModelVersioning_2026 a aidoc:ModelVersioning ;
+    rdfs:label "Registration of model version 2.1 in the model registry" ;
+    aidoc:affects ex:RankingModel .
+
+ex:RankingService a aidoc:SoftwareComponent ; rdfs:label "Ranking service" ; aidoc:dependsOn ex:RankingModel , ex:FeatureExtractor .
+ex:FeatureExtractor a aidoc:SoftwareComponent ; rdfs:label "CV parser and feature extractor" .
+
+ex:InferenceServer a aidoc:HardwareComponent ; rdfs:label "Inference server in the EU data centre of Hirewise" ;
+    aidoc:providesComputationalResource ex:InferenceCPU .
+ex:InferenceCPU a aidoc:ComputationalResource ; rdfs:label "Inference compute" ;
+    aidoc:resourceType "CPU" ; aidoc:resourceConfiguration "8 vCPU, 32 GB RAM" .
+
+ex:TalentScreenChangeLog a aidoc:ChangeLog ; rdfs:label "TalentScreen change log" ;
+    aidoc:hasChangeRecord ex:Change_2_1 , ex:Modification_2026_09 , ex:TalentScreenPredeterminedChange .
+ex:Change_2_1 a aidoc:ChangeRecord ;
+    rdfs:label "Release 2.1: reweighted training data" ;
+    aidoc:reasonForChange "Selection rate ratio between women and men below 0.8 in release 2.0" ;
+    aidoc:startDate "2026-02-01"^^xsd:date ; aidoc:endDate "2026-04-30"^^xsd:date ;
+    aidoc:hasStakeholder ex:Hirewise , ex:MetroLogistics .
+
+ex:Stage_Development a airo:AILifecyclePhase ; rdfs:label "Development" ;
+    aidoc:hasAIActivity ex:Training , ex:Evaluation_2026 , ex:IntegrationTests , ex:RiskAssessment_2026 .
+ex:Stage_Operation a airo:AILifecyclePhase ; rdfs:label "Operation and monitoring" ;
+    aidoc:hasAIActivity ex:PMMActivity , ex:PerformanceReview .
+
+ex:PMMActivity a aidoc:PostMarketMonitoringActivity ;
+    rdfs:label "Monthly review of selection rates, overrides, complaints and incidents" ;
+    aidoc:hasFrequency freq:monthly .
+ex:RiskAssessment_Update a aidoc-lex:RiskAssessment ;
+    rdfs:label "Update of the risk assessment with the findings of post-market monitoring" ;
+    prov:wasInformedBy ex:PMMActivity ;
+    aidoc-lex:assesses ex:TalentScreen ;
+    aidoc-lex:identifiesRisk ex:Risk_AgeExclusion ;
+    aidoc-lex:documentedIn ex:TalentScreenRiskRegister .
+ex:PerformanceReview a aidoc:PostMarketPerformanceEvaluationActivity ;
+    rdfs:label "Quarterly evaluation of the deployed model on the hiring outcomes of the quarter" ;
+    aidoc:hasFrequency freq:quarterly ;
+    aidoc:affects ex:RankingModel .
+ex:Risk_AgeExclusion a airo:Risk ;
+    rdfs:label "Lower ranking of older applicants after retraining" ;
+    aidoc-lex:riskCategory aidoc-lex:FundamentalRightsRisk , aidoc-lex:FeedbackLoopRisk ;
+    aidoc-lex:affectsGroup ex:OlderApplicants .
+ex:TalentScreen aidoc:hasRisk ex:Risk_AgeExclusion .
+
+ex:TalentScreenLogging aidoc:logsActivity ex:PMMActivity , ex:PerformanceReview ;
+    aidoc:storesLogsAt ex:LogStore .
+ex:LogStore a prov:Entity ; rdfs:label "Log store in the EU data centre of Hirewise, accessible to the deployer through an export" .
+
+ex:Log_0003 a aidoc-lex:LogEntry ;
+    aidoc-lex:partOfLog ex:TalentScreenLog ;
+    aidoc-lex:concernsSystem ex:TalentScreen ;
+    aidoc-lex:loggedEventType aidoc-lex:UsagePeriod ;
+    prov:startedAtTime "2026-06-03T08:00:00"^^xsd:dateTime ;
+    prov:endedAtTime "2026-06-03T17:30:00"^^xsd:dateTime .
+ex:Log_0004 a aidoc-lex:LogEntry ;
+    aidoc-lex:partOfLog ex:TalentScreenLog ;
+    aidoc-lex:concernsSystem ex:TalentScreen ;
+    aidoc-lex:loggedEventType aidoc-lex:PostMarketMonitoringEvent ;
+    prov:generatedAtTime "2026-07-01T06:00:00"^^xsd:dateTime ;
+    rdfs:comment "Monthly selection rate report per group." .
+ex:Log_0005 a aidoc-lex:LogEntry ;
+    aidoc-lex:partOfLog ex:TalentScreenLog ;
+    aidoc-lex:concernsSystem ex:TalentScreen ;
+    aidoc-lex:loggedEventType aidoc-lex:OperationalMonitoringEvent ;
+    prov:generatedAtTime "2026-06-03T12:40:00"^^xsd:dateTime ;
+    rdfs:comment "Override of a ranking by a recruiter." .
+
+ex:ExternalAuditor a aidoc:Auditor ; rdfs:label "Independent AI auditor" .
+ex:Audit_2026 prov:wasAssociatedWith ex:ExternalAuditor .
+
+ex:DeveloperTraining_2026 a aidoc-lex:CompetenceTraining ;
+    rdfs:label "Training of the data science team on bias in hiring data, risk management and the AI Act" ;
+    prov:wasAssociatedWith ex:DevTeam ;
+    aidoc-lex:concernsSystem ex:TalentScreen .
+
+ex:SocietyImpact_2026 a aidoc-lex:ImpactAssessment ;
+    rdfs:label "Assessment of the effects of automated pre-selection on access to employment in the region" ;
+    aidoc-lex:impactArea aidoc-lex:Society ;
+    aidoc-lex:assesses ex:TalentScreen ;
+    aidoc-lex:identifiesRisk ex:Risk_AgeExclusion .
+
+ex:Measure_RetrainingGate a aidoc-lex:BiasMitigationMeasure ;
+    rdfs:label "Release gate that blocks a retrained model when the selection rate ratio of any group drops below 0.8" ;
+    aidoc-lex:controlFunction aidoc-lex:Prevention ;
+    aidoc-lex:addressesRisk ex:Risk_AgeExclusion .

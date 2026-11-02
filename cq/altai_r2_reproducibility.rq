@@ -1,0 +1,12 @@
+# CQ: How does the AI system define and test the contexts and conditions required for reproducibility?
+# Question: lexreq:altai-r2-10-cq3
+# Requirement: lexreq:altai-r2-10
+# Terms: aidoc-lex:Procedure, aidoc-lex:procedureType, aidoc-lex:Reproducibility
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?procedure ?label WHERE {
+  ?procedure a aidoc-lex:Procedure ;
+             aidoc-lex:procedureType aidoc-lex:Reproducibility ;
+             rdfs:label ?label .
+}

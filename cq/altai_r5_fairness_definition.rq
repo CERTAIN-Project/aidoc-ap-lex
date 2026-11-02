@@ -1,0 +1,13 @@
+# CQ: What definition of fairness does the AI system implement, and where in the system is it operationalised?
+# Question: lexreq:altai-r5-05-cq1
+# Requirement: lexreq:altai-r5-05
+# Terms: aidoc-lex:riskAcceptanceCriteria, aidoc-lex:measuredForGroup, aidoc:PerformanceMetric
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+SELECT ?criteria ?metric ?group ?value WHERE {
+  ?rms aidoc-lex:riskAcceptanceCriteria ?criteria .
+  ?measurement aidoc-lex:measuredForGroup ?group ;
+               dqv:isMeasurementOf ?metric ;
+               dqv:value ?value .
+}

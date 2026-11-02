@@ -1,0 +1,12 @@
+# CQ: How is the acceptability of the overall residual risk of the high-risk AI system determined?
+# Question: lexreq:aiact-art9-5-cq4
+# Requirement: lexreq:aiact-art9-5
+# Terms: dpv-aiact:RiskManagementSystem, aidoc-lex:riskAcceptanceCriteria, aidoc:hasRisk
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+SELECT ?system ?rms ?criteria WHERE {
+  ?system aidoc-lex:hasManagementSystem ?rms .
+  ?rms a dpv-aiact:RiskManagementSystem ;
+       aidoc-lex:riskAcceptanceCriteria ?criteria .
+}

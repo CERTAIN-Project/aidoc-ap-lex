@@ -1,0 +1,13 @@
+# CQ: What systems and procedures are implemented for record-keeping of all relevant documentation and information?
+# Question: lexreq:aiact-art17-1-k-cq1
+# Requirement: lexreq:aiact-art17-1-k
+# Terms: aidoc-lex:RecordKeepingSystem, aidoc-lex:Procedure, aidoc-lex:DocumentRetention
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?procedure ?label WHERE {
+  ?system a aidoc-lex:RecordKeepingSystem ;
+          aidoc-lex:includesDocument ?procedure .
+  ?procedure aidoc-lex:procedureType aidoc-lex:DocumentRetention ;
+             rdfs:label ?label .
+}

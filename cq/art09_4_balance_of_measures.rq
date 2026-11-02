@@ -1,0 +1,12 @@
+# CQ: How is an appropriate balance achieved in implementing the measures?
+# Question: lexreq:aiact-art9-4-cq4
+# Requirement: lexreq:aiact-art9-4
+# Terms: aidoc-lex:TradeOffAssessment, aidoc-lex:justification
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?assessment ?justification ?board WHERE {
+  ?assessment a aidoc-lex:TradeOffAssessment ;
+              aidoc-lex:justification ?justification .
+  OPTIONAL { ?assessment prov:wasAssociatedWith ?board }
+}

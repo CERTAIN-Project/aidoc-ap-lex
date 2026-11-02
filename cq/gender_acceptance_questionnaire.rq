@@ -1,0 +1,12 @@
+# CQ: What questionnaire is used to collect demographic information and responses on PU, PEOU, PT, SI, FC, and GI?
+# Question: lexreq:gender-02-cq1
+# Requirement: lexreq:gender-02
+# Terms: aidoc-lex:TechnologyAcceptanceStudy
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?study ?label ?system WHERE {
+  ?study a aidoc-lex:TechnologyAcceptanceStudy ;
+         rdfs:label ?label ;
+         aidoc-lex:assesses ?system .
+}

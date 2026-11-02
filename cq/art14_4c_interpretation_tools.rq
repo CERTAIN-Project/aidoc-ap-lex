@@ -1,0 +1,13 @@
+# CQ: What interpretation tools and methods are available in the high-risk AI system for the natural persons to correctly interpret the system’s output?
+# Question: lexreq:aiact-art14-4-c-cq1
+# Requirement: lexreq:aiact-art14-4-c
+# Terms: aidoc-lex:OutputInterpretationGuidance, aidoc:ExplainableAIFeature, aidoc:hasInterface
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?tool ?type ?interface WHERE {
+  ?system aidoc:hasTransparencyMeasure ?tool .
+  ?tool a ?type .
+  VALUES ?type { aidoc-lex:OutputInterpretationGuidance aidoc:ExplainableAIFeature }
+  OPTIONAL { ?system aidoc:hasInterface ?interface }
+}

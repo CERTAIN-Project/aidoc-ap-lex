@@ -1,0 +1,13 @@
+# CQ: How is the suitability of the datasets assessed?
+# Question: lexreq:aiact-art10-2-e-cq3
+# Requirement: lexreq:aiact-art10-2-e
+# Terms: aidoc-lex:DatasetSuitabilityAssessment, aidoc:dataScope, aidoc:dataCharacteristic
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?assessment ?dataset ?scope ?characteristic WHERE {
+  ?assessment a aidoc-lex:DatasetSuitabilityAssessment ;
+              aidoc-lex:assesses ?dataset .
+  OPTIONAL { ?dataset aidoc:dataScope ?scope }
+  OPTIONAL { ?dataset aidoc:dataCharacteristic ?characteristic }
+}

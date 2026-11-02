@@ -1,0 +1,12 @@
+# CQ: What procedures are implemented for the handling of communication with national competent authorities, other relevant authorities, notified bodies, other operators, customers and other interested parties?
+# Question: lexreq:aiact-art17-1-j-cq1
+# Requirement: lexreq:aiact-art17-1-j
+# Terms: aidoc-lex:Procedure, aidoc-lex:AuthorityCommunicationHandling
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?qms ?procedure ?label WHERE {
+  ?qms aidoc-lex:includesDocument ?procedure .
+  ?procedure aidoc-lex:procedureType aidoc-lex:AuthorityCommunicationHandling ;
+             rdfs:label ?label .
+}

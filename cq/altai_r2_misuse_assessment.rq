@@ -1,0 +1,13 @@
+# CQ: What mechanisms does the AI system use to assess malicious use, misuse, and inappropriate use?
+# Question: lexreq:altai-r2-05-cq2
+# Requirement: lexreq:altai-r2-05
+# Terms: aidoc-lex:RiskAssessment, dpv-aiact:ReasonablyForeseeableMisuse, aidoc:hasRisk
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+SELECT ?system ?misuse ?assessment WHERE {
+  ?system aidoc-lex:hasForeseeableMisuse ?misuse .
+  ?misuse a dpv-aiact:ReasonablyForeseeableMisuse .
+  ?assessment a aidoc-lex:RiskAssessment ;
+              aidoc-lex:assesses ?system .
+}

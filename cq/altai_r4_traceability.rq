@@ -1,0 +1,14 @@
+# CQ: What mechanisms allow the AI system to trace the input data, model or rule set, and outputs involved in each decision or recommendation?
+# Question: lexreq:altai-r4-01-cq2
+# Requirement: lexreq:altai-r4-01
+# Terms: aidoc:AIModel, aidoc:usesTrainingData, aidoc-lex:LogEntry
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?model ?version ?trainingData (COUNT(?entry) AS ?logEntries) WHERE {
+  ?model a aidoc:AIModel ;
+         aidoc:version ?version .
+  ?training aidoc:usesTrainingData ?trainingData .
+  ?entry a aidoc-lex:LogEntry .
+}
+GROUP BY ?model ?version ?trainingData

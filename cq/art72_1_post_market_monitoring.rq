@@ -1,10 +1,11 @@
 # CQ: What post-market monitoring system is established and documented that is proportionate to the nature of the AI technologies and the risks of the high-risk AI system?
 # Question: lexreq:aiact-art72-1-cq1
 # Requirement: lexreq:aiact-art72-1
-# Terms: aidoc-lex:PostMarketMonitoringSystem, aidoc-lex:hasManagementSystem, aidoc-lex:includesDocument
+# Terms: dpv-aiact:PostMarketMonitoringSystem, aidoc-lex:hasManagementSystem, aidoc-lex:includesDocument
 
 PREFIX aidoc: <https://w3id.org/aidoc-ap#>
 PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
 PREFIX lexreq: <https://w3id.org/aidoc-ap/lex/requirements#>
 PREFIX aiact: <https://w3id.org/aidoc-ap/requirements#>
 PREFIX dqv: <http://www.w3.org/ns/dqv#>
@@ -13,6 +14,6 @@ PREFIX prov: <http://www.w3.org/ns/prov#>
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 SELECT ?system ?pmm ?document WHERE {
   ?system aidoc-lex:hasManagementSystem ?pmm .
-  ?pmm a aidoc-lex:PostMarketMonitoringSystem .
+  ?pmm a dpv-aiact:PostMarketMonitoringSystem .
   OPTIONAL { ?pmm aidoc-lex:includesDocument ?document }
 }

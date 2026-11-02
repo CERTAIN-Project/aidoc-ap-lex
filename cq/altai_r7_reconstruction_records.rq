@@ -1,0 +1,16 @@
+# CQ: What records does the AI system maintain so that internal or external parties can reconstruct relevant decisions and lifecycle actions?
+# Question: lexreq:altai-r7-01-cq2
+# Requirement: lexreq:altai-r7-01
+# Terms: aidoc:TechnicalDocumentation, aidoc:ChangeLog, aidoc:Log
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?record ?type WHERE {
+  {
+    ?system aidoc:hasTechnicalDocumentation ?record . BIND(aidoc:TechnicalDocumentation AS ?type)
+  } UNION {
+    ?system aidoc:hasChangeLog ?record . BIND(aidoc:ChangeLog AS ?type)
+  } UNION {
+    ?record a aidoc:Log . ?entry aidoc-lex:partOfLog ?record ; aidoc-lex:concernsSystem ?system . BIND(aidoc:Log AS ?type)
+  }
+}

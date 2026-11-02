@@ -1,0 +1,12 @@
+# CQ: What risks can reasonably be mitigated or eliminated through the design or development of the high-risk system?
+# Question: lexreq:aiact-art9-3-cq1
+# Requirement: lexreq:aiact-art9-3
+# Terms: aidoc:hasRisk, aidoc-lex:addressesRisk, aidoc:hasTransparencyMeasure
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?risk ?measure WHERE {
+  ?system aidoc:hasRisk ?risk .
+  ?measure aidoc-lex:addressesRisk ?risk .
+}
+ORDER BY ?risk ?measure

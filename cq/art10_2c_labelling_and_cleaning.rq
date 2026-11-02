@@ -1,0 +1,21 @@
+# CQ: How are annotation, labelling and cleaning carried out?
+# Question: lexreq:aiact-art10-2-c-cq2
+# Requirement: lexreq:aiact-art10-2-c
+# Terms: aidoc:LabelingProcedure, aidoc:labelingGuideline, aidoc:annotatorType, aidoc:DataCleaningProcedure, aidoc:missingDataStrategy, aidoc:outlierHandlingMethod
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?activity ?type ?description WHERE {
+  {
+    ?activity a aidoc:LabelingProcedure ; aidoc:labelingGuideline ?description .
+    BIND("labelling" AS ?type)
+  } UNION {
+    ?activity a aidoc:LabelingProcedure ; aidoc:annotatorType ?description .
+    BIND("annotators" AS ?type)
+  } UNION {
+    ?activity a aidoc:DataCleaningProcedure ; aidoc:missingDataStrategy ?description .
+    BIND("missing data" AS ?type)
+  } UNION {
+    ?activity a aidoc:DataCleaningProcedure ; aidoc:outlierHandlingMethod ?description .
+    BIND("outliers" AS ?type)
+  }
+}

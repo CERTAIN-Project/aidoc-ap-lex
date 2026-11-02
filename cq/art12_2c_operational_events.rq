@@ -1,0 +1,17 @@
+# CQ: What events are recorded for monitoring the operation of the high-risk AI system referred to in Article 26(5)?
+# Question: lexreq:aiact-art12-2-c-cq1
+# Requirement: lexreq:aiact-art12-2-c
+# Terms: aidoc-lex:LogEntry, aidoc-lex:OperationalMonitoringEvent, aidoc:isDeployedBy
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?entry ?system ?deployer ?time ?note WHERE {
+  ?entry a aidoc-lex:LogEntry ;
+         aidoc-lex:loggedEventType aidoc-lex:OperationalMonitoringEvent ;
+         aidoc-lex:concernsSystem ?system .
+  ?system aidoc:isDeployedBy ?deployer .
+  OPTIONAL { ?entry prov:generatedAtTime ?time }
+  OPTIONAL { ?entry rdfs:comment ?note }
+}

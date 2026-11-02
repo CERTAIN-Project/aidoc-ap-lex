@@ -1,0 +1,12 @@
+# CQ: What measures are identified by the provider before placing the high-risk AI system on the market or putting it into service and are appropriate to be implemented by the deployer?
+# Question: lexreq:aiact-art14-3-b-cq1
+# Requirement: lexreq:aiact-art14-3-b
+# Terms: aidoc-lex:DeployerOversightMeasure, aidoc:isDeployedBy
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?deployer ?measure WHERE {
+  ?system aidoc:isDeployedBy ?deployer ;
+          aidoc:hasHumanOversight ?measure .
+  ?measure a aidoc-lex:DeployerOversightMeasure .
+}

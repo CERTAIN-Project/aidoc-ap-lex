@@ -1,0 +1,13 @@
+# CQ: What relevant information is provided in terms of the training, validation and testing data sets used?
+# Question: lexreq:aiact-art13-3-b-vi-cq2
+# Requirement: lexreq:aiact-art13-3-b-vi
+# Terms: aidoc:Dataset, aidoc:TrainingDataSheet, aidoc:usesTrainingData, aidoc:usesValidationData, aidoc:usesTestData
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?dataset ?label ?characteristic ?datasheet WHERE {
+  ?activity aidoc:usesTrainingData|aidoc:usesValidationData|aidoc:usesTestData ?dataset .
+  ?dataset rdfs:label ?label .
+  OPTIONAL { ?dataset aidoc:dataCharacteristic ?characteristic }
+  OPTIONAL { ?datasheet a aidoc:TrainingDataSheet }
+}

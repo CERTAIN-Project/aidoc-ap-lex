@@ -1,0 +1,13 @@
+# CQ: What mitigation measures are implemented to address risks that cannot be eliminated?
+# Question: lexreq:aiact-art9-5-b-cq1
+# Requirement: lexreq:aiact-art9-5-b
+# Terms: aidoc-lex:RiskControlMeasure, aidoc-lex:controlFunction, aidoc:hasRisk
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?risk ?measure ?function WHERE {
+  ?system aidoc:hasRisk ?risk .
+  ?measure aidoc-lex:addressesRisk ?risk ;
+           aidoc-lex:controlFunction ?function .
+  VALUES ?function { aidoc-lex:Mitigation aidoc-lex:Detection }
+}

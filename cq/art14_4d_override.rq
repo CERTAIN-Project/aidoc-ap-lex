@@ -1,0 +1,13 @@
+# CQ: How are natural persons enabled to decide, in any particular situation, not to use the high-risk AI system or to otherwise disregard, override or reverse the output of the high-risk AI system?
+# Question: lexreq:aiact-art14-4-d-cq1
+# Requirement: lexreq:aiact-art14-4-d
+# Terms: aidoc-lex:OverrideMechanism, aidoc:hasHumanOversight
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?mechanism ?label WHERE {
+  ?system aidoc:hasHumanOversight ?mechanism .
+  ?mechanism a aidoc-lex:OverrideMechanism ;
+             rdfs:label ?label .
+}

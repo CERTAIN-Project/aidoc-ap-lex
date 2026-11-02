@@ -1,0 +1,13 @@
+# CQ: How are gender risks rated, mitigated, assigned, and tracked in the Ethical and Gender Risk Register?
+# Question: lexreq:gender-05-cq5
+# Requirement: lexreq:gender-05
+# Terms: aidoc-lex:GenderDisparityRisk, aidoc-lex:RiskRegister, aidoc-lex:RiskControlMeasure, aidoc:hasRisk
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?risk ?register ?measure ?function WHERE {
+  ?risk aidoc-lex:riskCategory aidoc-lex:GenderDisparityRisk .
+  ?assessment aidoc-lex:identifiesRisk ?risk ;
+              aidoc-lex:documentedIn ?register .
+  ?register a aidoc-lex:RiskRegister .
+  OPTIONAL { ?measure aidoc-lex:addressesRisk ?risk ; aidoc-lex:controlFunction ?function }
+}

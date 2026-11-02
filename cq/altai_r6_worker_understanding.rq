@@ -1,0 +1,15 @@
+# CQ: What mechanisms ensure that workers understand how the AI system operates, including what it can and cannot do?
+# Question: lexreq:altai-r6-03-cq2
+# Requirement: lexreq:altai-r6-03
+# Terms: aidoc-lex:CompetenceTraining, aidoc:hasCapability
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?training ?label ?limitation WHERE {
+  ?training a aidoc-lex:CompetenceTraining ;
+            aidoc-lex:concernsSystem ?system ;
+            rdfs:label ?label .
+  ?system aidoc:hasCapability ?capability .
+  OPTIONAL { ?capability rdfs:comment ?limitation }
+}

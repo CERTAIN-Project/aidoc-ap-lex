@@ -1,0 +1,12 @@
+# CQ: How are those logs kept?
+# Question: lexreq:aiact-art16-e-cq2
+# Requirement: lexreq:aiact-art16-e
+# Terms: aidoc:Log, aidoc:storesLogsAt, aidoc-lex:retentionPeriod
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?log ?store ?retention WHERE {
+  ?logging aidoc:producesLog ?log ;
+           aidoc:storesLogsAt ?store .
+  ?log aidoc-lex:retentionPeriod ?retention .
+}

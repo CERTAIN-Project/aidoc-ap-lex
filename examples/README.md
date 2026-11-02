@@ -18,4 +18,5 @@ TalentScreen, a CV screening system of an SME provider deployed by a logistics c
 | Article 14 | provider and deployer oversight measures, stop and override mechanisms, assigned overseers, training |
 | Articles 16, 17 | quality management system with typed procedures; accountability framework; conformity assessment, CE marking, EU registration, accessibility |
 | Articles 72, 73 | post-market monitoring system; serious incident with initial and complete report, investigation, corrective action and communication with the authority and the notified body |
+| AIDOC-AP core | data sets and their preparation, model and evaluation, interfaces, applied standards, hardware, change log, post-market monitoring |
 | ALTAI, OECD, D3.2 | fundamental rights, data protection, gender, work and environmental impact assessments; technology acceptance study; trade-off assessment; audit; worker consultation; redress, reporting channel and data subject rights |

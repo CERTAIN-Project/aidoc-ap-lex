@@ -1,0 +1,15 @@
+# CQ: What processes are in place for the provider for providing the report within two days?
+# Question: lexreq:aiact-art73-3-cq1
+# Requirement: lexreq:aiact-art73-3
+# Terms: aidoc-lex:Procedure, aidoc-lex:IncidentReporting, aidoc:AIProvider
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?provider ?procedure ?label WHERE {
+  ?provider a aidoc:AIProvider ;
+            aidoc-lex:hasManagementSystem ?qms .
+  ?qms aidoc-lex:includesDocument ?procedure .
+  ?procedure aidoc-lex:procedureType aidoc-lex:IncidentReporting ;
+             rdfs:label ?label .
+}

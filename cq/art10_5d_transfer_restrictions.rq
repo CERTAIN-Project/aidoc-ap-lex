@@ -1,0 +1,12 @@
+# CQ: What restrictions prevent the transmission, transfer or other access to the special categories of personal data by other parties?
+# Question: lexreq:aiact-art10-5-d-cq1
+# Requirement: lexreq:aiact-art10-5-d
+# Terms: aidoc-lex:PrivacyPreservingMeasure, aidoc-lex:controlFunction
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?measure ?label WHERE {
+  ?measure a aidoc-lex:PrivacyPreservingMeasure ;
+           aidoc-lex:controlFunction aidoc-lex:Prevention ;
+           rdfs:label ?label .
+}

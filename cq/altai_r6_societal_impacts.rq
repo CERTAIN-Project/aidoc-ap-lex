@@ -1,0 +1,13 @@
+# CQ: How does the AI system assess societal impacts beyond immediate end-users or subjects, including indirectly affected stakeholders?
+# Question: lexreq:altai-r6-05-cq2
+# Requirement: lexreq:altai-r6-05
+# Terms: aidoc-lex:ImpactAssessment, aidoc-lex:Society, aidoc-lex:identifiesRisk
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?assessment ?label ?risk WHERE {
+  ?assessment a aidoc-lex:ImpactAssessment ;
+              aidoc-lex:impactArea aidoc-lex:Society ;
+              rdfs:label ?label .
+  OPTIONAL { ?assessment aidoc-lex:identifiesRisk ?risk }
+}

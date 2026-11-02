@@ -1,0 +1,13 @@
+# CQ: How is the conformity of the high-risk AI system, when requested from the national competent authority as set out in Section 2, demonstrated?
+# Question: lexreq:aiact-art16-k-cq1
+# Requirement: lexreq:aiact-art16-k
+# Terms: aidoc-lex:ConformityAssessment, aidoc-lex:documentedIn, aidoc:hasDeclarationOfConformity
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?assessment ?documentation ?declaration WHERE {
+  ?assessment a aidoc-lex:ConformityAssessment ;
+              aidoc-lex:assesses ?system ;
+              aidoc-lex:documentedIn ?documentation .
+  OPTIONAL { ?system aidoc:hasDeclarationOfConformity ?declaration }
+}

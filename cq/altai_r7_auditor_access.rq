@@ -1,0 +1,15 @@
+# CQ: What access, documentation, and controls does the AI system provide to enable independent auditors to assess it?
+# Question: lexreq:altai-r7-02-cq2
+# Requirement: lexreq:altai-r7-02
+# Terms: aidoc-lex:Audit, aidoc:Auditor, aidoc:hasTechnicalDocumentation
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?audit ?auditor ?documentation WHERE {
+  ?audit a aidoc-lex:Audit ;
+         aidoc-lex:assesses ?system ;
+         prov:wasAssociatedWith ?auditor .
+  ?auditor a aidoc:Auditor .
+  ?system aidoc:hasTechnicalDocumentation ?documentation .
+}

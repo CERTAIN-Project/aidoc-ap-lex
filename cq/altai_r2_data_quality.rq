@@ -1,0 +1,11 @@
+# CQ: What mechanisms does the AI system use to ensure that training and development data are current, high quality, complete, and representative of the deployment environment?
+# Question: lexreq:altai-r2-08-cq2
+# Requirement: lexreq:altai-r2-08
+# Terms: aidoc:Dataset, aidoc:dataCharacteristic, aidoc:qualityMetricsUsed, aidoc:hasSourceDataset
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?dataset ?characteristic ?procedure ?metrics WHERE {
+  ?procedure aidoc:hasSourceDataset ?dataset ;
+             aidoc:qualityMetricsUsed ?metrics .
+  OPTIONAL { ?dataset aidoc:dataCharacteristic ?characteristic }
+}

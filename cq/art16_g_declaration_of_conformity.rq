@@ -1,0 +1,11 @@
+# CQ: What EU declaration of conformity is drawn up for the high-risk AI system?
+# Question: lexreq:aiact-art16-g-cq1
+# Requirement: lexreq:aiact-art16-g
+# Terms: aidoc:DeclarationOfConformity, aidoc:hasDeclarationOfConformity
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?declaration ?label WHERE {
+  ?system aidoc:hasDeclarationOfConformity ?declaration .
+  OPTIONAL { ?declaration rdfs:label ?label }
+}

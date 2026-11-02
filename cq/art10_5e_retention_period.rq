@@ -1,0 +1,13 @@
+# CQ: What is the retention period for the special categories of personal data?
+# Question: lexreq:aiact-art10-5-e-cq1
+# Requirement: lexreq:aiact-art10-5-e
+# Terms: aidoc-lex:containsSpecialCategoryData, aidoc-lex:retentionPeriod
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?item ?period WHERE {
+  {
+    ?item aidoc-lex:containsSpecialCategoryData true ; aidoc-lex:retentionPeriod ?period .
+  } UNION {
+    ?item a aidoc-lex:ProcessingRecord ; aidoc-lex:retentionPeriod ?period .
+  }
+}

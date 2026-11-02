@@ -1,0 +1,10 @@
+# CQ: What testing datasets are used for the development of the high-risk AI system not using techniques involving the training of AI models?
+# Question: lexreq:aiact-art10-6-cq1
+# Requirement: lexreq:aiact-art10-6
+# Terms: aidoc:DataTesting, aidoc:usesTestData
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+SELECT ?activity ?dataset WHERE {
+  ?activity a aidoc:DataTesting ;
+            aidoc:usesTestData ?dataset .
+}

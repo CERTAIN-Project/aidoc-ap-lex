@@ -1,0 +1,12 @@
+# CQ: Do the technical capabilities and characteristics of the high-risk AI system provide information that are relevant to explain its output?
+# Question: lexreq:aiact-art13-3-b-iv-cq2
+# Requirement: lexreq:aiact-art13-3-b-iv
+# Terms: aidoc:ExplainableAIFeature, aidoc:hasTransparencyMeasure
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?feature ?label WHERE {
+  ?system aidoc:hasTransparencyMeasure ?feature .
+  ?feature a aidoc:ExplainableAIFeature ;
+           rdfs:label ?label .
+}

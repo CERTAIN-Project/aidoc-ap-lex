@@ -1,0 +1,12 @@
+# CQ: How does the AI system support the rights to withdraw consent, object, and be forgotten where applicable?
+# Question: lexreq:altai-r3-03-cq1
+# Requirement: lexreq:altai-r3-03
+# Terms: aidoc-lex:DataSubjectRightsMechanism
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?mechanism ?label WHERE {
+  ?mechanism a aidoc-lex:DataSubjectRightsMechanism ;
+             aidoc-lex:concernsSystem ?system ;
+             rdfs:label ?label .
+}

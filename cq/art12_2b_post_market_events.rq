@@ -1,0 +1,19 @@
+# CQ: What events are recorded to facilitate the post-market monitoring referred to in Article 72?
+# Question: lexreq:aiact-art12-2-b-cq1
+# Requirement: lexreq:aiact-art12-2-b
+# Terms: aidoc-lex:LogEntry, aidoc-lex:PostMarketMonitoringEvent, aidoc:PostMarketMonitoringActivity, aidoc:logsActivity
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?entry ?time ?note ?monitoring WHERE {
+  ?entry a aidoc-lex:LogEntry ;
+         aidoc-lex:loggedEventType aidoc-lex:PostMarketMonitoringEvent ;
+         aidoc-lex:partOfLog ?log .
+  ?logging aidoc:producesLog ?log ;
+           aidoc:logsActivity ?monitoring .
+  ?monitoring a aidoc:PostMarketMonitoringActivity .
+  OPTIONAL { ?entry prov:generatedAtTime ?time }
+  OPTIONAL { ?entry rdfs:comment ?note }
+}

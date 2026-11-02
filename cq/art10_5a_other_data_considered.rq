@@ -1,0 +1,12 @@
+# CQ: How was it determined that bias detection and correction could not be effectively fulfilled by processing other data, including synthetic or anonymised data?
+# Question: lexreq:aiact-art10-5-a-cq2
+# Requirement: lexreq:aiact-art10-5-a
+# Terms: aidoc-lex:DatasetSuitabilityAssessment, aidoc-lex:ProcessingRecord, aidoc-lex:justification
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?assessment ?dataset ?record ?justification WHERE {
+  ?assessment a aidoc-lex:DatasetSuitabilityAssessment ;
+              aidoc-lex:assesses ?dataset .
+  ?record a aidoc-lex:ProcessingRecord ;
+          aidoc-lex:justification ?justification .
+}

@@ -12,6 +12,7 @@
   const FOAF = 'http://xmlns.com/foaf/0.1/';
   const OWL = 'http://www.w3.org/2002/07/owl#';
   const REQ = 'https://w3id.org/aidoc-ap/lex/requirements#';
+  const AIACT = 'https://w3id.org/aidoc-ap/requirements#';
   const ONTO = 'https://w3id.org/aidoc-ap/lex/requirements';
   const PREFIXES = [
     ['aidoc-lex:', 'https://w3id.org/aidoc-ap/lex#'], ['aidoc:', 'https://w3id.org/aidoc-ap#'],
@@ -53,7 +54,7 @@
     for (const [s, qs] of byS) {
       if (!qs.some(q => q.predicate.id === RDF && q.object.id === REQ+'Requirement')) continue;
       const fw = one(s, REQ+'framework');
-      const cqs = all(s, REQ+'hasCompetencyQuestion').map(o => ({
+      const cqs = all(s, AIACT+'hasCompetencyQuestion').map(o => ({
         id: o.id.split('#')[1], text: one(o.id, RDFS+'label'), query: one(o.id, REQ+'formalisedBy')
       })).sort((a, b) => Number(a.id.split('-cq')[1]) - Number(b.id.split('-cq')[1]));
       reqs.push({

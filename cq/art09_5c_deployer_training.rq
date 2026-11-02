@@ -1,0 +1,15 @@
+# CQ: What training is provided to deployers, where appropriate?
+# Question: lexreq:aiact-art9-5-c-cq2
+# Requirement: lexreq:aiact-art9-5-c
+# Terms: aidoc-lex:CompetenceTraining, aidoc-lex:assignedOverseer, aidoc:isDeployedBy
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT DISTINCT ?system ?deployer ?training ?person WHERE {
+  ?system aidoc:isDeployedBy ?deployer .
+  ?training a aidoc-lex:CompetenceTraining ;
+            aidoc-lex:concernsSystem ?system ;
+            prov:wasAssociatedWith ?person .
+  ?mechanism aidoc-lex:assignedOverseer ?person .
+}

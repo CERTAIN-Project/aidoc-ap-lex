@@ -5,7 +5,7 @@ Each query file starts with a header:
   # CQ: What risk management system has been established for the high-risk AI system?
   # Question: lexreq:aiact-art9-1-cq1
   # Requirement: lexreq:aiact-art9-1
-  # Terms: aidoc-lex:RiskManagementSystem
+  # Terms: dpv-aiact:RiskManagementSystem
 A query that does not parse is an error. A query without rows over the example graphs
 is reported, so that every term is shown to be usable on realistic data.
 """

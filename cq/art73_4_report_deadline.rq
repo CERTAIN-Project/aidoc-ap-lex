@@ -1,0 +1,15 @@
+# CQ: What systems are in place to ensure that the report is submitted within 10 days?
+# Question: lexreq:aiact-art73-4-cq3
+# Requirement: lexreq:aiact-art73-4
+# Terms: dpv-aiact:SeriousIncident, aidoc-lex:awarenessDate, aidoc-lex:IncidentReport, aidoc-lex:isInitialReport
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+SELECT ?incident ?awareness ?report ?submitted WHERE {
+  ?incident a dpv-aiact:SeriousIncident ;
+            aidoc-lex:awarenessDate ?awareness .
+  ?report aidoc-lex:reportsIncident ?incident ;
+          aidoc-lex:isInitialReport true ;
+          prov:generatedAtTime ?submitted .
+}

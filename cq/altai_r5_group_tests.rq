@@ -1,0 +1,12 @@
+# CQ: What tests does the AI system apply for specific target groups, problematic use cases, and lifecycle bias monitoring?
+# Question: lexreq:altai-r5-02-cq2
+# Requirement: lexreq:altai-r5-02
+# Terms: aidoc-lex:measuredForGroup, aidoc:PerformanceMetric
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dqv: <http://www.w3.org/ns/dqv#>
+SELECT ?group ?metric ?value WHERE {
+  ?measurement aidoc-lex:measuredForGroup ?group ;
+               dqv:isMeasurementOf ?metric ;
+               dqv:value ?value .
+}

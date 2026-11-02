@@ -1,0 +1,11 @@
+# CQ: What technical specifications, including standards, are applied to the high-risk AI system?
+# Question: lexreq:aiact-art17-1-e-cq1
+# Requirement: lexreq:aiact-art17-1-e
+# Terms: aidoc:Standard, aidoc:appliesStandard
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?standard ?label WHERE {
+  ?system aidoc:appliesStandard ?standard .
+  ?standard rdfs:label ?label .
+}

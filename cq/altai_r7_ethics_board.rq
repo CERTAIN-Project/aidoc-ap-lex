@@ -1,0 +1,12 @@
+# CQ: What review board or equivalent mechanism is established or considered for this purpose in relation to the AI system?
+# Question: lexreq:altai-r7-05-cq2
+# Requirement: lexreq:altai-r7-05
+# Terms: aidoc-lex:EthicsReviewBoard
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?board ?activity ?label WHERE {
+  ?board a aidoc-lex:EthicsReviewBoard .
+  OPTIONAL { ?activity prov:wasAssociatedWith ?board ; rdfs:label ?label }
+}

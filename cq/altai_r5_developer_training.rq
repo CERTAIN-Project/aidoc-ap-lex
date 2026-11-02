@@ -1,0 +1,15 @@
+# CQ: What awareness or training mechanisms linked to the AI system reinforce bias-sensitive design and development practices?
+# Question: lexreq:altai-r5-03-cq2
+# Requirement: lexreq:altai-r5-03
+# Terms: aidoc-lex:CompetenceTraining, aidoc:hasResponsibleDeveloper
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?training ?label ?developer WHERE {
+  ?development aidoc:hasResponsibleDeveloper ?developer .
+  ?training a aidoc-lex:CompetenceTraining ;
+            prov:wasAssociatedWith ?developer ;
+            rdfs:label ?label .
+}

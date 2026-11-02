@@ -1,0 +1,14 @@
+# CQ: How does the AI system ensure that relevant personnel receive risk training?
+# Question: lexreq:altai-r7-04-cq1
+# Requirement: lexreq:altai-r7-04
+# Terms: aidoc-lex:CompetenceTraining
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX prov: <http://www.w3.org/ns/prov#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?training ?label ?participant WHERE {
+  ?training a aidoc-lex:CompetenceTraining ;
+            rdfs:label ?label ;
+            prov:wasAssociatedWith ?participant .
+  FILTER(CONTAINS(LCASE(?label), "risk") || CONTAINS(LCASE(?label), "bias"))
+}

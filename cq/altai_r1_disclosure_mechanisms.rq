@@ -1,0 +1,13 @@
+# CQ: What disclosure mechanisms does the AI system provide to make users aware that they are interacting with an AI system?
+# Question: lexreq:altai-r1-02-cq2
+# Requirement: lexreq:altai-r1-02
+# Terms: aidoc-lex:AIInteractionDisclosure, aidoc:hasTransparencyMeasure
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?disclosure ?label WHERE {
+  ?system aidoc:hasTransparencyMeasure ?disclosure .
+  ?disclosure a aidoc-lex:AIInteractionDisclosure ;
+              rdfs:label ?label .
+}

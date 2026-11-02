@@ -2,7 +2,7 @@
 PY ?= $(shell [ -x .venv/bin/python ] && echo .venv/bin/python || echo python3)
 MODULE := ontology/aidoc-lex.ttl
 
-.PHONY: setup check check-strict cq test lint-text merged alignments docs-pages site serve set-version release all release-check fetch-core
+.PHONY: setup check check-strict cq kpi test lint-text merged alignments docs-pages site serve set-version release all release-check fetch-core
 
 setup:
 	python3 -m venv .venv
@@ -22,6 +22,9 @@ reports:
 
 cq: | reports
 	$(PY) scripts/run_cqs.py
+
+kpi: | reports
+	$(PY) scripts/kpi.py
 
 test:
 	$(PY) -m pytest -q tests
@@ -71,7 +74,7 @@ lint-text:
 merged: | reports
 	$(PY) scripts/merge.py --out reports/framework_merged.ttl
 
-all: check test cq alignments
+all: check test cq kpi alignments
 
 release-check: check-strict test cq alignments
 

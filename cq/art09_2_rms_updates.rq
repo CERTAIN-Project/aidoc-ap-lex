@@ -1,0 +1,17 @@
+# CQ: How are updates recorded and implemented?
+# Question: lexreq:aiact-art9-2-cq4
+# Requirement: lexreq:aiact-art9-2
+# Terms: dpv-aiact:RiskManagementSystem, aidoc:ChangeRecord, aidoc:startDate, aidoc:endDate
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+SELECT ?system ?rms ?change ?reason ?start ?end WHERE {
+  ?system aidoc-lex:hasManagementSystem ?rms ;
+          aidoc:hasChangeLog/aidoc:hasChangeRecord ?change .
+  ?rms a dpv-aiact:RiskManagementSystem .
+  OPTIONAL { ?change aidoc:reasonForChange ?reason }
+  OPTIONAL { ?change aidoc:startDate ?start }
+  OPTIONAL { ?change aidoc:endDate ?end }
+}
+ORDER BY ?start

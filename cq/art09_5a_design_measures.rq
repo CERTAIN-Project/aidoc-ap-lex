@@ -1,0 +1,13 @@
+# CQ: What design and development measures are adopted to eliminate or reduce those risks?
+# Question: lexreq:aiact-art9-5-a-cq2
+# Requirement: lexreq:aiact-art9-5-a
+# Terms: aidoc-lex:RiskControlMeasure, aidoc-lex:controlFunction, aidoc:hasRisk
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?system ?risk ?measure ?function WHERE {
+  ?system aidoc:hasRisk ?risk .
+  ?measure aidoc-lex:addressesRisk ?risk ;
+           aidoc-lex:controlFunction ?function .
+  VALUES ?function { aidoc-lex:Elimination aidoc-lex:Prevention }
+}

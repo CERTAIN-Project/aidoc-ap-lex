@@ -1,0 +1,11 @@
+# CQ: What special categories of personal data are processed for bias detection and correction?
+# Question: lexreq:aiact-art10-5-cq1
+# Requirement: lexreq:aiact-art10-5
+# Terms: aidoc-lex:containsSpecialCategoryData, aidoc-lex:BiasAssessment
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+SELECT ?dataset ?assessment WHERE {
+  ?dataset aidoc-lex:containsSpecialCategoryData true .
+  ?assessment a aidoc-lex:BiasAssessment ;
+              aidoc-lex:assesses ?dataset .
+}

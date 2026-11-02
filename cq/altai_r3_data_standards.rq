@@ -1,0 +1,12 @@
+# CQ: How does the AI system align with relevant standards or widely adopted protocols for data management and governance?
+# Question: lexreq:altai-r3-04-cq1
+# Requirement: lexreq:altai-r3-04
+# Terms: aidoc:Standard, aidoc:appliesStandard
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?system ?standard ?label WHERE {
+  ?system aidoc:appliesStandard ?standard .
+  ?standard rdfs:label ?label .
+  FILTER(CONTAINS(?label, "ISO/IEC"))
+}

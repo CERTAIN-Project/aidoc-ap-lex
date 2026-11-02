@@ -1,0 +1,14 @@
+# CQ: What post-market monitoring system is set up, implemented and maintained in accordance with Article 72?
+# Question: lexreq:aiact-art17-1-h-cq1
+# Requirement: lexreq:aiact-art17-1-h
+# Terms: dpv-aiact:PostMarketMonitoringSystem, aidoc:PostMarketMonitoringActivity, aidoc:hasFrequency
+
+PREFIX aidoc: <https://w3id.org/aidoc-ap#>
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX dpv-aiact: <https://w3id.org/dpv/legal/eu/aiact#>
+SELECT ?system ?pmm ?activity ?frequency WHERE {
+  ?system aidoc-lex:hasManagementSystem ?pmm .
+  ?pmm a dpv-aiact:PostMarketMonitoringSystem .
+  ?activity a aidoc:PostMarketMonitoringActivity .
+  OPTIONAL { ?activity aidoc:hasFrequency ?frequency }
+}

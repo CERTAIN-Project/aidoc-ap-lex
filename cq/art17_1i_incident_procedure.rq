@@ -1,0 +1,12 @@
+# CQ: What procedures are implemented for the reporting of a serious incident in accordance with Article 73?
+# Question: lexreq:aiact-art17-1-i-cq1
+# Requirement: lexreq:aiact-art17-1-i
+# Terms: aidoc-lex:Procedure, aidoc-lex:IncidentReporting
+
+PREFIX aidoc-lex: <https://w3id.org/aidoc-ap/lex#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+SELECT ?qms ?procedure ?label WHERE {
+  ?qms aidoc-lex:includesDocument ?procedure .
+  ?procedure aidoc-lex:procedureType aidoc-lex:IncidentReporting ;
+             rdfs:label ?label .
+}
