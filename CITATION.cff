@@ -4,6 +4,14 @@ type: dataset
 title: "AIDOC-AP LEX Extension: Legal and Ethical Requirements"
 version: "1.0"
 date-released: 2026-11-03
+doi: "10.5281/zenodo.23911026"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23911026"
+    description: "Version 1.0"
+  - type: doi
+    value: "10.5281/zenodo.23911025"
+    description: "All versions (concept DOI, resolves to the latest version)"
 abstract: >-
   Extension module of the AIDOC-AP application profile for legal and ethical requirements. It adds
   the terms needed to document how an AI system meets the obligations of providers and deployers

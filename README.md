@@ -4,6 +4,8 @@ Extension module of the [AIDOC-AP](https://w3id.org/aidoc-ap) application profil
 
 Status: version 1.0, released on 3 November 2026.
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23911025.svg)](https://doi.org/10.5281/zenodo.23911025)
+
 | | |
 |---|---|
 | Namespace | `https://w3id.org/aidoc-ap/lex#` (prefix `aidoc-lex`) |
@@ -12,6 +14,7 @@ Status: version 1.0, released on 3 November 2026.
 | Imports | AIDOC-AP core 1.2 |
 | Documentation | [w3id.org/aidoc-ap/lex](https://certain-project.github.io/aidoc-ap-lex/): term reference, [requirements](https://certain-project.github.io/aidoc-ap-lex/requirements.html), [worked examples](https://certain-project.github.io/aidoc-ap-lex/examples.html), [alignments](https://certain-project.github.io/aidoc-ap-lex/alignments.html) |
 | Licence | CC BY 4.0 for the ontology, requirements and documentation ([LICENSE-CC-BY.txt](LICENSE-CC-BY.txt)), Apache-2.0 for code ([LICENSE](LICENSE)) |
+| Archived releases | [10.5281/zenodo.23911025](https://doi.org/10.5281/zenodo.23911025) (all versions); version 1.0: [10.5281/zenodo.23911026](https://doi.org/10.5281/zenodo.23911026) |
 | Citation | [CITATION.cff](CITATION.cff) |
 
 ## Requirements
