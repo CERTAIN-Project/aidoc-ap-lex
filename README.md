@@ -2,7 +2,7 @@
 
 Extension module of the [AIDOC-AP](https://w3id.org/aidoc-ap) application profile, developed in the CERTAIN project (Horizon Europe, grant agreement 101189650). The AIDOC-AP core describes the technical documentation of AI systems required by Annex IV of the EU AI Act. The extension adds the terms needed to document how an AI system meets legal and ethical requirements: the obligations of providers and deployers in Articles 9 to 17, 72 and 73 of the EU AI Act, and the ethical requirements of the Assessment List for Trustworthy AI (ALTAI), the OECD AI Principles and the gender requirements of CERTAIN deliverable D3.2. It covers management systems, assessments, measures, compliance documents, incidents and the organisations and persons involved, and publishes the requirements themselves with their competency questions and the evidence an organisation is expected to keep. It imports the core without changing any of its definitions. As in the core and the Lifecycle Extension, terms are reused before new ones are minted: where DPV, the DPV AI Act extension or VAIR define the same concept, the module uses that term; a module term that specialises a core class is a subclass of the corresponding external term; SKOS mappings are kept for correspondences that are not subsumption.
 
-Status: draft of version 1.0, not released.
+Status: version 1.0, released on 3 November 2026.
 
 | | |
 |---|---|

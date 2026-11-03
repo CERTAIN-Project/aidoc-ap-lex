@@ -43,7 +43,8 @@
                       foaf:name "Tobias Dam" ;
                       foaf:organization "University of Applied Sciences St. Pölten" ] ;
     dcterms:created "2026-10-28"^^xsd:date ;
-    dcterms:modified "2026-10-28"^^xsd:date ;
+    dcterms:modified "2026-11-03"^^xsd:date ;
+    dcterms:issued "2026-11-03"^^xsd:date ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:publisher [ foaf:name "CERTAIN Project" ;
                         foaf:homepage <https://certain-project.eu> ] ;
@@ -51,8 +52,7 @@
     rdfs:seeAlso <https://w3id.org/aidoc-ap/lex/requirements> ;
     vann:preferredNamespacePrefix "aidoc-lex" ;
     vann:preferredNamespaceUri "https://w3id.org/aidoc-ap/lex#" ;
-    schema:funding <https://cordis.europa.eu/project/id/101189650> ;
-    skos:note "Draft, not released."@en .
+    schema:funding <https://cordis.europa.eu/project/id/101189650> .
 
 #################################################################
 #    Classes

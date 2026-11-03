@@ -3,6 +3,7 @@ message: "If you use the AIDOC-AP LEX Extension, please cite it as below."
 type: dataset
 title: "AIDOC-AP LEX Extension: Legal and Ethical Requirements"
 version: "1.0"
+date-released: 2026-11-03
 abstract: >-
   Extension module of the AIDOC-AP application profile for legal and ethical requirements. It adds
   the terms needed to document how an AI system meets the obligations of providers and deployers
@@ -14,6 +15,7 @@ authors:
   - family-names: Kovac
     given-names: Fabian
     affiliation: "University of Applied Sciences St. Pölten"
+    orcid: "https://orcid.org/0000-0002-1611-2598"
   - family-names: Amplianitis
     given-names: Konstantinos
     affiliation: "University College Dublin"
@@ -21,9 +23,11 @@ authors:
   - family-names: Neumaier
     given-names: Sebastian
     affiliation: "University of Applied Sciences St. Pölten"
+    orcid: "https://orcid.org/0000-0002-9804-4882"
   - family-names: Dam
     given-names: Tobias
     affiliation: "University of Applied Sciences St. Pölten"
+    orcid: "https://orcid.org/0000-0002-2463-5831"
 license:
   - CC-BY-4.0
   - Apache-2.0
